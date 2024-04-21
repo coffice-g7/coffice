@@ -39,10 +39,14 @@
 </head>
 <body>
     <div class="header">
-        <h1>Template da Home</h1>
+        <h1>Coffice</h1>
         <div>
+            {% if user.is_authenticated %}
+            <button onclick="location.href='/logout/'">Logout</button>
+            {% else %}
             <button onclick="location.href='/login/'">Login</button>
             <button onclick="location.href='/register/'">Register</button>
+            {% endif %}
         </div>
     </div>
     <div class="content">

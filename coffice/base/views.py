@@ -9,6 +9,10 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import logout as auth_logout
+
+
+
 
 # Create your views here.
 
@@ -46,3 +50,9 @@ def home(request):
 
 def room(request):
     return render(request, 'room.html')
+
+def logout(request):
+    auth_logout(request)
+    return redirect('home')
+    
+
