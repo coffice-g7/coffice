@@ -35,10 +35,10 @@ def register_view(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect('home')  # Redirecione para a página inicial após o registro
+            return redirect('home')  
     else:
         form = UserCreationForm()
-    return render(request, 'register.html', {'form': form})
+    return render(request, 'signup.html', {'form': form})
 
 
 def home(request):
