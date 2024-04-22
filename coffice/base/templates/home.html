@@ -51,6 +51,20 @@
     </div>
     <div class="content">
         <!-- Conteúdo da página -->
+
+        {% for coffee in coffee_shops %}
+        <h2>{{ coffee.name }}</h2>
+        <p>{{ coffee.description }}</p>
+        <p>Rating: {{ coffee.rating }}</p>
+        <p>Price: {{ coffee.price }}</p>
+        <p>Location: {{ coffee.location }}</p>
+        <p>asdasddsd</p>
+
+        {% empty %}
+        <h2>Não há cafés disponíveis</h2>
+
+        {% endfor %}
+
     </div>
 </body>
 </html>
