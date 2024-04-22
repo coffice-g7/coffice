@@ -15,7 +15,7 @@ class coffee_shop(models.Model):
     vegan_options = models.BooleanField(default=False) 
     zero_lactose_options = models.BooleanField(default=False)
     gluten_free_options = models.BooleanField(default=False)
-    acessibility = models.BooleanField(default=False)
+    accessibility  = models.BooleanField(default=False)
     has_parking = models.BooleanField(default=False)
 
     street = models.CharField(max_length=100)
@@ -23,4 +23,4 @@ class coffee_shop(models.Model):
     neighborhood = models.CharField(max_length=100)
     
     def __str__(self):
-        return self.cpnj
+        return self.cnpj
