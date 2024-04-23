@@ -6,6 +6,7 @@ class coffee_shop(models.Model):
     number = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
     description = models.TextField()
+    rating = models.DecimalField(max_digits=10, decimal_places=2)
 
     cnpj = models.CharField(max_length=100)
     allow_reservation = models.BooleanField(default=False)
