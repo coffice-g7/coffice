@@ -1,4 +1,4 @@
-<p align="center"><img align="center" width="280" src="..."/></p>
+<p align="center"><img align="center" width="280" src="imagens/COFFICE RETA PNG MARROM.png"/></p>
 <hr>
 
 <p align="center">
