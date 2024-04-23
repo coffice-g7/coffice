@@ -22,7 +22,7 @@
 </p>
 
 
-# Coffice ☕
+# Coffice 💻
 
 <h4>Bem vindo ao repositório do Coffice! Este Projeto está sendo realizado com intuito de fomentar a cultura e conhecimento acerca das cafeterias com ambiente de trabalho na cidade do Recife.<h4>
 
