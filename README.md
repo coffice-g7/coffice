@@ -139,7 +139,7 @@ Nesta seção, você encontrará informações sobre as sessões de pair program
 
 ## 📝 Licença
 
-Este projeto está licenciado sob a [Licença MIT](LICENSE.md).
+Este projeto está licenciado sob a [Licença MIT](LICENSE).
 
 
 
