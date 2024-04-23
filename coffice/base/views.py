@@ -10,6 +10,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import logout as auth_logout
+from .forms import CustomUserCreationForm
+from .models import Cliente
 
 from .models import coffee_shop
 
@@ -31,17 +33,23 @@ def login_view(request):
 
 def register_view(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
-            email = form.cleaned_data.get('email')
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
+            cpf = request.POST.get('cpf')
+            phone_number = request.POST.get('phone_number')
+            client_new = Cliente(user=user, phone_number=phone_number, cpf=cpf)
+            try:
+               client_new.save()
+            except Exception as e:
+               print("Erro ao salvar cliente:", e)
             login(request, user)
             return redirect('home')  
     else:
-        form = UserCreationForm()
+        form = CustomUserCreationForm(request.POST)
     return render(request, 'signup.html', {'form': form})
 
 
