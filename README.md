@@ -24,7 +24,7 @@
 
 <p float="left">
 
-<img align="right" width="80" height="100" src="imagens/WhatsApp Image 2024-04-23 at 11.43.18 (1).jpeg" />
+<img align="right" width="80" height="100" src="imagens/GRÃO_PNG_MARROM-removebg-preview.png" />
 
 O Coffice é uma plataforma que conecta profissionais a cafeterias ideais para trabalhar, estudar ou simplesmente desfrutar de um momento tranquilo. Facilitamos o processo de descobrir, filtrar e reservar espaços em cafeterias, enquanto você se integra a uma comunidade ativa que fornece feedback e valor à plataforma.
 
