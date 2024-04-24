@@ -92,7 +92,7 @@ Nesta seção, você encontrará o screencast demonstrando o funcionamento da pl
 <details>
 <summary>Thiago Queiroz - Antônio Neto</summary>
   <h4> História: Como usuário cliente quero poder me cadastrar</h4>
-  <p>A programação em par foi dividada com ambos ocupando o papel de revisor e desenvolvedores. O processo de desenvolvimento foi baseado na implementação da tela de registro e login, onde nós, implementamos essa funcionalidade com êxito e sem nenhum tipo de estresse, fruto da nossa colaboração e familiaridade em trabalhar juntos.</p>
+  <p>A programação em par foi dividada em ambos ocupando o papel de revisores e desenvolvedores. O processo de desenvolvimento foi baseado na implementação da tela de registro e login, junto com todo processo de estilização e outras obrigações do Django, onde nós implementamos essa funcionalidade com sucesso e sem nenhum tipo de estresse, fruto da nossa colaboração e familiaridade em trabalhar juntos.</p>
   <h4> FeedBack: </h4> <p> Foi uma experiência que nós, como equipe, sentimos que têm agregado bastante na nossa capacidade de desenvolvimento, apesar dos desafios iniciais com o Django, devido ao Projeto de "FDS" nós sentimos que estamos mais familiarizados com o framework, desenvolvendo bastante nossas habilidades e competências e aprendendo cada vez mais a trabalhar em conjunto. Foi uma ótima experiência</p>
 </details>
 
