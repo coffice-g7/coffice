@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ coffee_shop.name }}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'coffee_shop_detail.css' %}" />
+    <!-- Adicione seus estilos adicionais aqui -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        .details-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .details-item {
+            margin-bottom: 10px;
+        }
+
+        .details-item strong {
+            display: inline-block;
+            width: 200px;
+        }
+
+        .details-item span {
+            display: inline-block;
+        }
+
+        .details-item .yes {
+            color: green;
+        }
+
+        .details-item .no {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ coffee_shop.name }}</h1>
+        <p>{{ coffee_shop.description }}</p>
+        <ul class="details-list">
+            <li class="details-item">
+                <strong>Endereço:</strong>
+                <span>{{ coffee_shop.street }}, {{ coffee_shop.number }} - {{ coffee_shop.neighborhood }}</span>
+            </li>
+            <li class="details-item">
+                <strong>CNPJ:</strong>
+                <span>{{ coffee_shop.cnpj }}</span>
+            </li>
+            <li class="details-item">
+                <strong>Custo da reserva:</strong>
+                <span>R$ {{ coffee_shop.reservation_cost }}</span>
+            </li>
+            <li class="details-item">
+                <strong>Destaque do café:</strong>
+                <span>{{ coffee_shop.coffee_spotlight }}</span>
+            </li>
+            <li class="details-item">
+                <strong>Velocidade da internet:</strong>
+                <span>{{ coffee_shop.internet_speed }}</span>
+            </li>
+            <li class="details-item">
+                <strong>Opções veganas:</strong>
+                <span class="{% if coffee_shop.vegan_options %}yes{% else %}no{% endif %}">{% if coffee_shop.vegan_options %}Sim{% else %}Não{% endif %}</span>
+            </li>
+            <li class="details-item">
+                <strong>Opções sem lactose:</strong>
+                <span class="{% if coffee_shop.zero_lactose_options %}yes{% else %}no{% endif %}">{% if coffee_shop.zero_lactose_options %}Sim{% else %}Não{% endif %}</span>
+            </li>
+            <li class="details-item">
+                <strong>Opções sem glúten:</strong>
+                <span class="{% if coffee_shop.gluten_free_options %}yes{% else %}no{% endif %}">{% if coffee_shop.gluten_free_options %}Sim{% else %}Não{% endif %}</span>
+            </li>
+            <li class="details-item">
+                <strong>Acessibilidade:</strong>
+                <span class="{% if coffee_shop.accessibility %}yes{% else %}no{% endif %}">{% if coffee_shop.accessibility %}Sim{% else %}Não{% endif %}</span>
+            </li>
+            <li class="details-item">
+                <strong>Estacionamento:</strong>
+                <span class="{% if coffee_shop.has_parking %}yes{% else %}no{% endif %}">{% if coffee_shop.has_parking %}Sim{% else %}Não{% endif %}</span>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

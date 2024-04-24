@@ -98,10 +98,8 @@ def room(request):
 def logout(request):
     auth_logout(request)
     return redirect('home')
-    
 
-class CoffeeShopDetailView(DetailView):
-    template_name = 'coffee_shop_detail.html'
-    model = coffee_shop
-    context_object_name = 'coffee_shop'
-    pk_url_kwarg = 'pk'
+def coffee_shop_detail(request, pk):
+    coffee_shop_obj = get_object_or_404(coffee_shop, pk=pk)
+    context = {'coffee_shop_obj': coffee_shop_obj}
+    return render(request, 'coffee_shop_detail.html', context)
