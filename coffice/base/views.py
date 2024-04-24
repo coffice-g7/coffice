@@ -10,6 +10,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import logout as auth_logout
+from django.views.generic import DetailView
 from .forms import CustomUserCreationForm
 from .models import Cliente
 
@@ -77,6 +78,7 @@ def home(request):
             'street': coffee_shop_obj.street,
             'number': coffee_shop_obj.number,
             'neighborhood': coffee_shop_obj.neighborhood,
+            'cnpj': coffee_shop_obj.cnpj,
         }
         
         # Adiciona o coffee shop ao array de coffee shops
@@ -98,3 +100,8 @@ def logout(request):
     return redirect('home')
     
 
+class CoffeeShopDetailView(DetailView):
+    template_name = 'coffee_shop_detail.html'
+    model = coffee_shop
+    context_object_name = 'coffee_shop'
+    pk_url_kwarg = 'pk'
