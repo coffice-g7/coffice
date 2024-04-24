@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
         body {
@@ -11,15 +14,20 @@
             background-color: #f0f0f0;
             font-family: Arial, sans-serif;
         }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
         form {
             background-color: #fff;
             padding: 20px;
-            border-radius: 5px;
+            border-radius: 20px;
             box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
         }
         input {
             width: 100%;
-            padding: 10px;
+            padding: 8px;
             margin: 10px 0;
             border-radius: 5px;
             border: 1px solid #ccc;
@@ -29,30 +37,41 @@
             padding: 10px;
             border: none;
             border-radius: 5px;
-            background-color: #007BFF;
+            background-color: #6B8E23;
             color: #fff;
             cursor: pointer;
         }
         button:hover {
-            background-color: #0056b3;
+            background-color: #8d7259;
         }
         .error {
             color: red;
             margin-top: 10px;
         }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        img {
+            width: 100px; /* ajuste o tamanho conforme necessário */
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
-    <form method="post">
-        {% csrf_token %}
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password">
-        <button type="submit">Login</button>
-        {% if error %}
-            <p class="error"><strong>{{ error }}</strong></p>
-        {% endif %}
-    </form>
+    <div class="container">
+        <img src="https://lh3.googleusercontent.com/fife/ALs6j_FyrMZVmFEdJWTPK8KhSIs3eQXwC0Z9JTcTRElILAbM9aM-HKHwcRWR14sHsUir0Kd9bVfL3bYutVIJn33-34qQYIKjxEhCytPKroocVA3fHDfxj_98Ab81rNOffofQ7GycUQEu87VlqoUoqiIwK86eGxRcWcDoKGY6iw-tfiM2HhUlkATJ6wXHTk-n1Th_R7xO6_x6-scIYYFBiSwtdiiURnHR4YZGM8cPVSqvo1HM_3qV7nNOBlGY6WHmHphA8u6KdaRGY8wPZ-VJLFGRlFIltipLpy5kr5uNTwttbYYf9wNKLZNTy2gXxOrZjVBGDbLsb7g3YUSLraZhEQKUc8YcWn31GZJmg7qgqzzzeYhDNBv1oABIxbYOMG4vrLrqgPH0NTkBE1tCXroSMA008kj1nCQrniMBy8BjJfFXFPuKIknDdCFywRgAoxOXb31CkSNEeuVH23Uo__2GncNrbD4MaV1P98DF5Xm7c9xJJN4B5TpoTGzC7Cu0S1JBju5wBCT2tgNOYpofZ546qJi4G9fxkFsooJovjmbu8xqyd4nH2OJ_Z5Pgmq8gOgN1oLNbsYuAmvfJj_SR5M4lsaFEcDT5rAtC_GACaQcPDA52CdITguFAo6JzjwtGACkUH6_0Gpgvvt1vZNCBIiWjON02ZzN9hd8vbVsKFQ3d-bjkr_59QcUfWvbfA3TXtz9S-TaTUQPo2zmgAEwBaF3RWRTMez-t6y_AAJaY159p9g34Ioa0S6JP_TGVLznTacoLBnBCl9tn1NFoazKZDrZhyMrhHzW1lMAVKoGHdgR6T_bMhvaGn2HZR4m4f2bSTSLNpXS6WVYg0VQj-JuCEtka9Ht8nJOYwC0fplfr78DAVxXEvI0_6aTPvMBRvAqxGTj-BNNGpDBoz54s7EYbtcKa-DsFYGOBFO3ZfEJy6LRLSjkobavh1hhgBA4WvTZC_kV6fS8YJOCGYjdmsgOjthSAEO5bKF7EEhQC0aHvdn0oqBpoOvvlvx1PwLWptfklM2VGmKnX2nm6s104VvFgZIcLANJ6MreOl9SLbOMS_M6VRdHeq_iNFNhMz5s=w1920-h957-v0" height="40" style="width: 180px;">
+        <form method="post">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <button type="submit">Login</button>
+            {% if error %}
+                <p class="error"><strong>{{ error }}</strong></p>
+            {% endif %}
+        </form>
+    </div>
 </body>
 </html>
