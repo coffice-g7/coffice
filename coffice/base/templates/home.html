@@ -7,6 +7,7 @@
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
 
@@ -23,39 +24,64 @@
         </div>
     </div>
 
-    <!-- Conteúdo da página -->
-    <div class="album py-5 bg-body-tertiary">
-        <div class="container">
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            {% for coffee in coffee_shops %}
-            <div class="col mb-4">
-              <div class="card shadow-sm">
-                <img src="https://sebraemg.com.br/wp-content/uploads/2018/10/terceira-onda-1-980x588.jpg" class="bd-placeholder-img card-img-top" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" alt="Coffee Shop Image">
-                <div class="card-body">
-                  <h5 class="card-title">{{ coffee.name }}</h5>
-                  <p class="card-text">{{ coffee.description|truncatechars_html:50 }}</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <a href="#" class="btn btn-sm btn-outline-secondary">View</a>
-                      <a href="#" class="btn btn-sm btn-outline-secondary">Edit</a>
-                    </div>
-                    <small class="text-body-secondary">...</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {% empty %}
-            <div class="col mb-4">
-              <div class="card shadow-sm">
-                <div class="card-body">
-                  <h5 class="card-title">Não há cafés disponíveis</h5>
-                </div>
-              </div>
-            </div>
-            {% endfor %}
-          </div>
-        </div>
+<!-- Barra de Pesquisa -->
+<div class="search-container">
+    <form action="/search" method="GET">
+      <div class="search-wrapper">
+        <input type="text" name="q" class="search-input" placeholder="Pesquisar...">
+        <button type="submit" class="search-button">
+          <i class="fas fa-search"></i> <!-- Ícone de lupa -->
+        </button>
       </div>
+    </form>
+  </div>
+
+<!-- Barra de Filtros -->
+<div class="filter-bar">
+  <label><input type="checkbox" class="filter-checkbox" value="vegano">Veggie</label>
+  <label><input type="checkbox" class="filter-checkbox" value="zero-lactose">Zero Lactose</label>
+  <label><input type="checkbox" class="filter-checkbox" value="sem-gluten">Gluten Free</label>
+  <label><input type="checkbox" class="filter-checkbox" value="estacionamento">Estacionamento</label>
+  <label><input type="checkbox" class="filter-checkbox" value="acessibilidade">Acessibilidade</label>
+  <label><input type="checkbox" class="filter-checkbox" value="reservavel">Reservável</label>
+</div>
+
+
+<!-- Conteúdo da página -->
+<div class="album py-5 bg-body-tertiary">
+  <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+          {% for coffee in coffee_shops %}
+          <div class="col mb-4">
+              <div class="card shadow-sm">
+                  <img src="https://sebraemg.com.br/wp-content/uploads/2018/10/terceira-onda-1-980x588.jpg"
+                      class="bd-placeholder-img card-img-top" width="100%" height="225" role="img"
+                      aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"
+                      alt="Coffee Shop Image">
+                  <div class="card-body">
+                      <h5 class="card-title">{{ coffee.name }}</h5>
+                      <p class="card-text">{{ coffee.description|truncatechars_html:50 }}</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                              <a href="#" class="btn btn-sm btn-outline-secondary">Saiba Mais</a>
+                          </div>
+                          <a href="#" class="btn btn-sm btn-outline-secondary"><i class="fas fa-star"></i></a> <!-- Ícone de estrela -->
+                      </div>
+                  </div>
+              </div>
+          </div>
+          {% empty %}
+          <div class="col mb-4">
+              <div class="card shadow-sm">
+                  <div class="card-body">
+                      <h5 class="card-title">Não há cafés disponíveis</h5>
+                  </div>
+              </div>
+          </div>
+          {% endfor %}
+      </div>
+  </div>
+</div>
       
       
       
