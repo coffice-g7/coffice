@@ -1,4 +1,4 @@
-<p align="center"><img align="center" width="280" src="media/imagens/COFFICE RETA PNG MARROM.png"/></p>
+<p align="center"><img align="center" width="280" src="media/imagens/coffice_reta_marrom.png"/></p>
 <hr>
 
 <p align="center">
@@ -31,7 +31,7 @@ O Coffice é uma plataforma que conecta profissionais a cafeterias ideais para t
 ## 🔗 Links importantes 
 
 <p>
-  <a href="https://projetofds2p.atlassian.net/jira/software/projects/CP2/boards/8">
+  <a href="https://coffice-pj2.atlassian.net/jira/software/projects/COF/boards/1">
     <img src="https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white" alt="Jira Logo">
   </a>
   &nbsp;&nbsp;&nbsp;&nbsp;
