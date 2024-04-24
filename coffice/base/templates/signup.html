@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <style>
         body {
@@ -11,15 +13,21 @@
             background-color: #f0f0f0;
             font-family: Arial, sans-serif;
         }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
         form {
+            width: 300px; /* ajuste a largura conforme necessário */
             background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
+            padding: 30px; /* aumentado para 30px */
+            border-radius: 20px;
             box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
         }
         input {
-            width: 98%;
-            padding: 10px;
+            width: 100%;
+            padding: 8px;
             margin: 10px 0;
             border-radius: 5px;
             border: 1px solid #ccc;
@@ -28,13 +36,14 @@
             width: 100%;
             padding: 10px;
             border: none;
-            border-radius: 5px;
-            background-color: #007BFF;
+            border-radius: 5px; 
+            background-color: #6B8E23;
             color: #fff;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
         button:hover {
-            background-color: #0056b3;
+            background-color: #8d7259; 
         }
         .error {
             color: red;
@@ -43,21 +52,31 @@
     </style>
 </head>
 <body>
-    <form method="post">
-        {% csrf_token %}
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
-        <label for="first_name"></label>
-        <label for="password1">Password:</label>
-        <input type="password" id="password1" name="password1">
-        <label for="password2">Confirm Password:</label>
-        <input type="password" id="password2" name="password2">
-        <button type="submit">Register</button>
-        {% if error %}
-            <p class="error"><strong>{{ error }}</strong></p>
-        {% endif %}
-    </form>
+    <div class="container">
+        <form method="post">
+            <img style="margin-left: 45px;"src="https://lh3.googleusercontent.com/fife/ALs6j_FyrMZVmFEdJWTPK8KhSIs3eQXwC0Z9JTcTRElILAbM9aM-HKHwcRWR14sHsUir0Kd9bVfL3bYutVIJn33-34qQYIKjxEhCytPKroocVA3fHDfxj_98Ab81rNOffofQ7GycUQEu87VlqoUoqiIwK86eGxRcWcDoKGY6iw-tfiM2HhUlkATJ6wXHTk-n1Th_R7xO6_x6-scIYYFBiSwtdiiURnHR4YZGM8cPVSqvo1HM_3qV7nNOBlGY6WHmHphA8u6KdaRGY8wPZ-VJLFGRlFIltipLpy5kr5uNTwttbYYf9wNKLZNTy2gXxOrZjVBGDbLsb7g3YUSLraZhEQKUc8YcWn31GZJmg7qgqzzzeYhDNBv1oABIxbYOMG4vrLrqgPH0NTkBE1tCXroSMA008kj1nCQrniMBy8BjJfFXFPuKIknDdCFywRgAoxOXb31CkSNEeuVH23Uo__2GncNrbD4MaV1P98DF5Xm7c9xJJN4B5TpoTGzC7Cu0S1JBju5wBCT2tgNOYpofZ546qJi4G9fxkFsooJovjmbu8xqyd4nH2OJ_Z5Pgmq8gOgN1oLNbsYuAmvfJj_SR5M4lsaFEcDT5rAtC_GACaQcPDA52CdITguFAo6JzjwtGACkUH6_0Gpgvvt1vZNCBIiWjON02ZzN9hd8vbVsKFQ3d-bjkr_59QcUfWvbfA3TXtz9S-TaTUQPo2zmgAEwBaF3RWRTMez-t6y_AAJaY159p9g34Ioa0S6JP_TGVLznTacoLBnBCl9tn1NFoazKZDrZhyMrhHzW1lMAVKoGHdgR6T_bMhvaGn2HZR4m4f2bSTSLNpXS6WVYg0VQj-JuCEtka9Ht8nJOYwC0fplfr78DAVxXEvI0_6aTPvMBRvAqxGTj-BNNGpDBoz54s7EYbtcKa-DsFYGOBFO3ZfEJy6LRLSjkobavh1hhgBA4WvTZC_kV6fS8YJOCGYjdmsgOjthSAEO5bKF7EEhQC0aHvdn0oqBpoOvvlvx1PwLWptfklM2VGmKnX2nm6s104VvFgZIcLANJ6MreOl9SLbOMS_M6VRdHeq_iNFNhMz5s=w1920-h957-v0" height="40" style="width: 180px;"> <br>
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" maxlength="10">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="user@gmail.com" maxlength="50">
+            <label for="first_name">First Name</label>
+            <input type="text" id="first_name" name="first_name" maxlength="30">
+            <label for="last_name">Last Name</label>
+            <input type="text" name="last_name" id="last_name" maxlength="30">
+            <label for="cpf">CPF</label>
+            <input type="text" name="cpf" id="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="123.456.789-09" maxlength="14">
+            <label for="phone_number">Phone Number</label>
+            <input type="text" name="phone_number" id="phone_number" placeholder="XX9XXXXYYYY" maxlength= "11">
+            <label for="password1">Password:</label>
+            <input type="password" id="password1" name="password1" maxlength="30">
+            <label for="password2">Confirm Password:</label>
+            <input type="password" id="password2" name="password2" maxlength="30">
+            <button type="submit" id="registerButton">Register</button>
+            {% if error %}
+                <p class="error"><strong>{{ error }}</strong></p>
+            {% endif %}
+        </form>
+    </div>
 </body>
-</html>
+</html
