@@ -35,18 +35,29 @@ O Coffice é uma plataforma que conecta profissionais a cafeterias ideais para t
     <img src="https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white" alt="Jira Logo">
   </a>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://coffice.azurewebsites.net/">
-    <img src="https://img.shields.io/badge/Microsoft_Azure-0089D6?style=for-the-badge&logo=microsoft-azure&logoColor=white" alt="Azure Logo">
-  </a>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://sites.google.com/cesar.school/site-grupo7/home?authuser=1">
-    <img src="https://img.shields.io/badge/Google_chrome-4285F4?style=for-the-badge&logo=Google-chrome&logoColor=white" alt="Google Site Logo">
-  </a>
-  &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://miro.com/app/board/uXjVNjNdv6A=/">
     <img src="https://img.shields.io/badge/Miro-050038?style=for-the-badge&logo=Miro&logoColor=white" alt="Miro Logo">
   </a>
 </p>
+<p style="text-align: center; text-decoration: none;">
+  <a href="https://sites.google.com/cesar.school/site-grupo7/home?authuser=1" style="text-decoration: none;">
+    <img src="media/imagens/GRÃO_PNG_MARROM-removebg-preview.png" alt="Logo" width="20" height="25">
+    <span>Google Sites</span>
+  </a>
+</p>
+<p style="text-align: center; text-decoration: none;">
+  <a href="https://coffice.azurewebsites.net/" style="text-decoration: none;">
+    <img src="media/imagens/GRÃO_PNG_MARROM-removebg-preview.png" alt="Logo" width="20" height="25">
+    <span>Azure Site</span>
+  </a>
+</p>
+
+
+
+
+
+
+
 
 
 
@@ -59,7 +70,7 @@ O Coffice é uma plataforma que conecta profissionais a cafeterias ideais para t
 | *Framework de Desenvolvimento* | <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django Logo" style="border-radius: 5px;"> |
 | *Frontend*                     | <img src="https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white" alt="HTML Logo" style="border-radius: 5px;"> <img src="https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white" alt="CSS Logo" style="border-radius: 5px;"> <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap Logo" style="border-radius: 5px;"> |
 | *Organização*                  | <img src="https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white" alt="Jira Logo" style="border-radius: 5px;"> |
-
+|  *Aplicação*                  | <img src="https://img.shields.io/badge/Microsoft_Azure-0089D6?style=for-the-badge&logo=microsoft-azure&logoColor=white" alt="Jira Logo"> <img src="https://img.shields.io/badge/Google_chrome-4285F4?style=for-the-badge&logo=Google-chrome&logoColor=white" alt="Jira Logo">|
 ## 💼 Histórias de Usuário
 
 | **Como usuário cliente:**   | **Como dono de cafeteria:**  |
