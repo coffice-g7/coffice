@@ -59,7 +59,7 @@ O Coffice é uma plataforma que conecta profissionais a cafeterias ideais para t
 | *Linguagem de Programação*    | <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python Logo" style="border-radius: 5px;"> |
 | *Banco de Dados*               | <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL Logo" style="border-radius: 5px;"> |
 | *Framework de Desenvolvimento* | <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django Logo" style="border-radius: 5px;"> |
-| *Frontend*                     | <img src="https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white" alt="HTML Logo" style="border-radius: 5px;"> <img src="https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white" alt="CSS Logo" style="border-radius: 5px;"> <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap Logo" style="border-radius: 5px;"> |
+| *Frontend*                     | <img src="https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white" alt="HTML Logo" style="border-radius: 5px;"> <img src="https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white" alt="CSS Logo" style="border-radius: 5px;"> <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap Logo" style="border-radius: 5px;"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="Bootstrap Logo" style="border-radius: 5px;">|
 | *Organização*                  | <img src="https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white" alt="Jira Logo" style="border-radius: 5px;"> |
 |  *Aplicação*                  | <img src="https://img.shields.io/badge/Microsoft_Azure-0089D6?style=for-the-badge&logo=microsoft-azure&logoColor=white" alt="Jira Logo"> <img src="https://img.shields.io/badge/Google_chrome-4285F4?style=for-the-badge&logo=Google-chrome&logoColor=white" alt="Jira Logo"> <img src="https://img.shields.io/badge/Miro-050038?style=for-the-badge&logo=Miro&logoColor=white" alt="Miro Logo">|
 ## 💼 Histórias de Usuário
@@ -84,7 +84,7 @@ Nesta seção, você encontrará o screencast demonstrando o funcionamento da pl
 <summary>Arthur Silva - Bernardo Heuer</summary>
 
   <h4> História: Como usuário cliente gostaria de ver a listagem de cafeterias cadastradas</h4>
-  <p>- A programação em par foi dividida em dois momentos a fim de que ambos pudessem ocupar o papel de revisor e de desenvolvedor. O processo de desenvolvimento envolvendo criação da models, views, chamada de atributos do banco de dados e envio das informações foi realizado com Arthur desenvolvendo e Bernardo como o revisor. Ademais, durante a estilização inicial de todos os cards e esboço da futura funcionalidade de filtragem foi realizada por Bernardo com Arthur como revisor.</p>
+  <p>A programação em par foi dividida em dois momentos a fim de que ambos pudessem ocupar o papel de revisor e de desenvolvedor. O processo de desenvolvimento envolvendo criação da models, views, chamada de atributos do banco de dados e envio das informações foi realizado com Arthur desenvolvendo e Bernardo como o revisor. Ademais, durante a estilização inicial de todos os cards e esboço da futura funcionalidade de filtragem foi realizada por Bernardo com Arthur como revisor.</p>
 
 <h4> FeedBack: </h4> <p> Foi um ótima experiência uma vez que ao longo do desenvolvimento se faz útil para a revisão constante do código e insights para processo de desenvolvimento das histórias. </p>
 </details>
@@ -99,7 +99,7 @@ Nesta seção, você encontrará o screencast demonstrando o funcionamento da pl
 <details>
 <summary>Vinícius Cahu - George Filho</summary>
   <h4> História: </h4>
-  <p>- asd</p>
+  <p> asd</p>
   <h4> FeedBack: </h4> <p> ....</p>
 </details>
 
