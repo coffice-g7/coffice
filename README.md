@@ -1,4 +1,4 @@
-<p align="center"><img align="center" width="280" src="imagens/COFFICE RETA PNG MARROM.png"/></p>
+<p align="center"><img align="center" width="280" src="media/imagens/COFFICE RETA PNG MARROM.png"/></p>
 <hr>
 
 <p align="center">
@@ -24,7 +24,7 @@
 
 <p float="left">
 
-<img align="right" width="80" height="100" src="imagens/GRÃO_PNG_MARROM-removebg-preview.png" />
+<img align="right" width="80" height="100" src="media/imagens/GRÃO_PNG_MARROM-removebg-preview.png" />
 
 O Coffice é uma plataforma que conecta profissionais a cafeterias ideais para trabalhar, estudar ou simplesmente desfrutar de um momento tranquilo. Facilitamos o processo de descobrir, filtrar e reservar espaços em cafeterias, enquanto você se integra a uma comunidade ativa que fornece feedback e valor à plataforma.
 
@@ -89,25 +89,25 @@ Nesta seção, você encontrará informações sobre as sessões de pair program
     <a href="https://github.com/antnasc">Antonio Neto</a> - aaon@cesar.school 📩
   </li>
   <li>
-    <a href="https://github.com/arthursiqueira">Arthur Silva</a> - asc@cesar.school 📩
+    <a href="https://github.com/ArthurCapistrano">Arthur Silva</a> - asc@cesar.school 📩
   </li>
   <li>
-    <a href="https://github.com/BernardoCHG">Bernardo Heuer</a> - bchg@cesar.school 📩
+    <a href="https://github.com/BernardoHeuer">Bernardo Heuer</a> - bchg@cesar.school 📩
   </li>
   <li>
-    <a href="https://github.com/georgepaulino">George Paulino</a> - gdpf@cesar.school 📩
+    <a href="https://github.com/georgedfilho1">George Filho</a> - gdpf@cesar.school 📩
   </li>
   <li>
-    <a href="https://github.com/gycm">Gheyson Melo</a> - gycm@cesar.school 📩
+    <a href="https://github.com/gheysonmelo">Gheyson Melo</a> - gycm@cesar.school 📩
   </li>
   <li>
     <a href="https://github.com/joaocbf">João Cláudio</a> - jccbf@cesar.school 📩
   </li>
   <li>
-    <a href="https://github.com/thiagoqueirozfer">Thiago Queiroz</a> - tcq@cesar.school 📩
+    <a href="https://github.com/tempzz7">Thiago Queiroz</a> - tcq@cesar.school 📩
   </li>
   <li>
-    <a href="https://github.com/viniciuscahu">Vinicius Cahu</a> - vct@cesar.school 📩
+    <a href="https://github.com/Viniciuscahu">Vinicius Cahu</a> - vct@cesar.school 📩
   </li>
 </ul>
 
@@ -115,16 +115,16 @@ Nesta seção, você encontrará informações sobre as sessões de pair program
 
 <ul>
   <li>
-    <a href="https://github.com/amandaml">Amanda Lima</a> - amsl@cesar.school 📩
+    Amanda Lima - amsl@cesar.school 📩
   </li>
   <li>
-    <a href="https://github.com/claravilanova">Clara Vilanova</a> - mcvl@cesar.school 📩
+    Clara Vilanova - mcvl@cesar.school 📩
   </li>
   <li>
-    <a href="https://github.com/joaogabriellx">João Gabriel Lima</a> - jglx@cesar.school 📩
+    João Gabriel Lima - jglx@cesar.school 📩
   </li>
   <li>
-    <a href="https://github.com/marinaex">Eduarda Xavier</a> - mexs@cesar.school 📩
+    Eduarda Xavier - mexs@cesar.school 📩
   </li>
 </ul>
 
