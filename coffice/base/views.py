@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required 
 from django.contrib.auth import logout
 from django.shortcuts import redirect
 from django.contrib import messages
@@ -11,9 +11,9 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import logout as auth_logout
 from django.views.generic import DetailView
+
 from .forms import CustomUserCreationForm
 from .models import Cliente
-
 from .models import coffee_shop
 
 # Create your views here.
@@ -101,5 +101,4 @@ def logout(request):
 
 def coffee_shop_detail(request, pk):
     coffee_shop_obj = get_object_or_404(coffee_shop, pk=pk)
-    context = {'coffee_shop_obj': coffee_shop_obj}
-    return render(request, 'coffee_shop_detail.html', context)
+    return render(request, 'coffee_shop_detail.html', {'coffee_shop': coffee_shop_obj})
