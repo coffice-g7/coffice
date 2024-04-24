@@ -103,13 +103,6 @@ Nesta seção, você encontrará o screencast demonstrando o funcionamento da pl
   <h4> FeedBack: </h4> <p> ....</p>
 </details>
 
-<details>
-<summary>Gheyson Melo - João Cláudio</summary>
-  <h4> História: </h4>
-  <p>- asd</p>
-  <h4> FeedBack: </h4> <p> ....</p>
-</details>
-
 ## 👩‍💻 Membros
 
 ### CC 
