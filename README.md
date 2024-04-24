@@ -52,15 +52,6 @@ O Coffice é uma plataforma que conecta profissionais a cafeterias ideais para t
   </a>
 </p>
 
-
-
-
-
-
-
-
-
-
 ## ⚙ Tecnologias Utilizadas
 
 | Categoria                   | Tecnologia                                                                           |
