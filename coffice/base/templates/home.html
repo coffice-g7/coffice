@@ -9,46 +9,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
-    <style>
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f1f1f1;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            right: 0; /* Ajuste este valor conforme necessário */
-        }
-
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
-
-        .show {
-            display: block;
-        }
-        .search-button {
-            background-color: #b08e6b;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-            margin-left: -4px;
-          }
-    </style>
 </head>
 <body>
     <!-- Header da página -->
@@ -83,15 +43,36 @@
         </form>
     </div>
 
+    <br><br><br>
+    <h2 id="msg-filter">Olá, como deseja trabalhar hoje?</h2>
+    <br>
+    
+
     <!-- Barra de Filtros -->
-    <div class="filter-bar">
-        <label><input type="checkbox" class="filter-checkbox" value="vegano" />Veggie</label>
-        <label><input type="checkbox" class="filter-checkbox" value="zero-lactose" />Zero Lactose</label>
-        <label><input type="checkbox" class="filter-checkbox" value="sem-gluten" />Gluten Free</label>
-        <label><input type="checkbox" class="filter-checkbox" value="estacionamento" />Estacionamento</label>
-        <label><input type="checkbox" class="filter-checkbox" value="acessibilidade" />Acessibilidade</label>
-        <label><input type="checkbox" class="filter-checkbox" value="reservavel" />Reservável</label>
+    <div class="filter-container">
+        <div class="filter-bar filter-bar1">
+            <label><input type="checkbox" class="filter-checkbox" value="sozinho" />Sozinho</label>
+            <label><input type="checkbox" class="filter-checkbox" value="em_grupo" />Em grupo</label>
+        </div>
+        <br>
+        <div class="filter-bar filter-bar2">
+            <label><input type="checkbox" class="filter-checkbox" value="silencioso" />Ambiente Silencioso</label>
+            <label><input type="checkbox" class="filter-checkbox" value="sala_reuniao" />Sala de Reunião</label>
+            <label><input type="checkbox" class="filter-checkbox" value="reserva" />Faz Reserva?</label>
+        </div>
+        <div class="filter-bar filter-bar3">
+            <label><input type="checkbox" class="filter-checkbox" value="vegano" />Veggie</label>
+            <label><input type="checkbox" class="filter-checkbox" value="zero-lactose" />Zero Lactose</label>
+            <label><input type="checkbox" class="filter-checkbox" value="sem-gluten" />Gluten Free</label>
+            <label><input type="checkbox" class="filter-checkbox" value="estacionamento" />Estacionamento</label>
+            <label><input type="checkbox" class="filter-checkbox" value="acessibilidade" />Acessibilidade</label>
+            <label><input type="checkbox" class="filter-checkbox" value="reservavel" />Perto de mim</label>
+        </div>
     </div>
+    <br><br>
+    
+    
+    
 
     <!-- Conteúdo da página -->
     <div class="album py-5 bg-body-tertiary">
