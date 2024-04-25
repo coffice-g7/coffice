@@ -23,6 +23,10 @@
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex; /* Use flexbox para alinhar os elementos lado a lado */
+            flex-wrap: wrap; /* Permite que os elementos quebrem para a próxima linha se não couberem na largura */
+            justify-content: space-between;
+
         }
 
         h1 {
@@ -62,6 +66,7 @@
         .details-item .no {
             color: red;
         }
+
         .header {
              text-align: center;
             margin-bottom: 20px;
@@ -72,14 +77,16 @@
             height: auto;
             border-radius: 8px;
         }
+
         .box {
             width: 350px;
-            height: 300px;
+            padding: 20px;
             text-align: center;
-            line-height: 10px;
-            
-        }
+            line-height: 1.5;
+            box-sizing: border-box;
+            width: calc(50% - 10px);
 
+        }
     </style>
 </head>
 <body>
@@ -89,54 +96,48 @@
         </div>
         <div class="box">
             <h1>{{ coffee_shop.name }}</h1>
-            <li class="details-item">
-                <strong>Endereço:</strong>
-                <span>{{ coffee_shop.street }}, {{ coffee_shop.number }} - {{ coffee_shop.neighborhood }}</span>
-            </li>
+            <p>{{ coffee_shop.street }}, {{ coffee_shop.number }}</p>
             <p>{{ coffee_shop.description }}</p>
         </div>
-        <ul class="details-list">
-            <li class="details-item">
-                <strong>Endereço:</strong>
-                <span>{{ coffee_shop.street }}, {{ coffee_shop.number }} - {{ coffee_shop.neighborhood }}</span>
-            </li>
-            <li class="details-item">
-                <strong>CNPJ:</strong>
-                <span>{{ coffee_shop.cnpj }}</span>
-            </li>
-            <li class="details-item">
-                <strong>Custo da reserva:</strong>
-                <span>R$ {{ coffee_shop.reservation_cost }}</span>
-            </li>
-            <li class="details-item">
-                <strong>Destaque do café:</strong>
-                <span>{{ coffee_shop.coffee_spotlight }}</span>
-            </li>
-            <li class="details-item">
-                <strong>Velocidade da internet:</strong>
-                <span>{{ coffee_shop.internet_speed }}</span>
-            </li>
-            <li class="details-item">
-                <strong>Opções veganas:</strong>
-                <span class="{% if coffee_shop.vegan_options %}yes{% else %}no{% endif %}">{% if coffee_shop.vegan_options %}Sim{% else %}Não{% endif %}</span>
-            </li>
-            <li class="details-item">
-                <strong>Opções sem lactose:</strong>
-                <span class="{% if coffee_shop.zero_lactose_options %}yes{% else %}no{% endif %}">{% if coffee_shop.zero_lactose_options %}Sim{% else %}Não{% endif %}</span>
-            </li>
-            <li class="details-item">
-                <strong>Opções sem glúten:</strong>
-                <span class="{% if coffee_shop.gluten_free_options %}yes{% else %}no{% endif %}">{% if coffee_shop.gluten_free_options %}Sim{% else %}Não{% endif %}</span>
-            </li>
-            <li class="details-item">
-                <strong>Acessibilidade:</strong>
-                <span class="{% if coffee_shop.accessibility %}yes{% else %}no{% endif %}">{% if coffee_shop.accessibility %}Sim{% else %}Não{% endif %}</span>
-            </li>
-            <li class="details-item">
-                <strong>Estacionamento:</strong>
-                <span class="{% if coffee_shop.has_parking %}yes{% else %}no{% endif %}">{% if coffee_shop.has_parking %}Sim{% else %}Não{% endif %}</span>
-            </li>
-        </ul>
-    </div>
-</body>
-</html>
+        <div class="box">
+            <ul class="details-list">
+                <li class="details-item">
+                    <strong>Endereço:</strong>
+                    <span>{{ coffee_shop.street }}, {{ coffee_shop.number }} - {{ coffee_shop.neighborhood }}</span>
+                </li>
+                <li class="details-item">
+                    <strong>CNPJ:</strong>
+                    <span>{{ coffee_shop.cnpj }}</span>
+                </li>
+                <li class="details-item">
+                    <strong>Custo da reserva:</strong>
+                    <span>R$ {{ coffee_shop.reservation_cost }}</span>
+                </li>
+                <li class="details-item">
+                    <strong>Destaque do café:</strong>
+                    <span>{{ coffee_shop.coffee_spotlight }}</span>
+                </li>
+                <li class="details-item">
+                    <strong>Velocidade da internet:</strong>
+                    <span>{{ coffee_shop.internet_speed }}</span>
+                </li>
+                <li class="details-item">
+                    <strong>Opções veganas:</strong>
+                    <span class="{% if coffee_shop.vegan_options %}yes{% else %}no{% endif %}">{% if coffee_shop.vegan_options %}Sim{% else %}Não{% endif %}</span>
+                </li>
+                <li class="details-item">
+                    <strong>Opções sem lactose:</strong>
+                    <span class="{% if coffee_shop.zero_lactose_options %}yes{% else %}no{% endif %}">{% if coffee_shop.zero_lactose_options %}Sim{% else %}Não{% endif %}</span>
+                </li>
+                <li class="details-item">
+                    <strong>Opções sem glúten:</strong>
+                    <span class="{% if coffee_shop.gluten_free_options %}yes{% else %}no{% endif %}">{% if coffee_shop.gluten_free_options %}Sim{% else %}Não{% endif %}</span>
+                </li>
+                <li class="details-item">
+                    <strong>Acessibilidade:</strong>
+                    <span class="{% if coffee_shop.accessibility %}yes{% else %}no{% endif %}">{% if coffee_shop.accessibility %}Sim{% else %}Não{% endif %}</span>
+                </li>
+                <li class="details-item">
+                    <strong>Estacionamento:</strong>
+                    <span class="{% if coffee_shop.has_parking}
+                </div>
