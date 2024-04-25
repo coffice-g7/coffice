@@ -100,35 +100,27 @@
             <p>{{ coffee_shop.description }}</p>
         </div>
         <div class="box">
+            <li class="details-item">
+                <strong>Reserva:</strong>
+                <span class="{% if coffee_shop.allow_reservation%}yes{% else %}no{% endif %}">
+                    {% if coffee_shop.allow_reservation %}
+                        Sim
+                    {% else %}
+                        Não
+                    {% endif %}
+                </span>
+            </li>
+            <h1 class="details-item">
+                <strong>Custo da reserva:</strong>
+                 <span>R$ {{ coffee_shop.reservation_cost }}</span>
+            </h1>
+                
+                
+        </div> <!-- Fechando a segunda caixa aqui -->
+    
+        <!-- Iniciando a terceira caixa para os últimos quatro itens -->
+        <div class="box">
             <ul class="details-list">
-                <li class="details-item">
-                    <strong>Endereço:</strong>
-                    <span>{{ coffee_shop.street }}, {{ coffee_shop.number }} - {{ coffee_shop.neighborhood }}</span>
-                </li>
-                <li class="details-item">
-                    <strong>CNPJ:</strong>
-                    <span>{{ coffee_shop.cnpj }}</span>
-                </li>
-                <li class="details-item">
-                    <strong>Custo da reserva:</strong>
-                    <span>R$ {{ coffee_shop.reservation_cost }}</span>
-                </li>
-                <li class="details-item">
-                    <strong>Destaque do café:</strong>
-                    <span>{{ coffee_shop.coffee_spotlight }}</span>
-                </li>
-                <li class="details-item">
-                    <strong>Velocidade da internet:</strong>
-                    <span>{{ coffee_shop.internet_speed }}</span>
-                </li>
-                <li class="details-item">
-                    <strong>Opções veganas:</strong>
-                    <span class="{% if coffee_shop.vegan_options %}yes{% else %}no{% endif %}">{% if coffee_shop.vegan_options %}Sim{% else %}Não{% endif %}</span>
-                </li>
-                <li class="details-item">
-                    <strong>Opções sem lactose:</strong>
-                    <span class="{% if coffee_shop.zero_lactose_options %}yes{% else %}no{% endif %}">{% if coffee_shop.zero_lactose_options %}Sim{% else %}Não{% endif %}</span>
-                </li>
                 <li class="details-item">
                     <strong>Opções sem glúten:</strong>
                     <span class="{% if coffee_shop.gluten_free_options %}yes{% else %}no{% endif %}">{% if coffee_shop.gluten_free_options %}Sim{% else %}Não{% endif %}</span>
@@ -139,5 +131,16 @@
                 </li>
                 <li class="details-item">
                     <strong>Estacionamento:</strong>
-                    <span class="{% if coffee_shop.has_parking}
-                </div>
+                    <span class="{% if coffee_shop.has_parking %}yes{% else %}no{% endif %}">
+                        {% if coffee_shop.has_parking %}
+                            Sim
+                        {% else %}
+                            Não
+                        {% endif %}
+                    </span>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</body>
