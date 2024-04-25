@@ -62,12 +62,39 @@
         .details-item .no {
             color: red;
         }
+        .header {
+             text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .box {
+            width: 350px;
+            height: 300px;
+            text-align: center;
+            line-height: 10px;
+            
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>{{ coffee_shop.name }}</h1>
-        <p>{{ coffee_shop.description }}</p>
+        <div class="header">
+            <img src="https://sebraemg.com.br/wp-content/uploads/2018/10/terceira-onda-1-980x588.jpg" alt="Cafeteria Photo">
+        </div>
+        <div class="box">
+            <h1>{{ coffee_shop.name }}</h1>
+            <li class="details-item">
+                <strong>Endereço:</strong>
+                <span>{{ coffee_shop.street }}, {{ coffee_shop.number }} - {{ coffee_shop.neighborhood }}</span>
+            </li>
+            <p>{{ coffee_shop.description }}</p>
+        </div>
         <ul class="details-list">
             <li class="details-item">
                 <strong>Endereço:</strong>
