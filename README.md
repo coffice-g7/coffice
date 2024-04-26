@@ -64,11 +64,17 @@ O Coffice é uma plataforma que conecta profissionais a cafeterias ideais para t
 |  *Aplicação*                  | <img src="https://img.shields.io/badge/Microsoft_Azure-0089D6?style=for-the-badge&logo=microsoft-azure&logoColor=white" alt="Jira Logo"> <img src="https://img.shields.io/badge/Google_chrome-4285F4?style=for-the-badge&logo=Google-chrome&logoColor=white" alt="Jira Logo"> <img src="https://img.shields.io/badge/Miro-050038?style=for-the-badge&logo=Miro&logoColor=white" alt="Miro Logo">|
 ## 💼 Histórias de Usuário
 
-| **Como usuário cliente:**   | **Como dono de cafeteria:**  |
-|-----------------------------|------------------------------|
-| 1. Gostaria de ver a listagem de cafeterias cadastradas <br> Como usuário cliente, gostaria de visualizar uma lista de todas as cafeterias cadastradas na plataforma Coffice, para que eu possa escolher o local ideal para trabalhar, estudar ou desfrutar de um momento tranquilo. | 1. Gostaria de cadastrar minha cafeteria <br> Como dono de cafeteria, gostaria de poder cadastrar minha cafeteria na plataforma Coffice, fornecendo informações detalhadas sobre o local, incluindo sua localização, horário de funcionamento, comodidades oferecidas e fotos, para que os usuários possam encontrar e conhecer meu estabelecimento. |
-| 2. Gostaria de ver detalhes de uma cafeteria <br> Como usuário cliente, gostaria de visualizar os detalhes de uma cafeteria específica, incluindo sua localização, horário de funcionamento, comodidades oferecidas e avaliações de outros usuários, para que eu possa tomar uma decisão informada sobre onde ir. | 2. Gostaria de editar informações da minha cafeteria <br> Como dono de cafeteria, gostaria de poder editar as informações da minha cafeteria cadastrada na plataforma Coffice, para manter os detalhes do meu estabelecimento sempre atualizados e precisos. |
-| 3. Gostaria de favoritar cafeterias <br> Como usuário cliente, gostaria de poder favoritar minhas cafeterias favoritas, para que eu possa acessá-las facilmente e receber notificações sobre promoções e eventos especiais. | |
+### Como usuário cliente:
+
+| Número | Descrição |
+|--------|-----------|
+| 1. | **Gostaria de ver uma lista de sugestão de cafeterias** <br> Como usuário cliente, gostaria de visualizar uma lista de sugestões de cafeterias na plataforma Coffice, com base na minha localização ou preferências, para que eu possa escolher o local ideal para trabalhar, estudar ou desfrutar de um momento tranquilo. |
+| 2. | **Gostaria de ver detalhes de uma cafeteria** <br> Como usuário cliente, gostaria de visualizar os detalhes de uma cafeteria específica na plataforma Coffice, incluindo sua localização, horário de funcionamento, comodidades oferecidas e avaliações de outros usuários, para que eu possa tomar uma decisão informada sobre onde ir. |
+| 3. | **Consigo realizar login** <br> Como usuário cliente, gostaria de poder realizar o login na plataforma Coffice utilizando meu e-mail e senha cadastrados, para acessar minha conta e utilizar os recursos da plataforma. |
+| 4. | **Gostaria de me cadastrar** <br> Como usuário cliente, gostaria de poder me cadastrar na plataforma Coffice, fornecendo informações básicas como nome, e-mail e senha, para que eu possa acessar todos os recursos da plataforma. |
+| 5. | **Gostaria de favoritar cafeterias** <br> Como usuário cliente, gostaria de poder favoritar minhas cafeterias favoritas na plataforma Coffice, para que eu possa acessá-las facilmente e receber notificações sobre promoções e eventos especiais. |
+| 6. | **Gostaria de filtrar a lista de sugestões de cafeterias** <br> Como usuário cliente, gostaria de poder filtrar a lista de sugestões de cafeterias na plataforma Coffice, por critérios como localização, comodidades oferecidas e avaliações, para encontrar o local ideal para mim. |
+| 7. | **Gostaria de ver uma lista com as cafeterias que favoritei** <br> Como usuário cliente, gostaria de poder acessar uma lista com as cafeterias que favoritei na plataforma Coffice, para que eu possa encontrá-las facilmente e verificar se há novidades ou promoções disponíveis. |
 
 ## 🔄 Diagrama de Atividades
 
