@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
@@ -13,9 +15,18 @@ body {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex; /* Use flexbox para alinhar os elementos lado a lado */
-    flex-wrap: wrap; /* Permite que os elementos quebrem para a próxima linha se não couberem na largura */
+    display: flex; 
+    flex-wrap: wrap; 
     justify-content: space-between;
+    align-items: center; 
+}
+
+.container img {
+    max-width: 100%;
+    max-height: 100%; 
+    display: block; 
+    margin: 0 auto; 
+    border-radius: 8px; 
 
 }
 
@@ -56,15 +67,10 @@ strong {
 }
 
 .header {
-     text-align: center;
+    text-align: center;
     margin-bottom: 20px;
 }
 
-.header img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
 
 .box {
     width: 350px;
@@ -75,6 +81,7 @@ strong {
     width: calc(50% - 10px);
 
 }
+<<<<<<< HEAD
 .box-2{
     width: 20%; 
     text-align: center;
@@ -105,3 +112,88 @@ strong {
     margin-bottom: 5px;
 }
 
+=======
+
+#coffee-logo {
+    height: 50px; 
+    width: auto;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0; 
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+
+label {
+
+    background-color: #4B3621;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  label:hover, label.active {
+    background-color: #3D1F00;
+  }
+  
+  .filter-checkbox:checked + label {
+    background-color: #4B3621;
+  }
+
+   
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+.header h1 {
+    margin: 0;
+}
+.header button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6B8E23;
+    color: #fff;
+    cursor: pointer;
+}
+.header button:hover {
+    background-color: #4B3621;
+}
+.content {
+    padding: 20px;
+}
+>>>>>>> 7a5ab2087dc444f88d8cdc78d68fb513941a6503
