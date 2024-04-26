@@ -95,6 +95,11 @@ O Coffice é uma plataforma que conecta profissionais a cafeterias ideais para t
 
 Nesta seção, você encontrará o screencast demonstrando o funcionamento da plataforma Coffice.
 
+<p style="text-align: center; text-decoration: none;">
+  <a href="https://www.youtube.com/watch?v=JsFyQICn7oA&ab_channel=G7projetos2" style="text-decoration: none;"> <span>ScreenCast Video</span>
+  </a>
+</p>
+
 ## 👥 Pair Programming
 
 <details>
