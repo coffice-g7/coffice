@@ -9,7 +9,7 @@ class coffee_shop(models.Model):
     description = models.TextField()
     rating = models.DecimalField(max_digits=10, decimal_places=2, default=3.0)
 
-    cnpj = models.CharField(max_length=100)
+    cnpj = models.CharField(max_length=100, primary_key=True)
     allow_reservation = models.BooleanField(default=False)
     reservation_cost = models.DecimalField(max_digits=10, decimal_places=2)
     coffee_spotlight = models.CharField(max_length=100)

@@ -37,7 +37,7 @@
             padding: 10px;
             border: none;
             border-radius: 5px; 
-            background-color: #6B8E23;
+            background-color: #cdaf7b;
             color: #fff;
             cursor: pointer;
             transition: background-color 0.3s ease;
@@ -51,6 +51,31 @@
         }
     </style>
 </head>
+<script>
+    window.onload = function() {
+        document.getElementById('cpf').addEventListener('input', function (e) {
+            var input = e.target,
+                value = input.value;
+
+            value = value.replace(/\D/g, ""); 
+            value = value.replace(/(\d{3})(\d)/, "$1.$2"); 
+            value = value.replace(/(\d{3})(\d)/, "$1.$2"); 
+            value = value.replace(/(\d{3})(\d{2})$/, "$1-$2"); 
+            input.value = value;
+        });
+
+        document.getElementById('phone_number').addEventListener('input', function (e) {
+            var input = e.target,
+                value = input.value;
+
+            value = value.replace(/\D/g, ""); 
+            value = value.replace(/(\d{2})(\d)/, "($1) $2");
+            value = value.replace(/(\d{4})(\d)/, "$1-$2"); 
+
+            input.value = value;
+        });
+    }
+</script>
 <body>
     <div class="container">
         <form method="post">
@@ -65,9 +90,9 @@
             <label for="last_name">Last Name</label>
             <input type="text" name="last_name" id="last_name" maxlength="30">
             <label for="cpf">CPF</label>
-            <input type="text" name="cpf" id="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="123.456.789-09" maxlength="14">
+            <input type="text" name="cpf" id="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="123.456.789-10" maxlength="14">
             <label for="phone_number">Phone Number</label>
-            <input type="text" name="phone_number" id="phone_number" placeholder="XX9XXXXYYYY" maxlength= "11">
+            <input type="text" name="phone_number" id="phone_number" placeholder="(XX) 9XXXXXXXX" maxlength= "15">
             <label for="password1">Password:</label>
             <input type="password" id="password1" name="password1" maxlength="30">
             <label for="password2">Confirm Password:</label>
@@ -79,4 +104,4 @@
         </form>
     </div>
 </body>
-</html
+</html>

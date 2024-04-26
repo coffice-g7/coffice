@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ coffee_shop.name }}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'coffee_shop.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'custom_styles.css' %}" />
+</head>
+<body>
+    <div class="header">
+        <img
+          src="https://lh3.googleusercontent.com/fife/ALs6j_GWDqMeSpMkIfnltflaInDtBaJE2MkkgHU55wrCRl0al7OQwJpVnEUEwBFAWcH2kY_iDUSDsDPbXbgySm-URCbBH_1KPHkCS__ivaJMViu83NmCiZXFZXw4pBus8nZri55XRZwvd61ee-XlKoREDo5TaWgP27tLTzi1V-VxgdIJt-TnorllfvoT5A5NWNx_bajEeL2OuD9J1Npz_YRmyDdIKHkkSpoF0NMDc4C5wcJIxeP1LkRua9V2MVMgoRM-J_HxouedyqXGVDWM8tgt5vR31EBS2WjvW-ojhM6bktCIRKz4r36p7s9JocDgLGv9IThVMoLapCDQTan6w__8z5FTyUvO2sYYoOkoxLOq-hsd4RVBewuTOAjnyZJU1ZLacVr9sTSpDzbg259CLtHtQILZd2ohM71PW6oHPFhWB81-Dw-cfTGqZ7sFTGfEdciCFRD4rWHEMH-HxuZxvpRrRyUyYMUB3J-c5hJiP3T3emLkxKYJ4BAoHX9V9VB7TEVZ854Yp-gPw0Thpf-E8xHfI2143bdVlnZ77Oer7he7GUW2evX5tLBtE9emeq_TIPkacJ_j9ozg0Vb5SCj0baz-kb4cj9XnddWD_A08OCn87m5XKeQ9iyPqBRrUPAu7_NaNNqmcBuRZqYFvPT4GElrvZvTsYdcyGsNOySnosb56o1AzJuawfdm7NcgaH-jjIm2a-dSuF6lWyD6JJUXzPxf2_5dAPTist_Mxo8i6lJOA537mpTaRitjZzVt1zA0NsI0ngj7sRU5Pl86jlf-vc3V3KswAW2-zI3XbCcyd8xYfFFBHS0Hs-eRFkbjLacEkgIO8a4LQtPHqHcCbGG1edK9c-HBkyXDO2nEwGHfq7zUhQOwsYLgq247AWvsH6fRDbxjH-ZxLDahI3V3BCeMPNbxdCEe-o_6WZuMgKurs7KOA9Dot7Aa1hk6aQpkfHrXwbGLAdJJQnxI_uYeW5iJSYsSz4iIk_2DhKtOaILgaotLQ02EA2tijNFLIxpmh8D-HsionBgzBlvVjbNYoiE679OAaq6DwxhgG2NQ7CY8b8UxwTexhy-FlPg=w1920-h957"
+          alt="Coffice Logo"
+          height="50"
+        />
+        <img
+          style="margin-left: 20px"
+          src="https://lh3.googleusercontent.com/fife/ALs6j_FyrMZVmFEdJWTPK8KhSIs3eQXwC0Z9JTcTRElILAbM9aM-HKHwcRWR14sHsUir0Kd9bVfL3bYutVIJn33-34qQYIKjxEhCytPKroocVA3fHDfxj_98Ab81rNOffofQ7GycUQEu87VlqoUoqiIwK86eGxRcWcDoKGY6iw-tfiM2HhUlkATJ6wXHTk-n1Th_R7xO6_x6-scIYYFBiSwtdiiURnHR4YZGM8cPVSqvo1HM_3qV7nNOBlGY6WHmHphA8u6KdaRGY8wPZ-VJLFGRlFIltipLpy5kr5uNTwttbYYf9wNKLZNTy2gXxOrZjVBGDbLsb7g3YUSLraZhEQKUc8YcWn31GZJmg7qgqzzzeYhDNBv1oABIxbYOMG4vrLrqgPH0NTkBE1tCXroSMA008kj1nCQrniMBy8BjJfFXFPuKIknDdCFywRgAoxOXb31CkSNEeuVH23Uo__2GncNrbD4MaV1P98DF5Xm7c9xJJN4B5TpoTGzC7Cu0S1JBju5wBCT2tgNOYpofZ546qJi4G9fxkFsooJovjmbu8xqyd4nH2OJ_Z5Pgmq8gOgN1oLNbsYuAmvfJj_SR5M4lsaFEcDT5rAtC_GACaQcPDA52CdITguFAo6JzjwtGACkUH6_0Gpgvvt1vZNCBIiWjON02ZzN9hd8vbVsKFQ3d-bjkr_59QcUfWvbfA3TXtz9S-TaTUQPo2zmgAEwBaF3RWRTMez-t6y_AAJaY159p9g34Ioa0S6JP_TGVLznTacoLBnBCl9tn1NFoazKZDrZhyMrhHzW1lMAVKoGHdgR6T_bMhvaGn2HZR4m4f2bSTSLNpXS6WVYg0VQj-JuCEtka9Ht8nJOYwC0fplfr78DAVxXEvI0_6aTPvMBRvAqxGTj-BNNGpDBoz54s7EYbtcKa-DsFYGOBFO3ZfEJy6LRLSjkobavh1hhgBA4WvTZC_kV6fS8YJOCGYjdmsgOjthSAEO5bKF7EEhQC0aHvdn0oqBpoOvvlvx1PwLWptfklM2VGmKnX2nm6s104VvFgZIcLANJ6MreOl9SLbOMS_M6VRdHeq_iNFNhMz5s=w1920-h957-v0"
+          height="40"
+        />
+        <div class="dropdown">
+          <img
+            onclick="myFunction()"
+            class="dropbtn"
+            src="https://cdn-icons-png.freepik.com/512/64/64572.png"
+            height="40"
+          />
+          <div id="myDropdown" class="dropdown-content">
+            {% if user.is_authenticated %}
+            <a href="/logout/">Logout</a>
+            {% else %}
+            <a href="/login/">Login</a>
+            <a href="/register/">Register</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+    <div class="container">
+        <div class="header">
+            <img src="https://sebraemg.com.br/wp-content/uploads/2018/10/terceira-onda-1-980x588.jpg" alt="Cafeteria Photo">
+        </div>
+        <div class="box">
+            <h1>{{ coffee_shop.name }}</h1>
+            <h2>{{ coffee_shop.street }}, {{ coffee_shop.number }}</h2>
+            <p>{{ coffee_shop.description }}</p>
+        </div>
+        <div class="box">
+            <h1>Sala de Reunião</h1>
+            <span class="{% if coffee_shop.allow_reservation%}yes{% else %}no{% endif %}">
+                {% if coffee_shop.allow_reservation %}
+                    <h2>Custo da reserva:</h2>
+                    <span>1 hora = R$ {{ coffee_shop.reservation_cost }}</span>
+                {% else %}
+                {% endif %}
+            </span>
+           
+           
+        </div>
+        <div class="box-container">
+            <div class="box-1">
+                <img src="https://lh3.googleusercontent.com/d/1Vs3dkOt6AWTN8P1kZ9pOE9scuOeKj6tx" width="50" height="50" alt="comida">
+            </div>
+            <div class="box-2">
+                <img src="https://lh3.googleusercontent.com/d/1yrv-tL0BfEDv98HeTPsEKOA93UK6p-VX" width="50" height="50" alt="carro">
+            </div>
+            <div class="box-3">
+                <img src="https://lh3.googleusercontent.com/d/1ZbL3uUBKAW3JCgh0L6BfP5Z8_gEqiM9t" width="50" height="50" alt="tv">
+            </div>
+            <div class="box-4">
+                <img src="https://lh3.googleusercontent.com/d/1RB35K_5jN__d9N6qkBZxPuCkKYHqCsjA" width="50" height="50" alt="vegano">
+            </div>
+            <div class="box-4">
+                <img src="https://lh3.googleusercontent.com/d/193h7ppt9uCRxVlJ1UrgqMPbsCCgnI3RP" width="50" height="50" alt="wifi">
+            </div>
+        </div>
+        <div class="box-quad">
+            <div class="box-quad-group">
+                <img src="https://lh3.googleusercontent.com/d/1ue6DjMWb1kJu4V47-MhirY5x_gPdmYi_" width="100" height="50" alt="Imagem 2">
+                <img src="https://lh3.googleusercontent.com/d/1iyrxuYb70pKSuzqxcOtTUeeRNBHh1RhK" width="100" height="50"alt="Imagem 3">
+                <img src="https://lh3.googleusercontent.com/d/10UQysCHlbHIkWmY5EVkpIKFYxPaV12tj" width="100" height="50"alt="Imagem 4">
+            </div>
+        </div>
+        
+
+
+    
+        
+    </div>
+</body>
+    <script>
+        document
+          .querySelector(".dropdown")
+          .addEventListener("mouseover", function () {
+            document.getElementById("myDropdown").classList.add("show");
+          });
+  
+        document
+          .querySelector(".dropdown")
+          .addEventListener("mouseout", function () {
+            document.getElementById("myDropdown").classList.remove("show");
+          });
+  
+        window.onclick = function (event) {
+          if (!event.target.matches(".dropbtn")) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains("show")) {
+                openDropdown.classList.remove("show");
+              }
+            }
+          }
+        };
+      </script>
+
+    
+
+</body>
+</html>

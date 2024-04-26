@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required 
 from django.contrib.auth import logout
 from django.shortcuts import redirect
 from django.contrib import messages
@@ -10,9 +10,10 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import logout as auth_logout
+from django.views.generic import DetailView
+
 from .forms import CustomUserCreationForm
 from .models import Cliente
-
 from .models import coffee_shop
 
 # Create your views here.
@@ -77,6 +78,7 @@ def home(request):
             'street': coffee_shop_obj.street,
             'number': coffee_shop_obj.number,
             'neighborhood': coffee_shop_obj.neighborhood,
+            'cnpj': coffee_shop_obj.cnpj,
         }
         
         # Adiciona o coffee shop ao array de coffee shops
@@ -96,5 +98,7 @@ def room(request):
 def logout(request):
     auth_logout(request)
     return redirect('home')
-    
 
+def coffee_shop_detail(request, pk):
+    coffee_shop_obj = get_object_or_404(coffee_shop, pk=pk)
+    return render(request, 'coffee_shop_detail.html', {'coffee_shop': coffee_shop_obj})

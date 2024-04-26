@@ -1,135 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <style>
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f1f1f1;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {background-color: #ddd;}
-
-        .show {display: block;}
-    </style>
-</head>
-<body>
-
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
     <!-- Header da página -->
     <div class="header">
-        <img src="https://lh3.googleusercontent.com/fife/ALs6j_GWDqMeSpMkIfnltflaInDtBaJE2MkkgHU55wrCRl0al7OQwJpVnEUEwBFAWcH2kY_iDUSDsDPbXbgySm-URCbBH_1KPHkCS__ivaJMViu83NmCiZXFZXw4pBus8nZri55XRZwvd61ee-XlKoREDo5TaWgP27tLTzi1V-VxgdIJt-TnorllfvoT5A5NWNx_bajEeL2OuD9J1Npz_YRmyDdIKHkkSpoF0NMDc4C5wcJIxeP1LkRua9V2MVMgoRM-J_HxouedyqXGVDWM8tgt5vR31EBS2WjvW-ojhM6bktCIRKz4r36p7s9JocDgLGv9IThVMoLapCDQTan6w__8z5FTyUvO2sYYoOkoxLOq-hsd4RVBewuTOAjnyZJU1ZLacVr9sTSpDzbg259CLtHtQILZd2ohM71PW6oHPFhWB81-Dw-cfTGqZ7sFTGfEdciCFRD4rWHEMH-HxuZxvpRrRyUyYMUB3J-c5hJiP3T3emLkxKYJ4BAoHX9V9VB7TEVZ854Yp-gPw0Thpf-E8xHfI2143bdVlnZ77Oer7he7GUW2evX5tLBtE9emeq_TIPkacJ_j9ozg0Vb5SCj0baz-kb4cj9XnddWD_A08OCn87m5XKeQ9iyPqBRrUPAu7_NaNNqmcBuRZqYFvPT4GElrvZvTsYdcyGsNOySnosb56o1AzJuawfdm7NcgaH-jjIm2a-dSuF6lWyD6JJUXzPxf2_5dAPTist_Mxo8i6lJOA537mpTaRitjZzVt1zA0NsI0ngj7sRU5Pl86jlf-vc3V3KswAW2-zI3XbCcyd8xYfFFBHS0Hs-eRFkbjLacEkgIO8a4LQtPHqHcCbGG1edK9c-HBkyXDO2nEwGHfq7zUhQOwsYLgq247AWvsH6fRDbxjH-ZxLDahI3V3BCeMPNbxdCEe-o_6WZuMgKurs7KOA9Dot7Aa1hk6aQpkfHrXwbGLAdJJQnxI_uYeW5iJSYsSz4iIk_2DhKtOaILgaotLQ02EA2tijNFLIxpmh8D-HsionBgzBlvVjbNYoiE679OAaq6DwxhgG2NQ7CY8b8UxwTexhy-FlPg=w1920-h957" alt="Coffice Logo" height= "50" >
-        <img style="margin-left: 20px;" src="https://lh3.googleusercontent.com/fife/ALs6j_FyrMZVmFEdJWTPK8KhSIs3eQXwC0Z9JTcTRElILAbM9aM-HKHwcRWR14sHsUir0Kd9bVfL3bYutVIJn33-34qQYIKjxEhCytPKroocVA3fHDfxj_98Ab81rNOffofQ7GycUQEu87VlqoUoqiIwK86eGxRcWcDoKGY6iw-tfiM2HhUlkATJ6wXHTk-n1Th_R7xO6_x6-scIYYFBiSwtdiiURnHR4YZGM8cPVSqvo1HM_3qV7nNOBlGY6WHmHphA8u6KdaRGY8wPZ-VJLFGRlFIltipLpy5kr5uNTwttbYYf9wNKLZNTy2gXxOrZjVBGDbLsb7g3YUSLraZhEQKUc8YcWn31GZJmg7qgqzzzeYhDNBv1oABIxbYOMG4vrLrqgPH0NTkBE1tCXroSMA008kj1nCQrniMBy8BjJfFXFPuKIknDdCFywRgAoxOXb31CkSNEeuVH23Uo__2GncNrbD4MaV1P98DF5Xm7c9xJJN4B5TpoTGzC7Cu0S1JBju5wBCT2tgNOYpofZ546qJi4G9fxkFsooJovjmbu8xqyd4nH2OJ_Z5Pgmq8gOgN1oLNbsYuAmvfJj_SR5M4lsaFEcDT5rAtC_GACaQcPDA52CdITguFAo6JzjwtGACkUH6_0Gpgvvt1vZNCBIiWjON02ZzN9hd8vbVsKFQ3d-bjkr_59QcUfWvbfA3TXtz9S-TaTUQPo2zmgAEwBaF3RWRTMez-t6y_AAJaY159p9g34Ioa0S6JP_TGVLznTacoLBnBCl9tn1NFoazKZDrZhyMrhHzW1lMAVKoGHdgR6T_bMhvaGn2HZR4m4f2bSTSLNpXS6WVYg0VQj-JuCEtka9Ht8nJOYwC0fplfr78DAVxXEvI0_6aTPvMBRvAqxGTj-BNNGpDBoz54s7EYbtcKa-DsFYGOBFO3ZfEJy6LRLSjkobavh1hhgBA4WvTZC_kV6fS8YJOCGYjdmsgOjthSAEO5bKF7EEhQC0aHvdn0oqBpoOvvlvx1PwLWptfklM2VGmKnX2nm6s104VvFgZIcLANJ6MreOl9SLbOMS_M6VRdHeq_iNFNhMz5s=w1920-h957-v0" height="40">
-        <div class="dropdown">
-            <img onclick="myFunction()" class="dropbtn" src="https://cdn-icons-png.freepik.com/512/64/64572.png" height="40">
-             <div id="myDropdown" class="dropdown-content">
-                {% if user.is_authenticated %}
-                <a href="/logout/">Logout</a>
-                {% else %}
-                <a href="/login/">Login</a>
-                <a href="/register/">Register</a>
-                {% endif %}
-            </div>
-    </div>
-    </div> 
-
-<!-- Barra de Pesquisa -->
-<div class="search-container">
-    <form action="/search" method="GET">
-      <div class="search-wrapper">
-        <input type="text" name="q" class="search-input" placeholder="Pesquisar...">
-        <button type="submit" class="search-button">
-          <i class="fas fa-search"></i> <!-- Ícone de lupa -->
-        </button>
+      <img
+        src="https://lh3.googleusercontent.com/fife/ALs6j_GWDqMeSpMkIfnltflaInDtBaJE2MkkgHU55wrCRl0al7OQwJpVnEUEwBFAWcH2kY_iDUSDsDPbXbgySm-URCbBH_1KPHkCS__ivaJMViu83NmCiZXFZXw4pBus8nZri55XRZwvd61ee-XlKoREDo5TaWgP27tLTzi1V-VxgdIJt-TnorllfvoT5A5NWNx_bajEeL2OuD9J1Npz_YRmyDdIKHkkSpoF0NMDc4C5wcJIxeP1LkRua9V2MVMgoRM-J_HxouedyqXGVDWM8tgt5vR31EBS2WjvW-ojhM6bktCIRKz4r36p7s9JocDgLGv9IThVMoLapCDQTan6w__8z5FTyUvO2sYYoOkoxLOq-hsd4RVBewuTOAjnyZJU1ZLacVr9sTSpDzbg259CLtHtQILZd2ohM71PW6oHPFhWB81-Dw-cfTGqZ7sFTGfEdciCFRD4rWHEMH-HxuZxvpRrRyUyYMUB3J-c5hJiP3T3emLkxKYJ4BAoHX9V9VB7TEVZ854Yp-gPw0Thpf-E8xHfI2143bdVlnZ77Oer7he7GUW2evX5tLBtE9emeq_TIPkacJ_j9ozg0Vb5SCj0baz-kb4cj9XnddWD_A08OCn87m5XKeQ9iyPqBRrUPAu7_NaNNqmcBuRZqYFvPT4GElrvZvTsYdcyGsNOySnosb56o1AzJuawfdm7NcgaH-jjIm2a-dSuF6lWyD6JJUXzPxf2_5dAPTist_Mxo8i6lJOA537mpTaRitjZzVt1zA0NsI0ngj7sRU5Pl86jlf-vc3V3KswAW2-zI3XbCcyd8xYfFFBHS0Hs-eRFkbjLacEkgIO8a4LQtPHqHcCbGG1edK9c-HBkyXDO2nEwGHfq7zUhQOwsYLgq247AWvsH6fRDbxjH-ZxLDahI3V3BCeMPNbxdCEe-o_6WZuMgKurs7KOA9Dot7Aa1hk6aQpkfHrXwbGLAdJJQnxI_uYeW5iJSYsSz4iIk_2DhKtOaILgaotLQ02EA2tijNFLIxpmh8D-HsionBgzBlvVjbNYoiE679OAaq6DwxhgG2NQ7CY8b8UxwTexhy-FlPg=w1920-h957"
+        alt="Coffice Logo"
+        height="50"
+      />
+      <img
+        style="margin-left: 20px"
+        src="https://lh3.googleusercontent.com/fife/ALs6j_FyrMZVmFEdJWTPK8KhSIs3eQXwC0Z9JTcTRElILAbM9aM-HKHwcRWR14sHsUir0Kd9bVfL3bYutVIJn33-34qQYIKjxEhCytPKroocVA3fHDfxj_98Ab81rNOffofQ7GycUQEu87VlqoUoqiIwK86eGxRcWcDoKGY6iw-tfiM2HhUlkATJ6wXHTk-n1Th_R7xO6_x6-scIYYFBiSwtdiiURnHR4YZGM8cPVSqvo1HM_3qV7nNOBlGY6WHmHphA8u6KdaRGY8wPZ-VJLFGRlFIltipLpy5kr5uNTwttbYYf9wNKLZNTy2gXxOrZjVBGDbLsb7g3YUSLraZhEQKUc8YcWn31GZJmg7qgqzzzeYhDNBv1oABIxbYOMG4vrLrqgPH0NTkBE1tCXroSMA008kj1nCQrniMBy8BjJfFXFPuKIknDdCFywRgAoxOXb31CkSNEeuVH23Uo__2GncNrbD4MaV1P98DF5Xm7c9xJJN4B5TpoTGzC7Cu0S1JBju5wBCT2tgNOYpofZ546qJi4G9fxkFsooJovjmbu8xqyd4nH2OJ_Z5Pgmq8gOgN1oLNbsYuAmvfJj_SR5M4lsaFEcDT5rAtC_GACaQcPDA52CdITguFAo6JzjwtGACkUH6_0Gpgvvt1vZNCBIiWjON02ZzN9hd8vbVsKFQ3d-bjkr_59QcUfWvbfA3TXtz9S-TaTUQPo2zmgAEwBaF3RWRTMez-t6y_AAJaY159p9g34Ioa0S6JP_TGVLznTacoLBnBCl9tn1NFoazKZDrZhyMrhHzW1lMAVKoGHdgR6T_bMhvaGn2HZR4m4f2bSTSLNpXS6WVYg0VQj-JuCEtka9Ht8nJOYwC0fplfr78DAVxXEvI0_6aTPvMBRvAqxGTj-BNNGpDBoz54s7EYbtcKa-DsFYGOBFO3ZfEJy6LRLSjkobavh1hhgBA4WvTZC_kV6fS8YJOCGYjdmsgOjthSAEO5bKF7EEhQC0aHvdn0oqBpoOvvlvx1PwLWptfklM2VGmKnX2nm6s104VvFgZIcLANJ6MreOl9SLbOMS_M6VRdHeq_iNFNhMz5s=w1920-h957-v0"
+        height="40"
+      />
+      <div class="dropdown">
+        <img
+          onclick="myFunction()"
+          class="dropbtn"
+          src="https://cdn-icons-png.freepik.com/512/64/64572.png"
+          height="40"
+        />
+        <div id="myDropdown" class="dropdown-content">
+          {% if user.is_authenticated %}
+          <a href="/logout/">Logout</a>
+          {% else %}
+          <a href="/login/">Login</a>
+          <a href="/register/">Register</a>
+          {% endif %}
+        </div>
       </div>
-    </form>
-  </div>
+    </div>
 
-<!-- Barra de Filtros -->
-<div class="filter-bar">
-  <label><input type="checkbox" class="filter-checkbox" value="vegano">Veggie</label>
-  <label><input type="checkbox" class="filter-checkbox" value="zero-lactose">Zero Lactose</label>
-  <label><input type="checkbox" class="filter-checkbox" value="sem-gluten">Gluten Free</label>
-  <label><input type="checkbox" class="filter-checkbox" value="estacionamento">Estacionamento</label>
-  <label><input type="checkbox" class="filter-checkbox" value="acessibilidade">Acessibilidade</label>
-  <label><input type="checkbox" class="filter-checkbox" value="reservavel">Reservável</label>
-</div>
+    <div class="search-container">
+      <form action="/search" method="GET">
+        <div class="search-wrapper">
+          <input
+            type="text"
+            name="q"
+            class="search-input"
+            placeholder="Pesquisar..."
+          />
+          <button type="submit" class="search-button">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </form>
+    </div>
 
+    <br /><br /><br />
+    <h2 id="msg-filter">Olá, como deseja trabalhar hoje?</h2>
+    <br />
 
-<!-- Conteúdo da página -->
-<div class="album py-5 bg-body-tertiary">
-  <div class="container">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+    <div class="filter-container">
+      <div class="filter-bar filter-bar1">
+        <label
+          ><input
+            type="checkbox"
+            class="filter-checkbox"
+            value="sozinho"
+          />Sozinho</label
+        >
+        <label
+          ><input type="checkbox" class="filter-checkbox" value="em_grupo" />Em
+          grupo</label
+        >
+      </div>
+      <br />
+      <div class="filter-bar filter-bar2">
+        <label
+          ><input
+            type="checkbox"
+            class="filter-checkbox"
+            value="silencioso"
+          />Ambiente Silencioso</label
+        >
+        <label
+          ><input
+            type="checkbox"
+            class="filter-checkbox"
+            value="sala_reuniao"
+          />Sala de Reunião</label
+        >
+        <label
+          ><input
+            type="checkbox"
+            class="filter-checkbox"
+            value="reserva"
+          />Possibilidade de Reserva</label
+        >
+      </div>
+      <div class="filter-bar filter-bar3">
+        <label
+          ><input
+            type="checkbox"
+            class="filter-checkbox"
+            value="reservavel"
+          />Pertinho de mim</label
+        >
+        <label
+          ><input
+            type="checkbox"
+            class="filter-checkbox"
+            value="vegano"
+          />Veggie</label
+        >
+        <label
+          ><input
+            type="checkbox"
+            class="filter-checkbox"
+            value="zero-lactose"
+          />Zero Lactose</label
+        >
+        <label
+          ><input
+            type="checkbox"
+            class="filter-checkbox"
+            value="sem-gluten"
+          />Gluten Free</label
+        >
+        <label
+          ><input
+            type="checkbox"
+            class="filter-checkbox"
+            value="estacionamento"
+          />Estacionamento</label
+        >
+        <label
+          ><input
+            type="checkbox"
+            class="filter-checkbox"
+            value="acessibilidade"
+          />Acessibilidade</label
+        >
+      </div>
+    </div>
+    <br /><br />
+
+    <div class="album py-5 bg-body-tertiary">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
           {% for coffee in coffee_shops %}
           <div class="col mb-4">
+            <a
+              href="{% url 'coffee_shop_detail' pk=coffee.cnpj %}"
+              class="card-link"
+            >
               <div class="card shadow-sm">
-                  <img src="https://sebraemg.com.br/wp-content/uploads/2018/10/terceira-onda-1-980x588.jpg"
-                      class="bd-placeholder-img card-img-top" width="100%" height="225" role="img"
-                      aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"
-                      alt="Coffee Shop Image">
-                  <div class="card-body">
-                      <h5 class="card-title">{{ coffee.name }}</h5>
-                      <p class="card-text">{{ coffee.description|truncatechars_html:50 }}</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                          <div class="btn-group">
-                              <a href="#" class="btn btn-sm btn-outline-secondary">Saiba Mais</a>
-                          </div>
-                          <a href="#" class="btn btn-sm btn-outline-secondary"><i class="fas fa-star"></i></a> <!-- Ícone de estrela -->
-                      </div>
+                <img
+                  src="https://sebraemg.com.br/wp-content/uploads/2018/10/terceira-onda-1-980x588.jpg"
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                  alt="Coffee Shop Image"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">{{ coffee.name }}</h5>
+                  <p class="card-text">
+                    {{ coffee.description|truncatechars_html:50 }}
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <a href="#" class="btn btn-sm btn-outline-secondary"
+                      ><i class="fas fa-star"></i
+                    ></a>
                   </div>
+                </div>
               </div>
+            </a>
           </div>
           {% empty %}
           <div class="col mb-4">
-              <div class="card shadow-sm">
-                  <div class="card-body">
-                      <h5 class="card-title">Não há cafés disponíveis</h5>
-                  </div>
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Não há cafés disponíveis</h5>
               </div>
+            </div>
           </div>
           {% endfor %}
+        </div>
       </div>
-  </div>
-</div>
-      
-<script>
-    function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
+    </div>
 
-    window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            for (var i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                }
+    <script>
+      document
+        .querySelector(".dropdown")
+        .addEventListener("mouseover", function () {
+          document.getElementById("myDropdown").classList.add("show");
+        });
+
+      document
+        .querySelector(".dropdown")
+        .addEventListener("mouseout", function () {
+          document.getElementById("myDropdown").classList.remove("show");
+        });
+
+      window.onclick = function (event) {
+        if (!event.target.matches(".dropbtn")) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove("show");
             }
+          }
         }
-    }
-</script>
-      
-</body>
+      };
+    </script>
+  </body>
 </html>
