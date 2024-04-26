@@ -88,7 +88,7 @@ O Coffice é uma plataforma que conecta profissionais a cafeterias ideais para t
 
 ## 🔄 Diagrama de Atividades
 
-<img src="media/imagens/DiagramaCoffice.png" alt="Descrição da imagem" height="400">
+<img src="media/imagens/DiagramaCoffice.png" alt="Descrição da imagem" height="800">
 
 
 ## 🎥 ScreenCast
