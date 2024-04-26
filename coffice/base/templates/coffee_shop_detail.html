@@ -15,51 +15,51 @@
         </div>
         <div class="box">
             <h1>{{ coffee_shop.name }}</h1>
-            <p>{{ coffee_shop.street }}, {{ coffee_shop.number }}</p>
+            <h2>{{ coffee_shop.street }}, {{ coffee_shop.number }}</h2>
             <p>{{ coffee_shop.description }}</p>
         </div>
         <div class="box">
-            <li class="details-item">
-                <strong>Reserva:</strong>
-                <span class="{% if coffee_shop.allow_reservation%}yes{% else %}no{% endif %}">
-                    {% if coffee_shop.allow_reservation %}
-                        Sim
-                    {% else %}
-                        Não
-                    {% endif %}
-                </span>
-            </li>
-            <h1 class="details-item">
-                <strong>Custo da reserva:</strong>
-                 <span>R$ {{ coffee_shop.reservation_cost }}</span>
-            </h1>
+            <h1>Sala de Reunião</h1>
+            <span class="{% if coffee_shop.allow_reservation%}yes{% else %}no{% endif %}">
+                {% if coffee_shop.allow_reservation %}
+                    <h2>Custo da reserva:</h2>
+                    <span>1 hora = R$ {{ coffee_shop.reservation_cost }}</span>
+                {% else %}
+                {% endif %}
+            </span>
+           
+           
                 
                 
         </div> <!-- Fechando a segunda caixa aqui -->
-    
-        <!-- Iniciando a terceira caixa para os últimos quatro itens -->
-        <div class="box">
-            <ul class="details-list">
-                <li class="details-item">
-                    <strong>Opções sem glúten:</strong>
-                    <span class="{% if coffee_shop.gluten_free_options %}yes{% else %}no{% endif %}">{% if coffee_shop.gluten_free_options %}Sim{% else %}Não{% endif %}</span>
-                </li>
-                <li class="details-item">
-                    <strong>Acessibilidade:</strong>
-                    <span class="{% if coffee_shop.accessibility %}yes{% else %}no{% endif %}">{% if coffee_shop.accessibility %}Sim{% else %}Não{% endif %}</span>
-                </li>
-                <li class="details-item">
-                    <strong>Estacionamento:</strong>
-                    <span class="{% if coffee_shop.has_parking %}yes{% else %}no{% endif %}">
-                        {% if coffee_shop.has_parking %}
-                            Sim
-                        {% else %}
-                            Não
-                        {% endif %}
-                    </span>
-                </li>
-                
-            </ul>
+        <div class="box-container">
+            <div class="box-2">
+                <img src="https://lh3.googleusercontent.com/d/1Vs3dkOt6AWTN8P1kZ9pOE9scuOeKj6tx" width="50" height="50" alt="comida">
+            </div>
+            <div class="box-2">
+                <img src="https://lh3.googleusercontent.com/d/1yrv-tL0BfEDv98HeTPsEKOA93UK6p-VX" width="50" height="50" alt="carro">
+            </div>
+            <div class="box-2">
+                <img src="https://lh3.googleusercontent.com/d/1ZbL3uUBKAW3JCgh0L6BfP5Z8_gEqiM9t" width="50" height="50" alt="tv">
+            </div>
+            <div class="box-2">
+                <img src="https://lh3.googleusercontent.com/d/1RB35K_5jN__d9N6qkBZxPuCkKYHqCsjA" width="50" height="50" alt="vegano">
+            </div>
+            <div class="box-2">
+                <img src="https://lh3.googleusercontent.com/d/193h7ppt9uCRxVlJ1UrgqMPbsCCgnI3RP" width="50" height="50" alt="wifi">
+            </div>
         </div>
+        <div class="box-quad">
+            <div class="box-quad-group">
+                <img src="https://lh3.googleusercontent.com/d/1ue6DjMWb1kJu4V47-MhirY5x_gPdmYi_" width="100" height="50" alt="Imagem 2">
+                <img src="https://lh3.googleusercontent.com/d/1iyrxuYb70pKSuzqxcOtTUeeRNBHh1RhK" width="100" height="50"alt="Imagem 3">
+                <img src="https://lh3.googleusercontent.com/d/10UQysCHlbHIkWmY5EVkpIKFYxPaV12tj" width="100" height="50"alt="Imagem 4">
+            </div>
+        </div>
+        
+
+
+    
+        
     </div>
 </body>
