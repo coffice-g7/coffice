@@ -98,6 +98,8 @@ Nesta seção, você encontrará os screencasts demonstrando o funcionamento da 
 <p style="text-align: center; text-decoration: none;">
   <a href="https://www.youtube.com/watch?v=JsFyQICn7oA&ab_channel=G7projetos2" style="text-decoration: none;"> <span>ScreenCast do Protótipo de Baixa Fidelidade</span>
   </a>
+</p>
+<p>
   <a href="https://www.youtube.com/watch?v=-K9tpjrsI5k" style="text-decoration: none;"> <span>ScreenCast do Sistema em Produção</span>
   </a>
 </p>
