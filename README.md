@@ -54,6 +54,12 @@ O Coffice é uma plataforma que conecta profissionais a cafeterias ideais para t
     <span>Google Sites</span>
   </a>
 </p>
+<p style="text-align: center; text-decoration: none;">
+  <a href="https://www.youtube.com/channel/UCpPg-7nDrKEgPi6ADXkpfIA" style="text-decoration: none;">
+    <img src="media/imagens/GRÃO_PNG_MARROM-removebg-preview.png" alt="Logo" width="20" height="25">
+    <span>Youtube</span>
+  </a>
+</p>
 
 
 ## ⚙ Tecnologias Utilizadas
