@@ -104,9 +104,12 @@ Nesta seção, você encontrará o screencast demonstrando o funcionamento da pl
 
 <details>
 <summary>Vinícius Cahu - George Filho</summary>
-  <h4> História: </h4>
-  <p> asd</p>
-  <h4> FeedBack: </h4> <p> ....</p>
+  <h4> História: Gostaria de ver detalhes de uma cafeteria</h4>
+  <p> Na implementação da funcionalidade de visualização de detalhes de uma cafeteria, nós aplicamos a programação em par para dividir o trabalho de maneira eficiente. Enquanto Vinicius se concentrou na interação do usuário, George cuidou dos aspectos visuais.</p>
+  <h4> FeedBack: </h4> <p> Após a conclusão da implementação da funcionalidade de visualização de detalhes da cafeteria, podemos fornecer um feedback positivo sobre nossa experiência de trabalho em equipe e sobre o resultado alcançado.
+Após a conclusão da implementação da funcionalidade de visualização de detalhes da cafeteria, podemos fornecer um feedback positivo sobre nossa experiência de trabalho em equipe e sobre o resultado alcançado.
+
+A aplicação da programação em par foi fundamental para o sucesso do projeto. Trabalhando em conjunto, conseguimos dividir as tarefas de forma eficiente e aproveitar nossas habilidades individuais para alcançar um objetivo comum.</p>
 </details>
 
 ## 👩‍💻 Membros
