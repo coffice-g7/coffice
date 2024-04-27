@@ -87,16 +87,26 @@ O Coffice é uma plataforma que conecta profissionais a cafeterias ideais para t
 | 7. | **Gostaria de ver uma lista com as cafeterias que favoritei** <br> Como usuário cliente, gostaria de poder acessar uma lista com as cafeterias que favoritei na plataforma Coffice, para que eu possa encontrá-las facilmente e verificar se há novidades ou promoções disponíveis. |
 
 ## 🔄 Diagrama de Atividades
+<p style="text-align: center; text-decoration: none;">
+  <a href="https://www.canva.com/design/DAGDdsu4FgE/Awlz7JrUiJPjznhP2TWa6g/edit?utm_content=DAGDdsu4FgE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" style="text-decoration: none;">
+    <img src="media/imagens/GRÃO_PNG_MARROM-removebg-preview.png" alt="Logo" width="20" height="25">
+    <span>Diagrama</span>
+  </a>
+</p>
 
 <img src="media/imagens/DiagramaCoffice.png" alt="Descrição da imagem" height="800">
 
 
-## 🎥 ScreenCast
+## 🎥 ScreenCasts
 
-Nesta seção, você encontrará o screencast demonstrando o funcionamento da plataforma Coffice.
+Nesta seção, você encontrará os screencasts demonstrando o funcionamento da plataforma Coffice.
 
 <p style="text-align: center; text-decoration: none;">
-  <a href="https://www.youtube.com/watch?v=JsFyQICn7oA&ab_channel=G7projetos2" style="text-decoration: none;"> <span>ScreenCast Video</span>
+  <a href="https://www.youtube.com/watch?v=JsFyQICn7oA&ab_channel=G7projetos2" style="text-decoration: none;"> <span>ScreenCast do Protótipo de Baixa Fidelidade</span>
+  </a>
+</p>
+<p>
+  <a href="https://www.youtube.com/watch?v=-K9tpjrsI5k" style="text-decoration: none;"> <span>ScreenCast do Sistema em Produção</span>
   </a>
 </p>
 
@@ -130,7 +140,7 @@ A aplicação da programação em par foi fundamental para o sucesso do projeto.
 
 ## 📊 Jira
 
-<img src="..." alt="Descrição da imagem" height="400">
+<img src="media/imagens/quadro_jira_sr1.png" alt="Descrição da imagem" height="400">
 
 ## 👩‍💻 Membros
 
