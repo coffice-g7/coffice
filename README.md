@@ -51,7 +51,7 @@ O Coffice é uma plataforma que conecta profissionais a cafeterias ideais para t
 <p style="text-align: center; text-decoration: none;">
   <a href="https://miro.com/app/board/uXjVNjNdv6A=/" style="text-decoration: none;">
     <img src="media/imagens/GRÃO_PNG_MARROM-removebg-preview.png" alt="Logo" width="20" height="25">
-    <span>Miros</span>
+    <span>Miro</span>
   </a>
 </p>
 <p style="text-align: center; text-decoration: none;">
