@@ -51,7 +51,7 @@ O Coffice é uma plataforma que conecta profissionais a cafeterias ideais para t
 <p style="text-align: center; text-decoration: none;">
   <a href="https://miro.com/app/board/uXjVNjNdv6A=/" style="text-decoration: none;">
     <img src="media/imagens/GRÃO_PNG_MARROM-removebg-preview.png" alt="Logo" width="20" height="25">
-    <span>Google Sites</span>
+    <span>Miro</span>
   </a>
 </p>
 <p style="text-align: center; text-decoration: none;">
@@ -94,7 +94,7 @@ O Coffice é uma plataforma que conecta profissionais a cafeterias ideais para t
   </a>
 </p>
 
-<img src="media/imagens/DiagramaCoffice.png" alt="Descrição da imagem" height="800">
+<img src="media/imagens/diagrama_coffice.png" alt="Descrição da imagem" height="800">
 
 
 ## 🎥 ScreenCasts
@@ -140,7 +140,7 @@ A aplicação da programação em par foi fundamental para o sucesso do projeto.
 
 ## 📊 Jira
 
-<img src="media/imagens/quadro_jira_sr1.png" alt="Descrição da imagem" height="400">
+<img src="media/imagens/quadro_jira_concluido.png" alt="Descrição da imagem" height="400">
 
 ## 👩‍💻 Membros
 
