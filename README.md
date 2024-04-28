@@ -140,7 +140,7 @@ A aplicação da programação em par foi fundamental para o sucesso do projeto.
 
 ## 📊 Jira
 
-<img src="media/imagens/quadro_jira_sr1.png" alt="Descrição da imagem" height="400">
+<img src="media/imagens/quadro_jira_concluido.png" alt="Descrição da imagem" height="400">
 
 ## 👩‍💻 Membros
 
