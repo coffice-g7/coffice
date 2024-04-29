@@ -60,6 +60,12 @@ O Coffice é uma plataforma que conecta profissionais a cafeterias ideais para t
     <span>Youtube</span>
   </a>
 </p>
+<p style="text-align: center; text-decoration: none;">
+  <a href="https://www.figma.com/file/VuJpIWTrolT7ZYsfdg1E6g/Figma-basics?type=design&node-id=1669%3A162202&mode=design&t=4V8eHwX7xPwvWkX1-1" style="text-decoration: none;">
+    <img src="media/imagens/GRÃO_PNG_MARROM-removebg-preview.png" alt="Logo" width="20" height="25">
+    <span>Figma</span>
+  </a>
+</p>
 
 
 ## ⚙ Tecnologias Utilizadas
