@@ -148,6 +148,10 @@ A aplicação da programação em par foi fundamental para o sucesso do projeto.
 
 <img src="media/imagens/quadro_jira_concluido.png" alt="Descrição da imagem" height="400">
 
+## 🪲 Issue / Bug Tracker
+
+<img src="media/imagens/issue_bug.png" alt="Descrição da imagem" height="400">
+
 ## 👩‍💻 Membros
 
 ### CC 
