@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.conf import settings
 
 # Create your models here.
 class coffee_shop(models.Model):
@@ -27,7 +28,7 @@ class coffee_shop(models.Model):
     def __str__(self):
         return self.cnpj
     
-    
+
 class Cliente(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     cpf = models.CharField(max_length=14) 
@@ -36,3 +37,14 @@ class Cliente(models.Model):
 
     def __str__(self):
         return self.user.username
+    
+class Favorite(models.Model):
+    coffee = models.ForeignKey(coffee_shop, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    value = models.CharField(choices=[('like', 'Like'), ('unlike', 'Unlike')], max_length=10)
+
+    class Meta:
+        unique_together = ('coffee', 'user')
+
+    def __str__(self):
+        return f'{self.coffee} - {self.user}'

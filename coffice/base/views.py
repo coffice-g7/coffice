@@ -14,7 +14,7 @@ from django.views.generic import DetailView
 
 from .forms import CustomUserCreationForm
 from .models import Cliente
-from .models import coffee_shop
+from .models import coffee_shop, Favorite
 
 # Create your views here.
 
@@ -58,11 +58,17 @@ def home(request):
     # Recebe o usuário logado
     user = request.user
     
+    # Busca todas as instâncias de favoritos do usuário
+    favorites = Favorite.objects.filter(user_id=user.id)
+    
     # Inicializa o array de coffee shops que vai para a home
     coffee_shops = []
     
     # Busca todas as instâncias de coffee shops
     for coffee_shop_obj in coffee_shop.objects.all():
+        # Verifica se o coffee shop está nos favoritos do usuário
+        is_favorited = favorites.filter(coffee=coffee_shop_obj, user_id=user.id).exists()
+        
         # Monta o payload de dados do coffee shop para a home
         coffee_shop_data = {
             'name': coffee_shop_obj.name,
@@ -79,11 +85,15 @@ def home(request):
             'number': coffee_shop_obj.number,
             'neighborhood': coffee_shop_obj.neighborhood,
             'cnpj': coffee_shop_obj.cnpj,
+            'favorited': is_favorited,
         }
         
         # Adiciona o coffee shop ao array de coffee shops
         coffee_shops.append(coffee_shop_data)
     
+    # Ordena as babás pelo atributo favorited
+    coffee_shops.sort(key=lambda x: x['favorited'], reverse=True)
+
     # Monta o contexto da home
     context = {
         'coffee_shops': coffee_shops,
@@ -91,6 +101,7 @@ def home(request):
     }
     
     return render(request, 'home.html', context)
+
 
 def room(request):
     return render(request, 'room.html')
@@ -102,3 +113,20 @@ def logout(request):
 def coffee_shop_detail(request, pk):
     coffee_shop_obj = get_object_or_404(coffee_shop, pk=pk)
     return render(request, 'coffee_shop_detail.html', {'coffee_shop': coffee_shop_obj})
+
+def favorited_coffee_shop(request, pk):
+    user = request.user
+
+    if request.method == 'POST':
+        coffee = coffee_shop.objects.get(cnpj=pk)
+        
+        favorited = {}
+        
+        try:
+            favorited = Favorite.objects.get(user=user, coffee=pk) 
+            Favorite.delete(favorited)
+        except:
+            Favorite.objects.create(user=user, coffee=coffee)
+    
+    return redirect('home')
+
