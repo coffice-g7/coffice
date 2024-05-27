@@ -67,7 +67,6 @@ O Coffice é uma plataforma que conecta profissionais a cafeterias ideais para t
   </a>
 </p>
 
-
 ## ⚙ Tecnologias Utilizadas
 
 | Categoria                   | Tecnologia                                                                           |
@@ -78,6 +77,10 @@ O Coffice é uma plataforma que conecta profissionais a cafeterias ideais para t
 | *Frontend*                     | <img src="https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white" alt="HTML Logo" style="border-radius: 5px;"> <img src="https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white" alt="CSS Logo" style="border-radius: 5px;"> <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap Logo" style="border-radius: 5px;"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="Bootstrap Logo" style="border-radius: 5px;">|
 | *Organização*                  | <img src="https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white" alt="Jira Logo" style="border-radius: 5px;"> |
 |  *Aplicação*                  | <img src="https://img.shields.io/badge/Microsoft_Azure-0089D6?style=for-the-badge&logo=microsoft-azure&logoColor=white" alt="Jira Logo"> <img src="https://img.shields.io/badge/Google_chrome-4285F4?style=for-the-badge&logo=Google-chrome&logoColor=white" alt="Jira Logo"> <img src="https://img.shields.io/badge/Miro-050038?style=for-the-badge&logo=Miro&logoColor=white" alt="Miro Logo">|
+
+<details>
+<summary> <h1> 📝 Status Report 1 </h1> </summary>
+
 ## 💼 Histórias de Usuário
 
 ### Como usuário cliente:
@@ -151,6 +154,90 @@ A aplicação da programação em par foi fundamental para o sucesso do projeto.
 ## 🪲 Issue / Bug Tracker
 
 <img src="media/imagens/issue_bug.png" alt="Descrição da imagem" height="400">
+
+</details>
+
+<details>
+<summary> <h1> 📝 Status Report 2 </h1> </summary>
+
+## 💼 Histórias de Usuário
+
+### Como usuário cliente:
+
+| Número | Descrição |
+|--------|-----------|
+| 1. | **Posso filtrar cafeterias** <br> Como usuário cliente, posso filtrar a lista de sugestões de cafeterias na plataforma Coffice, por critérios como "estou sozinho" ou "estou em grupo" para encontrar o local ideal para mim. |
+| 2. | **Posso favoritar cafeterias** <br> Como usuário cliente, posso favoritar minhas cafeterias favoritas na plataforma Coffice, para que eu possa visualizá-las facilmente. |
+| 3. | **Posso ver minha lista de favoritos** <br> Como usuário cliente, posso acessar uma lista com as cafeterias que favoritei na plataforma Coffice, para que eu possa encontrá-las facilmente. |
+| 4. | **Posso solicitar reserva em uma cafeteria** <br> Como usuário cliente, posso solicitar uma reserva em uma cafeteria específica através da plataforma Coffice, para garantir um lugar para trabalhar ou encontrar amigos. |
+| 5. | **Posso ver minhas solicitações de reserva** <br> Como usuário cliente, posso visualizar minhas solicitações de reserva em cafeterias através da plataforma Coffice, para acompanhar o status. |
+| 6. | **Posso adicionar uma avaliação em uma cafeteria** <br> Como usuário cliente, posso adicionar uma avaliação para uma cafeteria através da plataforma Coffice, para compartilhar minha experiência com outros usuários. |
+| 7. | **Posso visualizar as avaliações de uma cafeteria** <br> Como usuário cliente, posso visualizar as avaliações de outros usuários para uma cafeteria específica na plataforma Coffice, para tomar uma decisão informada sobre onde ir. |
+| 8. | **Posso visualizar meu histórico de avaliações** <br> Como usuário cliente, posso acessar meu histórico de avaliações de cafeterias na plataforma Coffice, para ver o que escrevi e acompanhar minhas experiências passadas. |
+
+## 🔄 Diagrama de Atividades
+
+
+## 🎥 ScreenCasts
+
+Nesta seção, você encontrará os screencasts demonstrando o funcionamento da plataforma Coffice.
+
+
+## 👥 Pair Programming
+
+<details>
+<summary>Arthur Silva - Bernardo Heuer</summary>
+
+  <h4> História: Como usuário cliente posso filtrar cafeterias</h4>
+  <p>...</p>
+  
+  <h4> História: Como usuário cliente posso favoritar cafeterias</h4>
+  <p>...</p>
+
+  <h4> História: Como usuário cliente posso ver minha lista de favoritos</h4>
+  <p>...</p>
+
+  <h4> FeedBack: </h4> 
+  <p>...</p>
+  </details>
+
+<details>
+<summary>Thiago Queiroz - Antônio Neto</summary>
+
+  <h4> História: Como usuário cliente posso solicitar reserva em uma cafeteria</h4>
+  <p>...</p>
+
+  <h4> História: Como usuário cliente posso ver minhas solicitações de reserva</h4>
+  <p>...</p>
+
+  <h4> FeedBack: </h4>
+  <p>...</p>
+</details>
+
+<details>
+<summary>Vinícius Cahu - George Filho</summary>
+
+  <h4> História: Como usuário cliente posso adicionar uma avaliação em uma cafeteria</h4>
+  <p>...</p>
+  
+  <h4> História: Como usuário cliente posso visualizar as avaliações de uma cafeteria</h4>
+  <p>...</p>
+  
+  <h4> História: Como usuário cliente posso visualizar meu histórico de avaliações</h4>
+  <p>...</p>
+  
+  <h4> FeedBack: </h4>
+ <p>...</p>
+ </details>
+
+## 📊 Jira
+
+
+## 🪲 Issue / Bug Tracker
+
+
+</details>
+
 
 ## 👩‍💻 Membros
 
