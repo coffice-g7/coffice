@@ -14,18 +14,87 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend&display=swap">
+
+
+
+    <style>
+      .card-custom-rounded {
+    border-radius: 15px; /* Define o raio da borda do card */
+    overflow: hidden; /* Garante que a imagem dentro do card herde o arredondamento */
+    width: 100%; /* Ajusta a largura do card */
+    height: 300px; /* Aumenta a altura do card */
+  }
+  .card-custom-rounded img {
+    width: 100%; /* Garante que a imagem ocupe toda a largura do card */
+    height: 100%; /* Garante que a imagem ocupe toda a altura do card */
+    object-fit: cover; /* Mantém a proporção da imagem dentro do card */
+    border-radius: 15px; /* Define o raio da borda da imagem */
+  }
+  .card-description {
+    text-align: left; /* Centraliza o texto */
+    padding-top: 10px; /* Adiciona um pouco de espaço entre a imagem e o texto */
+  }
+  .card-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .btn-favorite {
+  color: #dc5f4a; /* cor do ícone de coração vazio */
+  border: none; /* remove a borda do botão */
+  background-color: transparent; /* torna o fundo do botão transparente */
+}
+
+.btn-favorited {
+  color: #dc5f4a; /* cor do ícone de coração preenchido */
+  border: none; /* remove a borda do botão */
+  background-color: transparent; /* torna o fundo do botão transparente */
+}
+.card-title, .card-text {
+  font-family: 'Lexend', sans-serif;
+}
+label {
+  background-color: #f6f6f6; 
+  color: #dc5f4a;
+  padding: auto;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+label:hover,
+label.active {
+  background-color: #e2e2e2;
+}
+
+#msg-filter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-family: 'Lexend', sans-serif;
+  color: #183c39;
+}
+
+
+  
+    </style>
   </head>
-  <body>
+  <body
+    style="
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    "
+  >
     <!-- Header da página -->
-    <div class="header">
-      <img
-        src="https://lh3.googleusercontent.com/fife/ALs6j_GWDqMeSpMkIfnltflaInDtBaJE2MkkgHU55wrCRl0al7OQwJpVnEUEwBFAWcH2kY_iDUSDsDPbXbgySm-URCbBH_1KPHkCS__ivaJMViu83NmCiZXFZXw4pBus8nZri55XRZwvd61ee-XlKoREDo5TaWgP27tLTzi1V-VxgdIJt-TnorllfvoT5A5NWNx_bajEeL2OuD9J1Npz_YRmyDdIKHkkSpoF0NMDc4C5wcJIxeP1LkRua9V2MVMgoRM-J_HxouedyqXGVDWM8tgt5vR31EBS2WjvW-ojhM6bktCIRKz4r36p7s9JocDgLGv9IThVMoLapCDQTan6w__8z5FTyUvO2sYYoOkoxLOq-hsd4RVBewuTOAjnyZJU1ZLacVr9sTSpDzbg259CLtHtQILZd2ohM71PW6oHPFhWB81-Dw-cfTGqZ7sFTGfEdciCFRD4rWHEMH-HxuZxvpRrRyUyYMUB3J-c5hJiP3T3emLkxKYJ4BAoHX9V9VB7TEVZ854Yp-gPw0Thpf-E8xHfI2143bdVlnZ77Oer7he7GUW2evX5tLBtE9emeq_TIPkacJ_j9ozg0Vb5SCj0baz-kb4cj9XnddWD_A08OCn87m5XKeQ9iyPqBRrUPAu7_NaNNqmcBuRZqYFvPT4GElrvZvTsYdcyGsNOySnosb56o1AzJuawfdm7NcgaH-jjIm2a-dSuF6lWyD6JJUXzPxf2_5dAPTist_Mxo8i6lJOA537mpTaRitjZzVt1zA0NsI0ngj7sRU5Pl86jlf-vc3V3KswAW2-zI3XbCcyd8xYfFFBHS0Hs-eRFkbjLacEkgIO8a4LQtPHqHcCbGG1edK9c-HBkyXDO2nEwGHfq7zUhQOwsYLgq247AWvsH6fRDbxjH-ZxLDahI3V3BCeMPNbxdCEe-o_6WZuMgKurs7KOA9Dot7Aa1hk6aQpkfHrXwbGLAdJJQnxI_uYeW5iJSYsSz4iIk_2DhKtOaILgaotLQ02EA2tijNFLIxpmh8D-HsionBgzBlvVjbNYoiE679OAaq6DwxhgG2NQ7CY8b8UxwTexhy-FlPg=w1920-h957"
-        alt="Coffice Logo"
-        height="50"
-      />
+    <div style="width: 100vw" class="header">
+      
       <img
         style="margin-left: 20px"
-        src="https://lh3.googleusercontent.com/fife/ALs6j_FyrMZVmFEdJWTPK8KhSIs3eQXwC0Z9JTcTRElILAbM9aM-HKHwcRWR14sHsUir0Kd9bVfL3bYutVIJn33-34qQYIKjxEhCytPKroocVA3fHDfxj_98Ab81rNOffofQ7GycUQEu87VlqoUoqiIwK86eGxRcWcDoKGY6iw-tfiM2HhUlkATJ6wXHTk-n1Th_R7xO6_x6-scIYYFBiSwtdiiURnHR4YZGM8cPVSqvo1HM_3qV7nNOBlGY6WHmHphA8u6KdaRGY8wPZ-VJLFGRlFIltipLpy5kr5uNTwttbYYf9wNKLZNTy2gXxOrZjVBGDbLsb7g3YUSLraZhEQKUc8YcWn31GZJmg7qgqzzzeYhDNBv1oABIxbYOMG4vrLrqgPH0NTkBE1tCXroSMA008kj1nCQrniMBy8BjJfFXFPuKIknDdCFywRgAoxOXb31CkSNEeuVH23Uo__2GncNrbD4MaV1P98DF5Xm7c9xJJN4B5TpoTGzC7Cu0S1JBju5wBCT2tgNOYpofZ546qJi4G9fxkFsooJovjmbu8xqyd4nH2OJ_Z5Pgmq8gOgN1oLNbsYuAmvfJj_SR5M4lsaFEcDT5rAtC_GACaQcPDA52CdITguFAo6JzjwtGACkUH6_0Gpgvvt1vZNCBIiWjON02ZzN9hd8vbVsKFQ3d-bjkr_59QcUfWvbfA3TXtz9S-TaTUQPo2zmgAEwBaF3RWRTMez-t6y_AAJaY159p9g34Ioa0S6JP_TGVLznTacoLBnBCl9tn1NFoazKZDrZhyMrhHzW1lMAVKoGHdgR6T_bMhvaGn2HZR4m4f2bSTSLNpXS6WVYg0VQj-JuCEtka9Ht8nJOYwC0fplfr78DAVxXEvI0_6aTPvMBRvAqxGTj-BNNGpDBoz54s7EYbtcKa-DsFYGOBFO3ZfEJy6LRLSjkobavh1hhgBA4WvTZC_kV6fS8YJOCGYjdmsgOjthSAEO5bKF7EEhQC0aHvdn0oqBpoOvvlvx1PwLWptfklM2VGmKnX2nm6s104VvFgZIcLANJ6MreOl9SLbOMS_M6VRdHeq_iNFNhMz5s=w1920-h957-v0"
+        src="https://pbs.twimg.com/media/GPWhLuzbIAAcsfx?format=png&name=small"
         height="40"
       />
       <div class="dropdown">
@@ -46,165 +115,180 @@
       </div>
     </div>
 
-    <div class="search-container">
-      <form action="/search" method="GET">
-        <div class="search-wrapper">
-          <input
-            type="text"
-            name="q"
-            class="search-input"
-            placeholder="Pesquisar..."
-          />
-          <button type="submit" class="search-button">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </form>
-    </div>
-
-    <br /><br /><br />
-    <h2 id="msg-filter">Olá, como deseja trabalhar hoje?</h2>
+    <br /><br />
+    <h2 id="msg-filter">Olá, como você gostaria de trabalhar hoje?</h2>
     <br />
 
-    <div class="filter-container">
-      <div class="filter-bar filter-bar1">
-        <label
-          ><input
-            type="checkbox"
-            class="filter-checkbox"
-            value="sozinho"
-          />Sozinho</label
-        >
-        <label
-          ><input type="checkbox" class="filter-checkbox" value="em_grupo" />Em
-          grupo</label
-        >
+    <div style="width: 1044px" class="filter-container">
+      <!-- Essa div guarda os 2 filtros da primeira fila -->
+      <div style="width: 100%; display: flex; justify-content: space-between; flex-direction: row; flex-wrap: nowrap; height: 180px; color: #dc5f4a;" class="filter-bar filter-bar1">
+        <!-- Essa div abaixo guarda o filtro SOZINHO -->
+        <div style="display: flex; justify-content: center; width: 49%; align-items: center; background-color: #f6f6f6; border-radius: 50px; height: 100%;">
+
+          <div style="width: 50%; display: flex; align-items: center; justify-content: center; height: 100%;">
+            <img src="https://pbs.twimg.com/media/GPWIKttXwAAVFID?format=jpg&name=medium" style="height: 100%"/>
+          </div>
+
+          <div style="width: 50%; align-items: center; text-align: left; justify-content: center; font-size: 50px; height: 100%; display: flex;">
+            Sozinho
+          </div>
+        </div>
+
+        <!-- Div para o filtro "Em grupo" -->
+        <div style="display: flex; justify-content: center; width: 49%; align-items: center; background-color: #f6f6f6; border-radius: 50px; height: 100%;">
+
+          <div style="width: 50%; display: flex; align-items: center; justify-content: center; height: 100%;">
+            <img src="https://pbs.twimg.com/media/GPWLvvgXEAAck_b?format=jpg&name=4096x4096" style="height: 100%"/>
+          </div>
+
+          <div style="width: 50%; align-items: center; text-align: left; justify-content: center; font-size: 50px; height: 100%; display: flex;">
+            Em grupo
+          </div>
+        </div>  
       </div>
-      <br />
-      <div class="filter-bar filter-bar2">
-        <label
-          ><input
-            type="checkbox"
-            class="filter-checkbox"
-            value="silencioso"
-          />Ambiente Silencioso</label
-        >
-        <label
-          ><input
-            type="checkbox"
-            class="filter-checkbox"
-            value="sala_reuniao"
-          />Sala de Reunião</label
-        >
-        <label
-          ><input
-            type="checkbox"
-            class="filter-checkbox"
-            value="reserva"
-          />Possibilidade de Reserva</label
-        >
+
+      <!-- Essa div guarda os 3 filtros da segunda fila -->
+      <div style="width: 100%; display: flex; justify-content: space-between; flex-direction: row; flex-wrap: nowrap; height: 120px; margin-top: 10px; color: #dc5f4a;" class="filter-bar filter-bar2">
+        <!-- Div para o filtro "Silencioso" -->
+        <div style="display: flex; justify-content: center; width: 33%; align-items: center; background-color: #f6f6f6; border-radius: 50px; height: 100%;">
+          
+            <div style="width: 50%; display: flex; align-items: center; justify-content: center; height: 100%;">
+              <img src="https://pbs.twimg.com/media/GPWLvvgXEAAck_b?format=jpg&name=4096x4096" alt="Ambiente Silencioso" style="height: 100%"/>
+            </div>
+
+            <div style="width: 50%; align-items: center; text-align: left; justify-content: center; font-size: 30px; height: 100%; display: flex;">
+              Ambiente silencioso
+            </div>
+          
+        </div>
+
+        <!-- Div para o filtro "Sala de reunião" -->
+        <div style="display: flex; justify-content: center; width: 33%; align-items: center; background-color: #f6f6f6; border-radius: 50px; height: 100%;">
+          
+            <div style="width: 50%; display: flex; align-items: center; justify-content: center; height: 100%;">
+              <img src="https://pbs.twimg.com/media/GPWLvvgXEAAck_b?format=jpg&name=4096x4096" alt="Sala de reunião" style="height: 100%"/>
+            </div>
+
+            <div style="width: 50%; align-items: center; text-align: left; justify-content: center; font-size: 30px; height: 100%; display: flex;">
+              Sala de reunião
+            </div>
+        </div>
+
+        <!-- Div para o filtro "Ambiente silencioso" -->
+        <div style="display: flex; justify-content: center; width: 33%; align-items: center; background-color: #f6f6f6; border-radius: 50px; height: 100%;">
+          
+            <div style="width: 50%; display: flex; align-items: center; justify-content: center; height: 100%;">
+              <img src="https://pbs.twimg.com/media/GPWLvvgXEAAck_b?format=jpg&name=4096x4096" alt="Ambiente silencioso" style="height: 100%"/>
+            </div>
+
+            <div style="width: 50%; align-items: center; text-align: left; justify-content: center; font-size: 30px; height: 100%; display: flex;">
+              Ambiente silencioso
+            </div>
+        </div>
+
       </div>
-      <div class="filter-bar filter-bar3">
+
+      <!-- Essa div guarda os 6 filtros da terceira fila -->
+      <div style="width: 100%; display: flex; justify-content: space-between; flex-direction: row; flex-wrap: nowrap; height: 90px; margin-top: 10px;" class="filter-bar filter-bar3">
+
         <label
-          ><input
-            type="checkbox"
-            class="filter-checkbox"
-            value="reservavel"
-          />Pertinho de mim</label
+          style="min-height: 75.5px; display: flex; justify-content: center; width: 15%; border-radius: 30px; text-align: center; align-items: center;">
+          <input type="checkbox" class="filter-checkbox" value="reservavel"/>Pertinho de mim</label
         >
+        
         <label
-          ><input
-            type="checkbox"
-            class="filter-checkbox"
-            value="vegano"
-          />Veggie</label
+          style="min-height: 75.5px; display: flex; justify-content: center; width: 15%; border-radius: 30px; text-align: center; align-items: center;">
+          <input type="checkbox" class="filter-checkbox" value="reservavel"/>Veggie</label
         >
+
         <label
-          ><input
-            type="checkbox"
-            class="filter-checkbox"
-            value="zero-lactose"
-          />Zero Lactose</label
+          style="min-height: 75.5px; display: flex; justify-content: center; width: 15%; border-radius: 30px; text-align: center; align-items: center;">
+          <input type="checkbox" class="filter-checkbox" value="reservavel"/>Zero Lactose</label
         >
+        
         <label
-          ><input
-            type="checkbox"
-            class="filter-checkbox"
-            value="sem-gluten"
-          />Gluten Free</label
+          style="min-height: 75.5px; display: flex; justify-content: center; width: 15%; border-radius: 30px; text-align: center; align-items: center;">
+          <input type="checkbox" class="filter-checkbox" value="reservavel"/>Gluten Free</label
         >
+
         <label
-          ><input
-            type="checkbox"
-            class="filter-checkbox"
-            value="estacionamento"
-          />Estacionamento</label
+          style="min-height: 75.5px; display: flex; justify-content: center; width: 15%; border-radius: 30px; text-align: center; align-items: center;">
+          <input type="checkbox" class="filter-checkbox" value="reservavel"/>Estacionamento</label
         >
+
         <label
-          ><input
-            type="checkbox"
-            class="filter-checkbox"
-            value="acessibilidade"
-          />Acessibilidade</label
+          style="min-height: 75.5px; display: flex; justify-content: center; width: 15%; border-radius: 30px; text-align: center; align-items: center;">
+          <input type="checkbox" class="filter-checkbox" value="reservavel"/>Acessibilidade</label
         >
+        
       </div>
     </div>
+
     <br /><br />
 
-    <div class="album py-5 bg-body-tertiary">
-      <div class="container">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
-          {% for coffee in coffee_shops %}
-          <div class="col mb-4">
-            <a
-              href="{% url 'coffee_shop_detail' pk=coffee.cnpj %}"
-              class="card-link"
-            >
-              <div class="card shadow-sm">
-                <img
-                  src="https://sebraemg.com.br/wp-content/uploads/2018/10/terceira-onda-1-980x588.jpg"
-                  class="bd-placeholder-img card-img-top"
-                  width="100%"
-                  height="225"
-                  role="img"
-                  aria-label="Placeholder: Thumbnail"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
-                  alt="Coffee Shop Image"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">{{ coffee.name }}</h5>
-                  <p class="card-text">
-                    {{ coffee.description|truncatechars_html:50 }}
-                  </p>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                  <div>
-                    <form action="{% url 'favorited_coffee_shop' pk=coffee.cnpj %}" method="POST" class="ui form">
-                        {% csrf_token %}
-                        {% if coffee.favorited %}
-                        <button type="submit" id="FavSuccess" class="btn btn-success">❤ Favorited</button>
-                        {% else %}
-                        <button type="submit" class="btn btn-outline-secondary">♡ Favorite</button>
-                        {% endif %}
-                    </form>
-                </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          {% empty %}
-          <div class="col mb-4">
-            <div class="card shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title">Não há cafés disponíveis</h5>
-              </div>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+      {% for coffee in coffee_shops %}
+      <div class="col mb-4">
+        <a href="{% url 'coffee_shop_detail' pk=coffee.cnpj %}" class="card-link">
+          <div class="card shadow-sm card-custom-rounded">
+            <div class="card-img-overlay">
+              
+                <img src="https://static.ifood-static.com.br/image/upload/t_high/logosgde/5263af65-50db-482d-8ce9-239ce3b4cc32/201908161622_mXdZ_i.png" class="card-img rounded-circle shadow-sm" style="width: 70px; height: 70px; object-fit: cover;" alt="...">
+              
+              
+              
+              
             </div>
+            <img
+              src="https://sebraemg.com.br/wp-content/uploads/2018/10/terceira-onda-1-980x588.jpg"
+              class="bd-placeholder-img card-img-top"
+              role="img"
+              aria-label="Placeholder: Thumbnail"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+              alt="Coffee Shop Image"
+            />
+            
           </div>
-          {% endfor %}
+        </a>
+        <div class="card-description">
+          <a href="{% url 'coffee_shop_detail' pk=coffee.cnpj %}" class="card-link"><h5 class="card-title" > <span style="font-size: 24px; color: #183c39;">{{ coffee.name }}</span>
+          </a>
+            <span class="star-rating" style="color:#8B898F;">
+              4.5 <!-- Média de avaliação, substitua pelo valor real -->
+              <i class="bi bi-star-fill" style="color: #dc5f4a;"></i> <!-- Ícone de estrela preenchida -->
+            </span>
+          </h5>
+          <p class="card-text" style="color: #8B898F;">
+            {{ coffee.description|truncatechars_html:50 }}
+          </p>
+          <form action="{% url 'favorited_coffee_shop' pk=coffee.cnpj %}" method="POST" class="ui form">
+            {% csrf_token %} 
+            <div class="btn-group" role="group" aria-label="Favorited and Favorite buttons">
+              {% if coffee.favorited %}
+              <button type="submit" id="FavSuccess" class="btn btn-favorited">
+                <i class="bi bi-heart-fill"></i> 
+              </button>
+              {% else %}
+              <button type="submit" class="btn btn-favorite">
+                <i class="bi bi-heartbreak" style="color: #8B898F ;"></i> 
+              </button>
+              {% endif %}
+            </div>
+          </form>   
         </div>
+      </div>
+      {% empty %}
+      <div class="col mb-4">
+        <div class="card shadow-sm card-custom-rounded">
+          <div class="card-body">
+            <h5 class="card-title">Não há cafés disponíveis</h5>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    
       </div>
     </div>
 
