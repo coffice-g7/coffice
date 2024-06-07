@@ -25,6 +25,7 @@
             />
             <div id="myDropdown" class="dropdown-content">
                 {% if user.is_authenticated %}
+                <a href="/myprofile/">Meu Perfil</a>
                 <a href="/logout/">Logout</a>
                 {% else %}
                 <a href="/login/">Login</a>
@@ -130,6 +131,7 @@
             <!-- DESCRIÇÃO DO CAFÉ -->
             <div class="card-description">
               <span>{{ coffee.description }}</span>
+              <button>Favoritar</button>
             </div>
           </a>
         </div>

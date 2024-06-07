@@ -169,3 +169,6 @@ def favorited_coffee_shop(request, pk):
     
     return redirect('home')
 
+def myprofile(request):
+    return render(request, 'myprofile.html')
+

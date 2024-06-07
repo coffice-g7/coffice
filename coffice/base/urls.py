@@ -13,4 +13,7 @@ urlpatterns = [
     path('make/<str:cnpj>/', views.make_reservation, name='make_reservation'),
     path('my/', views.reservation_list, name='reservation_list'),
     path('cancel/<int:reservation_id>/', views.cancel_reservation, name='cancel_reservation'),
+    path('myprofile/', views.myprofile, name="myprofile"),
+    path('home/', views.home, name="home.html"),
+
 ]

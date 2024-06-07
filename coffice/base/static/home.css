@@ -363,3 +363,64 @@ label.active {
 .generate-options-button:hover {
   background-color: #e0776a; /* Cor de fundo ao passar o mouse */
 }
+
+.btn-home {
+  background-color: #e0776a; /* Cor de fundo */
+  color: white; /* Cor do texto */
+  border: 2px solid #e0776a; /* Cor da borda */
+  padding: 10px 20px; /* Espaçamento interno */
+  text-decoration: none; /* Remover sublinhado */
+  font-size: 16px; /* Tamanho da fonte */
+  border-radius: 15px; /* Bordas arredondadas */
+  transition: background-color 0.3s, color 0.3s; /* Transição suave */
+}
+
+/* Estilo hover do botão */
+.btn-home:hover {
+  background-color: #183c39; /* Cor de fundo ao passar o mouse */
+  color: #e0776a; /* Cor do texto ao passar o mouse */
+}
+
+.profile-section {
+  display: flex;
+  justify-content: space-around; /* Distribuir os elementos de forma uniforme */
+  color: #8B898F
+}
+
+.section-tab {
+  padding: 10px 40px;
+  cursor: pointer;
+  background-color: transparent; /* Remover o fundo */
+  border: none; /* Remover a borda */
+  position: relative; /* Posição relativa para alinhar a linha */
+  margin-right: 20px; /* Espaçamento entre os botões */
+}
+
+.section-tab:last-child {
+  margin-right: 0; /* Remover margem do último botão para evitar espaçamento extra */
+}
+
+.section-tab::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #8B898F; /* Cor da linha */
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.3s ease-in-out; /* Transição suave */
+}
+
+.section-tab.selected::after {
+  width: 100%; /* Expandir a linha quando o botão estiver selecionado */
+}
+
+.content {
+  border: 1px solid #ccc;
+  border-top: none;
+  padding: 20px;
+  color: #8B898F
+}
+
