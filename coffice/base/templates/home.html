@@ -40,123 +40,209 @@
     <div class="filter-div">
       <!-- Div que contém os filtros da linha 1 -->
       <div class="first-line-filters">
-        <div class="div-filter-option">
+        <button class="div-filter-option">
           <div class="filter-image-container">
             <img src="https://pbs.twimg.com/media/GPWIKttXwAAVFID?format=jpg&name=medium" class="filter-image" />
           </div>
           <div class="filter-text">Sozinho</div>
-        </div>
-        <div class="div-filter-option">
+        </button>
+        <button class="div-filter-option">
           <div class="filter-image-container">
             <img src="https://pbs.twimg.com/media/GPWLvvgXEAAck_b?format=jpg&name=4096x4096" class="filter-image" />
           </div>
           <div class="filter-text">Em grupo</div>
-        </div>
+        </button>
       </div>
       <!-- Div que contém os filtros da linha 2 -->
       <div class="second-line-filters">
-        <div class="div-filter-option-2">
+        <button class="div-filter-option-2">
           <div class="filter-image-container-2">
             <img src="https://pbs.twimg.com/media/GPWLvvgXEAAck_b?format=jpg&name=4096x4096" alt="Ambiente Silencioso" class="filter-image" />
           </div>
           <div class="filter-text-small">Ambiente silencioso</div>
-        </div>
-        <div class="div-filter-option-2">
+        </button>
+        <button class="div-filter-option-2">
           <div class="filter-image-container-2">
             <img src="https://pbs.twimg.com/media/GPWLvvgXEAAck_b?format=jpg&name=4096x4096" alt="Sala de reunião" class="filter-image" />
           </div>
           <div class="filter-text-small">Sala para reuniões</div>
-        </div>
-        <div class="div-filter-option-2">
+        </button>
+        <button class="div-filter-option-2">
           <div class="filter-image-container-2">
             <img src="https://pbs.twimg.com/media/GPWLvvgXEAAck_b?format=jpg&name=4096x4096" alt="Ambiente silencioso" class="filter-image" />
           </div>
           <div class="filter-text-small">Possibilidade de reserva</div>
-        </div>
+        </button>
       </div>
       <!-- Div que contém os filtros da linha 3 -->
       <div class="third-line-filters">
-        <label class="div-filter-option-3">
+        <button class="div-filter-option-3">
           <input type="checkbox" class="filter-checkbox" value="pertinho" />
           <div>Pertinho<br>de mim</div>
-        </label>
-        <label class="div-filter-option-3">
+        </button>
+        <button class="div-filter-option-3">
           <input type="checkbox" class="filter-checkbox" value="veggie" />Veggie
-        </label>
-        <label class="div-filter-option-3">
+        </button>
+        <button class="div-filter-option-3">
           <input type="checkbox" class="filter-checkbox" value="zero-lactose" />Zero Lactose
-        </label>
-        <label class="div-filter-option-3">
+        </button>
+        <button class="div-filter-option-3">
           <input type="checkbox" class="filter-checkbox" value="gluten-free" />Gluten Free
-        </label>
-        <label class="div-filter-option-3">
+        </button>
+        <button class="div-filter-option-3">
           <input type="checkbox" class="filter-checkbox" value="estacionamento" />
           <div>Estaciona-<br>mento</div>
-        </label>
-        <label class="div-filter-option-3">
+        </button>
+        <button class="div-filter-option-3">
           <input type="checkbox" class="filter-checkbox" value="acessibilidade" />Acessibilidade
-        </label>
+        </button>
       </div>
     </div>
 
     <!-- Botão de Gerar opções -->
     <div class="generate-options">
-      <button class="generate-options-button">Gerar opções</button>
+      <button class="generate-options-button" onclick="generateOptions()">Gerar opções</button>
     </div>
 
-    <!-- Div da lista de cafeterias -->
     <div class="coffees-list">
-      {% for coffee in coffee_shops %}
-      <!-- CADA CARD -->
-      <div class="card">
-        <a href="{% url 'coffee_shop_detail' pk=coffee.cnpj %}" class="card-link">
-          <!-- BACKGROUND IMAGE -->
-          <div class="background-image" style="background-image: url('https://sebraemg.com.br/wp-content/uploads/2018/10/terceira-onda-1-980x588.jpg')">
-          </div>
-          <!-- LOGO -->
-          <div class="card-logo">
-            <img src="https://static.ifood-static.com.br/image/upload/t_high/logosgde/5263af65-50db-482d-8ce9-239ce3b4cc32/201908161622_mXdZ_i.png" alt="Coffee Shop Logo"/>
-          </div>
-          <!-- NOME DO CAFÉ E AVALIAÇÃO -->
-          <div class="title-rating">
-            <!-- NOME DO CAFÉ -->
-            <div class="card-title">
-              <span class="title-text">{{ coffee.name }}</span>
+        {% for coffee in coffee_shops %}
+        <!-- CADA CARD -->
+        <div class="card">
+          <a href="{% url 'coffee_shop_detail' pk=coffee.cnpj %}" class="card-link">
+            <!-- BACKGROUND IMAGE -->
+            <div class="background-image" style="background-image: url('https://sebraemg.com.br/wp-content/uploads/2018/10/terceira-onda-1-980x588.jpg')">
             </div>
-            <!-- AVALIAÇÃO DO CAFÉ -->
-            <div class="card-rating">
-              <span class="rating-text">4.5</span>
+            <!-- LOGO -->
+            <div class="card-logo">
+              <img src="https://static.ifood-static.com.br/image/upload/t_high/logosgde/5263af65-50db-482d-8ce9-239ce3b4cc32/201908161622_mXdZ_i.png" alt="Coffee Shop Logo"/>
             </div>
-          </div>
-          <!-- DESCRIÇÃO DO CAFÉ -->
-          <div class="card-description">
-            <span>{{ coffee.description }}</span>
-          </div>
-        </a>
-      </div>
-      {% endfor %}
+            <!-- NOME DO CAFÉ E AVALIAÇÃO -->
+            <div class="title-rating">
+              <!-- NOME DO CAFÉ -->
+              <div class="card-title">
+                <span class="title-text">{{ coffee.name }}</span>
+              </div>
+              <!-- AVALIAÇÃO DO CAFÉ -->
+              <div class="card-rating">
+                <span class="rating-text">4.5</span>
+              </div>
+            </div>
+            <!-- DESCRIÇÃO DO CAFÉ -->
+            <div class="card-description">
+              <span>{{ coffee.description }}</span>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
     </div>
 
     <script>
-        document.querySelector(".dropdown").addEventListener("mouseover", function () {
-            document.getElementById("myDropdown").classList.add("show");
+      document.querySelectorAll('.div-filter-option, .div-filter-option-2, .div-filter-option-3').forEach(function(button) {
+        button.addEventListener('click', function() {
+          this.classList.toggle('active');
         });
+      });
 
-        document.querySelector(".dropdown").addEventListener("mouseout", function () {
-            document.getElementById("myDropdown").classList.remove("show");
-        });
+      document.querySelector(".dropdown").addEventListener("mouseover", function () {
+          document.getElementById("myDropdown").classList.add("show");
+      });
 
-        window.onclick = function (event) {
-            if (!event.target.matches(".dropbtn")) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                for (var i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains("show")) {
-                        openDropdown.classList.remove("show");
-                    }
-                }
-            }
-        };
+      document.querySelector(".dropdown").addEventListener("mouseout", function () {
+          document.getElementById("myDropdown").classList.remove("show");
+      });
+
+      window.onclick = function (event) {
+          if (!event.target.matches(".dropbtn")) {
+              var dropdowns = document.getElementsByClassName("dropdown-content");
+              for (var i = 0; i < dropdowns.length; i++) {
+                  var openDropdown = dropdowns[i];
+                  if (openDropdown.classList.contains("show")) {
+                      openDropdown.classList.remove("show");
+                  }
+              }
+          }
+      };
+
+     function generateOptions() {
+      // Inicializa um array para armazenar os valores dos filtros selecionados
+      const selectedFilters = [];
+
+      // Seleciona todos os checkboxes que estão marcados
+      const checkboxes = document.querySelectorAll('.filter-checkbox:checked');
+
+      // Itera sobre cada checkbox e adiciona o valor ao array de filtros selecionados
+      checkboxes.forEach((checkbox) => {
+        selectedFilters.push(checkbox.value);
+      });
+
+      // Seleciona os botões de filtro da primeira linha
+      const firstLineFilterButtons = document.querySelectorAll('.first-line-filters .div-filter-option');
+
+      // Itera sobre cada botão de filtro da primeira linha
+      firstLineFilterButtons.forEach((button) => {
+        // Verifica se o botão está ativo
+        if (button.classList.contains('active')) {
+          // Seleciona o checkbox dentro do botão de filtro
+          const checkbox = button.querySelector('.filter-text');
+
+          // Verifica se o checkbox está presente e possui um valor
+          if (checkbox && checkbox.innerText) {
+            // Se estiver ativo e o checkbox tiver um valor, adiciona o valor ao array de filtros selecionados
+            selectedFilters.push(checkbox.innerText);
+          }
+        }
+      });
+
+      // Seleciona os botões de filtro da segunda linha
+      const secondLineFilterButtons = document.querySelectorAll('.second-line-filters .div-filter-option-2');
+
+      // Itera sobre cada botão de filtro da segunda linha
+      secondLineFilterButtons.forEach((button) => {
+        // Verifica se o botão está ativo
+        if (button.classList.contains('active')) {
+          // Seleciona o checkbox dentro do botão de filtro
+          const checkbox = button.querySelector('.filter-text-small');
+          // Verifica se o checkbox está presente e possui um valor
+          if (checkbox && checkbox.innerText) {
+            // Se estiver ativo e o checkbox tiver um valor, adiciona o valor ao array de filtros selecionados
+            selectedFilters.push(checkbox.innerText);
+          }
+        }
+  });
+
+      // Seleciona os botões de filtro da terceira linha
+      const thirdLineFilterButtons = document.querySelectorAll('.third-line-filters .div-filter-option-3');
+
+      // Itera sobre cada botão de filtro da terceira linha
+      thirdLineFilterButtons.forEach((button) => {
+        // Verifica se o botão está ativo
+        if (button.classList.contains('active')) {
+          // Seleciona o checkbox dentro do botão de filtro
+          const checkbox = button.querySelector('.filter-checkbox');
+          // Verifica se o checkbox está presente e possui um valor
+          if (checkbox && checkbox.value) {
+            // Se estiver ativo e o checkbox tiver um valor, adiciona o valor ao array de filtros selecionados
+            selectedFilters.push(checkbox.value);
+          }
+        }
+      });
+
+      // Cria um objeto para armazenar os parâmetros de consulta
+      const params = new URLSearchParams();
+
+      // Adiciona cada filtro selecionado aos parâmetros de consulta
+      selectedFilters.forEach((filter) => {
+        params.append(filter, 'true');
+      });
+
+      // Debug: Verificar os filtros selecionados
+      console.log('Selected Filters:', params.toString());
+
+      // Redireciona para a página atual com os parâmetros de consulta
+      window.location.href = '?' + params.toString();
+    }
+
+      // ...
     </script>
-</body>
+  </body>
 </html>

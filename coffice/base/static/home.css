@@ -116,6 +116,18 @@ body {
   font-family: "Lexend", sans-serif;
   text-align: center;
   overflow: hidden;
+  border: none;
+  cursor: pointer;
+  color: #dc5f4a;
+}
+
+.div-filter-option:hover,
+.div-filter-option-2:hover,
+.div-filter-option-3:hover,
+.div-filter-option.active,
+.div-filter-option-2.active,
+.div-filter-option-3.active {
+  background-color: #e2e2e2;
 }
 
 .div-filter-option {
@@ -139,6 +151,10 @@ body {
 
 .div-filter-option-3 input[type="checkbox"] {
   display: none;
+}
+
+.div-filter-option-3 input[type="checkbox"]:checked + div {
+  background-color: #e2e2e2;
 }
 
 .div-filter-option-3 div {
@@ -249,6 +265,16 @@ label.active {
   margin: 0 10px 20px;
 }
 
+.card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
 .background-image {
   height: 65%;
   overflow: hidden;
@@ -259,7 +285,8 @@ label.active {
 
 .card-logo {
   width: 50px;
-  position: absolute; 
+  height: 50px; /* Adicione esta linha para garantir que a logo fique uma bolinha completa */
+  position: absolute;
   top: 10px;
   left: 10px;
   z-index: 1;
@@ -269,8 +296,10 @@ label.active {
 
 .card-logo img {
   width: 100%;
-  height: auto;
+  height: 100%; /* Adicione esta linha para garantir que a imagem preencha totalmente o contêiner */
+  object-fit: cover; /* Adicione esta linha para garantir que a imagem se ajuste dentro do contêiner */
 }
+
 
 .title-rating {
   width: 100%;
