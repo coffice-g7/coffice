@@ -53,6 +53,7 @@ def cancel_reservation(request, reservation_id):
     return redirect('reservation_list')
 
 def login_view(request):
+    error_message = None
     if request.method == 'POST':
         form = AuthenticationForm(request, request.POST)
         if form.is_valid():
@@ -62,9 +63,13 @@ def login_view(request):
             if user is not None:
                 login(request, user)
                 return redirect('home')  
+            else:
+                error_message = "Credenciais inválidas. Tente novamente."
+        else:
+            error_message = "Por favor, corrija os erros no formulário."        
     else:
         form = AuthenticationForm()
-    return render(request, 'login.html', {'form': form})
+    return render(request, 'login.html', {'form': form, 'error': error_message})
 
 def register_view(request):
     if request.method == 'POST':
