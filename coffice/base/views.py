@@ -11,12 +11,46 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import logout as auth_logout
 from django.views.generic import DetailView
+from django.utils import timezone
 
 from .forms import CustomUserCreationForm
+from .forms import ReservationForm
+from .models import Reservation
 from .models import Cliente
 from .models import coffee_shop, Favorite
 
 # Create your views here.
+
+@login_required
+def make_reservation(request, cnpj):
+    cafe = get_object_or_404(coffee_shop, cnpj=cnpj)
+    if request.method == 'POST':
+        form = ReservationForm(request.POST)
+        if form.is_valid():
+            reservation = form.save(commit=False)
+            reservation.user = request.user
+            reservation.save()
+            return redirect('reservation_list')
+    else:
+        form = ReservationForm(initial={'cafe': cafe})
+    return render(request, 'make_reservation.html', {'form': form, 'cafe': cafe})
+
+@login_required
+def reservation_list(request):
+    reservations = Reservation.objects.filter(user=request.user)
+    current_datetime = timezone.now()
+    for res in reservations:
+        if res.date < current_datetime:
+            res.delete()
+    return render(request, 'reservation_list.html', {'reservations': reservations})
+
+@login_required
+def cancel_reservation(request, reservation_id):
+    reservation = Reservation.objects.get(id=reservation_id, user=request.user)
+    if reservation.status == 'P':
+        reservation.status = 'X'
+        reservation.save()
+    return redirect('reservation_list')
 
 def login_view(request):
     if request.method == 'POST':

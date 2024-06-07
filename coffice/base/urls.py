@@ -10,4 +10,7 @@ urlpatterns = [
     path('room/', views.room, name="room"),
     path('logout/', views.logout, name='logout'),
     path('coffee_shop/<str:pk>/', views.coffee_shop_detail, name='coffee_shop_detail'),
+    path('make/<str:cnpj>/', views.make_reservation, name='make_reservation'),
+    path('my/', views.reservation_list, name='reservation_list'),
+    path('cancel/<int:reservation_id>/', views.cancel_reservation, name='cancel_reservation'),
 ]

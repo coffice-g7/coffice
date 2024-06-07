@@ -46,6 +46,8 @@
             <h1>{{ coffee_shop.name }}</h1>
             <h2>{{ coffee_shop.street }}, {{ coffee_shop.number }}</h2>
             <p>{{ coffee_shop.description }}</p>
+            <p>{{ coffee_shop.id}}</p>
+            <a href="{% url 'make_reservation' coffee_shop.cnpj %}">Fazer Reserva</a>
         </div>
         <div class="box">
             <h1>Sala de Reunião</h1>
