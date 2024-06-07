@@ -49,9 +49,47 @@
     
     <br><br>
     <div class="content" id="favoritos-content">
-        <!-- Conteúdo de Meus Favoritos -->
-        <!-- Você pode adicionar aqui o conteúdo dos favoritos -->
-        Conteúdo dos Favoritos
+        <div class="coffees-list">
+            {% for coffee in coffee_shops %}
+        <!-- CADA CARD -->
+        <div class="card">
+            <a href="{% url 'coffee_shop_detail' pk=coffee.cnpj %}" class="card-link">
+                <!-- BACKGROUND IMAGE -->
+                <div class="background-image" style="background-image: url('https://sebraemg.com.br/wp-content/uploads/2018/10/terceira-onda-1-980x588.jpg')"></div>
+                <!-- LOGO -->
+                <div class="card-logo">
+                    <img src="https://static.ifood-static.com.br/image/upload/t_high/logosgde/5263af65-50db-482d-8ce9-239ce3b4cc32/201908161622_mXdZ_i.png" alt="Coffee Shop Logo">
+                </div>
+            </a>
+            <!-- NOME DO CAFÉ E AVALIAÇÃO -->
+            <div class="title-rating">
+                <!-- NOME DO CAFÉ -->
+                <div class="card-title">
+                    <span class="title-text">{{ coffee.name }}</span>
+                </div>
+                <!-- AVALIAÇÃO DO CAFÉ -->
+                <div class="card-rating">
+                    <span class="rating-text">4.5</span>
+                </div>
+            </div>
+            <!-- DESCRIÇÃO DO CAFÉ -->
+            <div class="card-description">
+                <div>                    
+                    <form action="{% url 'favorited_coffee_shop' pk=coffee.cnpj %}" method="POST" class="ui form">
+                        {% csrf_token %}
+                        <input type="hidden" name="redirect_to" value="myprofile">
+                        <button type="submit" id="FavSuccess" class="btn btn-success">
+                            {% if coffee.favorited %}
+                                🗑️ Remover dos Favoritos
+                            {% endif %}
+                        </button>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        </div>
     </div>
     
     <div class="content" id="reservas-content" style="display: none;">

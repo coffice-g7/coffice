@@ -117,6 +117,7 @@
             <div class="card-logo">
               <img src="https://static.ifood-static.com.br/image/upload/t_high/logosgde/5263af65-50db-482d-8ce9-239ce3b4cc32/201908161622_mXdZ_i.png" alt="Coffee Shop Logo"/>
             </div>
+          </a>
             <!-- NOME DO CAFÉ E AVALIAÇÃO -->
             <div class="title-rating">
               <!-- NOME DO CAFÉ -->
@@ -131,9 +132,21 @@
             <!-- DESCRIÇÃO DO CAFÉ -->
             <div class="card-description">
               <span>{{ coffee.description }}</span>
-              <button>Favoritar</button>
+              <div>
+                <form action="{% url 'favorited_coffee_shop' pk=coffee.cnpj %}" method="POST" class="ui form">
+                  {% csrf_token %}
+                  <input type="hidden" name="redirect_to" value="home">
+                  <button type="submit" id="FavSuccess" class="btn btn-success">
+                      {% if coffee.favorited %}
+                        ❤ Favorited
+                      {% else %}
+                        ♡ Favorite
+                      {% endif %}
+                  </button>
+              </form>
+              
             </div>
-          </a>
+            </div>
         </div>
         {% endfor %}
     </div>

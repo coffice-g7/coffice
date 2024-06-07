@@ -166,9 +166,46 @@ def favorited_coffee_shop(request, pk):
             Favorite.delete(favorited)
         except:
             Favorite.objects.create(user=user, coffee=coffee)
-    
-    return redirect('home')
+
+        redirect_to = request.POST.get('redirect_to', 'home')
+
+    return redirect(redirect_to)
 
 def myprofile(request):
-    return render(request, 'myprofile.html')
+    user = request.user
+    
+    # Busca todas as instâncias de favoritos do usuário
+    favorites = Favorite.objects.filter(user=user)
+
+    coffee_shops = []
+    
+    # Inicializa o array de coffee shops favoritadas
+    for favorite in favorites:
+        coffee_shop_obj = favorite.coffee
+        coffee_shop_data = {
+            'name': coffee_shop_obj.name,
+            'description': coffee_shop_obj.description,
+            'reservation_cost': coffee_shop_obj.reservation_cost,
+            'coffee_spotlight': coffee_shop_obj.coffee_spotlight,
+            'internet_speed': coffee_shop_obj.internet_speed,
+            'vegan_options': coffee_shop_obj.vegan_options,
+            'zero_lactose_options': coffee_shop_obj.zero_lactose_options,
+            'gluten_free_options': coffee_shop_obj.gluten_free_options,
+            'accessibility': coffee_shop_obj.accessibility,
+            'has_parking': coffee_shop_obj.has_parking,
+            'street': coffee_shop_obj.street,
+            'number': coffee_shop_obj.number,
+            'neighborhood': coffee_shop_obj.neighborhood,
+            'cnpj': coffee_shop_obj.cnpj,
+            'favorited': True,  # Define como favorited
+        }
+        coffee_shops.append(coffee_shop_data)
+    
+    # Monta o contexto da página de perfil
+    context = {
+        'coffee_shops': coffee_shops,
+        'user': user
+    }
+
+    return render(request, 'myprofile.html', context)
 
