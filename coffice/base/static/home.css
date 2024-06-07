@@ -1,18 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend&display=swap");
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Lexend", sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden; /* Adicionado para evitar rolagem horizontal na body */
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 10px 20px 10px 20px;
   background-color: #fff;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header-logo {
+  margin-left: 20px;
 }
 
 .header h1 {
@@ -20,11 +31,8 @@ body {
 }
 
 .header button {
-  margin-left: 10px;
-  padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #6b8e23;
   color: #fff;
   cursor: pointer;
 }
@@ -37,17 +45,6 @@ body {
   padding: 20px;
 }
 
-.card {
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px !important;
-}
 .search-container {
   margin-top: 40px;
   text-align: center;
@@ -75,66 +72,83 @@ body {
 .search-button:hover {
   background-color: #4b3621;
 }
-.filter-container {
-  display: flex;
-  flex-direction: column;
+
+.filter-div {
+  width: 1044px;
+  overflow-x: auto; /* Adicionado para permitir rolagem horizontal */
+  overflow-y: hidden; /* Escondido a rolagem vertical para manter o design */
 }
 
-.filter-bar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  font-family: "Lexend", sans-serif;
+.first-line-filters,
+.second-line-filters,
+.third-line-filters {
   width: 100%;
-}
-
-.filter-bar1 {
-  justify-content: center;
-  font-size: 90px;
-}
-
-.filter-bar2 {
-  justify-content: center;
-  font-size: 33.5px;
-}
-
-.filter-bar3 {
-  justify-content: center;
-  font-size: 18.5px;
-}
-
-.filter-bar label {
-  margin-right: 5px;
-  margin-bottom: 5px;
-  width: 100%;
-}
-
-.filter-bar input[type="checkbox"] {
-  margin-right: 5px;
-  text-align: center;
-}
-
-.filter-checkbox {
-  position: absolute;
-  opacity: 0;
-}
-
-label {
-  background-color: #f6f6f6; 
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
   color: #dc5f4a;
-  padding: auto;
-  border-radius: 10px;
-  cursor: pointer;
+}
+
+.first-line-filters {
+  height: 140px;
+}
+
+.second-line-filters {
+  height: 100px;
+  margin-top: 10px;
+}
+
+.third-line-filters {
+  height: 70px;
+  margin-top: 10px;
+}
+
+.div-filter-option,
+.div-filter-option-2,
+.div-filter-option-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6f6f6;
+  border-radius: 50px;
+  height: 100%;
+  font-family: "Lexend", sans-serif;
+  text-align: center;
+  overflow: hidden;
+}
+
+.div-filter-option {
+  width: 49%;
+  font-size: 30px;
+}
+
+.div-filter-option-2 {
+  width: 32%;
+  font-size: 20px;
+}
+
+.div-filter-option-3 {
+  width: 15%;
+  font-size: 18px;
+  padding: 5px; /* Adiciona um pouco de padding */
+  box-sizing: border-box; /* Inclui padding e border no tamanho total do elemento */
+  min-height: 75.5px;
+  border-radius: 30px; /* Ajusta o border-radius */
+}
+
+.div-filter-option-3 input[type="checkbox"] {
+  display: none;
+}
+
+.div-filter-option-3 div {
+  white-space: nowrap; /* Evita quebra de linha dentro do div */
+  text-align: center; /* Centraliza o texto */
 }
 
 label:hover,
 label.active {
   background-color: #e2e2e2;
-}
-
-.filter-checkbox:checked + label {
-  background-color: #4b3621;
 }
 
 .dropdown {
@@ -170,7 +184,153 @@ label.active {
 #msg-filter {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
-  font-family: "Lucida Sans";
+  margin-bottom: 15px;
+  font-family: "Lexend", sans-serif;
+  font-size: 50px;
   color: #183c39;
+  width: 55%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.filter-image-container,
+.filter-image-container-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  overflow: hidden; /* Corta o conteúdo excedente */
+}
+
+.filter-image-container {
+  width: 50%;
+}
+
+.filter-image-container-2 {
+  width: 40%;
+}
+
+.filter-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Mantém as proporções da imagem */
+}
+
+.filter-text,
+.filter-text-small {
+  margin-top: 10px;
+}
+
+.filter-text {
+  width: 50%;
+}
+
+.filter-text-small {
+  width: 60%;
+  margin-right: 50px;
+}
+
+.coffees-list {
+  width: 1200px;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap; /* Para os cards envolverem para a próxima linha quando não couberem mais na largura */
+  justify-content: start; /* Centralizar os cards */
+  overflow-y: auto; /* Adicionado para permitir rolagem vertical */
+}
+
+.card {
+  width: 285px; 
+  height: 300px; 
+  border-radius: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+  margin: 0 10px 20px;
+}
+
+.background-image {
+  height: 65%;
+  overflow: hidden;
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-logo {
+  width: 50px;
+  position: absolute; 
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.card-logo img {
+  width: 100%;
+  height: auto;
+}
+
+.title-rating {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Alinhar verticalmente */
+  padding: 10px;
+}
+
+.card-title {
+  width: calc(100% - 70px);
+}
+
+.card-title span {
+  font-size: 18px;
+  color: #183c39;
+  font-weight: bold;
+}
+
+.card-rating {
+  width: 50px; /* Largura fixa para a avaliação */
+  font-size: 18px;
+  color: #dc5f4a;
+  text-decoration: none;
+}
+
+/* Remover o sublinhado do nome do café e do rating */
+.card-title span,
+.card-rating {
+  text-decoration: none;
+}
+
+.card-description {
+  padding: 0 10px;
+}
+
+.card-description p {
+  font-size: 14px;
+  color: #8B898F;
+}
+
+/* BOTÃO DE GERAR OPÇÕES */
+
+.generate-options {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Ajuste conforme necessário */
+}
+
+.generate-options-button {
+  background-color: #dc5f4a; /* Cor rosa usada no texto dos filtros */
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 30px; /* Ajuste para o tamanho desejado */
+  font-size: 20px; /* Maior que os itens da terceira linha dos filtros */
+  cursor: pointer;
+  font-family: "Lexend", sans-serif;
+}
+
+.generate-options-button:hover {
+  background-color: #e0776a; /* Cor de fundo ao passar o mouse */
 }
