@@ -29,6 +29,23 @@ class coffee_shop(models.Model):
         return self.cnpj
     
 
+class Reservation(models.Model):
+    STATUS_CHOICES = [
+        ('P', 'Pendente'),
+        ('C', 'Confirmada'),
+        ('X', 'Cancelada'),
+    ]
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    cafe = models.ForeignKey(coffee_shop, on_delete=models.CASCADE)
+    date = models.DateTimeField()
+    duration = models.IntegerField(help_text="Duração em minutos")
+    num_people = models.IntegerField()
+    status = models.CharField(max_length=1, choices=STATUS_CHOICES, default='P')
+
+    def __str__(self):
+        return f"Reserva de {self.user.username} em {self.cafe.name} para {self.num_people} pessoas"
+    
 class Cliente(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     cpf = models.CharField(max_length=14) 

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h2>Fazer Reserva</h2>
+{% if cafe %}
+<p>Reservando para: {{ cafe.name }}</p>
+{% endif %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Reservar</button>
+</form>
+{% endblock %}

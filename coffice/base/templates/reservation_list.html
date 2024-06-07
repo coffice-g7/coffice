@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h2>Minhas Reservas</h2>
+<ul>
+    {% for reservation in reservations %}
+    <li>
+        {{ reservation.cafe.name }} - {{ reservation.date }} - {{ reservation.duration }} minutos -
+        {{reservation.num_people }} pessoas - {{ reservation.get_status_display }}
+        {% if reservation.status == 'P' %}
+        <form method="post" action="{% url 'cancel_reservation' reservation.id %}" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit">Cancelar</button>
+        </form>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
