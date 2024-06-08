@@ -257,8 +257,8 @@ label.active {
 
 .card {
   width: 285px; 
-  height: 300px; 
-  border-radius: 20px;
+  height: 350px; 
+  border-radius: 50px;
   margin-bottom: 20px;
   overflow: hidden;
   position: relative;
@@ -278,17 +278,17 @@ label.active {
 .background-image {
   height: 65%;
   overflow: hidden;
-  border-radius: 15px;
+  border-radius: 50px;
   background-size: cover;
   background-position: center;
 }
 
 .card-logo {
-  width: 50px;
-  height: 50px; /* Adicione esta linha para garantir que a logo fique uma bolinha completa */
+  width: 65px;
+  height: 65px; /* Adicione esta linha para garantir que a logo fique uma bolinha completa */
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 12px;
+  left: 15px;
   z-index: 1;
   border-radius: 50%;
   overflow: hidden;
@@ -306,7 +306,7 @@ label.active {
   display: flex;
   justify-content: space-between;
   align-items: center; /* Alinhar verticalmente */
-  padding: 10px;
+  padding: 10px 0px 10px 5px;
 }
 
 .card-title {
@@ -387,13 +387,30 @@ label.active {
   color: #8B898F
 }
 
+.no-style-button {
+  border: none;
+  background: none;
+  padding: 0;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.no-style-button img {
+  width: 30px;
+  height: 30px;
+}
+
 .section-tab {
   padding: 10px 40px;
   cursor: pointer;
-  background-color: transparent; /* Remover o fundo */
-  border: none; /* Remover a borda */
-  position: relative; /* Posição relativa para alinhar a linha */
-  margin-right: 20px; /* Espaçamento entre os botões */
+  background-color: transparent; 
+  border: none; 
+  position: relative; 
+  margin-right: 20px; 
 }
 
 .section-tab:last-child {
@@ -435,6 +452,8 @@ label.active {
   border: none; /* remove a borda do botão */
   background-color: transparent; /* torna o fundo do botão transparente */
 }
+
+
 
 
 /* Adiciona estilo ao botão "Remover dos Favoritos" */

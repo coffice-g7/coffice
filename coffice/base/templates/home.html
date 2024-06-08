@@ -123,7 +123,22 @@
             <div class="card-logo">
               <img src="https://static.ifood-static.com.br/image/upload/t_high/logosgde/5263af65-50db-482d-8ce9-239ce3b4cc32/201908161622_mXdZ_i.png" alt="Coffee Shop Logo"/>
             </div>
+            
           </a>
+          <div>
+                <form action="{% url 'favorited_coffee_shop' pk=coffee.cnpj %}" method="POST" class="ui form">
+                  {% csrf_token %}
+                  <input type="hidden" name="redirect_to" value="home">
+                    <button type="submit" id="FavSuccess" class="no-style-button">
+                      {% if coffee.favorited %}
+                          <img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihbUqZTjvw8y_se2tiojwQETTdYh_12MB-szDQBiBLQj_UKDwk3n7VT9GxrtJASw8ZJx5WjW0fnAuQk4YNMsfUyn8P8ioeFY_3M=w1912-h976-rw-v1" alt="favoritado">
+                      {% else %}
+                          <img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihauzrZ3JKU0RFjZdIkXtQ4xz4ZUvBQNoWdjglOxbSDlMOLXnCiOCz2cpsFaFNRKAgevYpRIkTsU7CzQBK-8cRe1N-amw1k58Ok=w953-h959-rw-v1" alt="não favoritado" style="opacity: 0.7;">
+                      {% endif %}
+                  </button>
+              </form>
+              
+            </div>
             <!-- NOME DO CAFÉ E AVALIAÇÃO -->
             <div class="title-rating">
               <!-- NOME DO CAFÉ -->
@@ -132,7 +147,7 @@
               </div>
               <!-- AVALIAÇÃO DO CAFÉ -->
               <div class="card-rating">
-                <span class="rating-text">4.5</span>
+                <span class="rating-text">4.5 <img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZ-hnnZOZxvOnRRUThOJACLioRnbouJ9iBb635GpoTIO5ON0nITrSqS1TqHhupsZdBzs5OcDJeTsp2pxK8aohj60hVpL2B5vJI=w1912-h976-rw-v1" alt="rating" style="height: 15px;width: 15px;"></span> 
               </div>
             </div>
             <!-- DESCRIÇÃO DO CAFÉ -->
@@ -140,29 +155,6 @@
               <div>
               <span>{{ coffee.street }}, {{ coffee.number }}</span>
               </div>
-              <div>
-                <form action="{% url 'favorited_coffee_shop' pk=coffee.cnpj %}" method="POST" class="ui form">
-                  {% csrf_token %}
-                  <input type="hidden" name="redirect_to" value="home">
-                  <button type="submit" id="FavSuccess" class="btn btn-success">
-                      {% if coffee.favorited %}
-                        ❤ Favorited
-                      {% else %}
-                        ♡ Favorite
-                      {% endif %}
-                      {% if coffee.favorited %}
-                      <button type="submit" id="FavSuccess" class="btn btn-favorited">
-                        <i class="bi bi-heart-fill"></i> 
-                      </button>
-                      {% else %}
-                      <button type="submit" class="btn btn-favorite">
-                        <i class="bi bi-heartbreak" style="color: #8B898F ;"></i> 
-                      </button>
-                      {% endif %}
-                  </button>
-              </form>
-              
-            </div>
             </div>
         </div>
         {% endfor %}

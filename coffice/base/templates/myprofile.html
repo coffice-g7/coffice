@@ -78,7 +78,7 @@
                         <form action="{% url 'favorited_coffee_shop' pk=coffee.cnpj %}" method="POST" class="ui form">
                             {% csrf_token %}
                             <input type="hidden" name="redirect_to" value="myprofile">
-                            <button type="submit" id="FavSuccess" class="btn btn-remove-favorite">
+                            <button type="submit" id="FavSuccess" class="btn btn-home">
                             {% if coffee.favorited %}
                             Remover
                             {% endif %}
