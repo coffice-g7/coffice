@@ -49,8 +49,9 @@ class Reservation(models.Model):
 class Cliente(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     cpf = models.CharField(max_length=14) 
-    phone_number = models.CharField(max_length=15)  
-    ##profile_pic = models.ImageField(upload_to='perfil/', blank=True, null=True)
+    email = models.EmailField(max_length=100)
+    cep = models.CharField(max_length=9)
+    number = models.CharField(max_length=10)
 
     def __str__(self):
         return self.user.username

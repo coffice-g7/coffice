@@ -12,6 +12,8 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import logout as auth_logout
 from django.views.generic import DetailView
 from django.utils import timezone
+from .forms import CustomUserCreationForm
+from .models import Cliente
 
 from .forms import CustomUserCreationForm
 from .forms import ReservationForm
@@ -75,21 +77,14 @@ def register_view(request):
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
-            form.save()
+            user = form.save()
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
-            cpf = request.POST.get('cpf')
-            phone_number = request.POST.get('phone_number')
-            client_new = Cliente(user=user, phone_number=phone_number, cpf=cpf)
-            try:
-               client_new.save()
-            except Exception as e:
-               print("Erro ao salvar cliente:", e)
-            login(request, user)
+            login(request, user)  
             return redirect('home')  
     else:
-        form = CustomUserCreationForm(request.POST)
+        form = CustomUserCreationForm()
     return render(request, 'signup.html', {'form': form})
 
 
