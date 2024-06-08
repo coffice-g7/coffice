@@ -424,3 +424,32 @@ label.active {
   color: #8B898F
 }
 
+.btn-favorite {
+  color: #dc5f4a; /* cor do ícone de coração vazio */
+  border: none; /* remove a borda do botão */
+  background-color: transparent; /* torna o fundo do botão transparente */
+}
+
+.btn-favorited {
+  color: #dc5f4a; /* cor do ícone de coração preenchido */
+  border: none; /* remove a borda do botão */
+  background-color: transparent; /* torna o fundo do botão transparente */
+}
+
+
+/* Adiciona estilo ao botão "Remover dos Favoritos" */
+.btn-remove-favorite {
+  background-color: #ff4d4d; /* Cor de fundo vermelha */
+  color: #fff; /* Cor do texto branco */
+  border: none; /* Remove a borda */
+  padding: 8px 16px; /* Espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+  cursor: pointer; /* Muda o cursor para indicar interatividade */
+  display: flex; /* Faz com que o ícone e o texto fiquem na mesma linha */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+/* Adiciona espaçamento entre o ícone e o texto */
+.btn-remove-favorite i {
+  margin-right: 8px; /* Espaçamento à direita do ícone */
+}

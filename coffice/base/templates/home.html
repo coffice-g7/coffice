@@ -35,7 +35,11 @@
         </div>
     </div>
 
+    <br>
+    <br>
     <h2 id="msg-filter">Olá, como você gostaria de trabalhar hoje?</h2>
+    <br>
+    <br>
 
     <!-- Div que contém todos os filtros -->
     <div class="filter-div">
@@ -105,6 +109,8 @@
       <button class="generate-options-button" onclick="generateOptions()">Gerar opções</button>
     </div>
 
+    <br><br>
+
     <div class="coffees-list">
         {% for coffee in coffee_shops %}
         <!-- CADA CARD -->
@@ -131,7 +137,9 @@
             </div>
             <!-- DESCRIÇÃO DO CAFÉ -->
             <div class="card-description">
-              <span>{{ coffee.description }}</span>
+              <div>
+              <span>{{ coffee.street }}, {{ coffee.number }}</span>
+              </div>
               <div>
                 <form action="{% url 'favorited_coffee_shop' pk=coffee.cnpj %}" method="POST" class="ui form">
                   {% csrf_token %}
@@ -141,6 +149,15 @@
                         ❤ Favorited
                       {% else %}
                         ♡ Favorite
+                      {% endif %}
+                      {% if coffee.favorited %}
+                      <button type="submit" id="FavSuccess" class="btn btn-favorited">
+                        <i class="bi bi-heart-fill"></i> 
+                      </button>
+                      {% else %}
+                      <button type="submit" class="btn btn-favorite">
+                        <i class="bi bi-heartbreak" style="color: #8B898F ;"></i> 
+                      </button>
                       {% endif %}
                   </button>
               </form>

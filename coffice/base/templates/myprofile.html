@@ -37,14 +37,14 @@
     <br>
     <br>
     <br>
-    <h2 id="msg-filter">Olá, {{ user.username }}</h2>
+    <h1 id="msg-filter">Olá, {{ user.username }}</h1>
 
     <br>
     <a href="{% url 'home.html' %}" class="btn btn-home">Editar Perfil</a>
     <br><br><br><br><br>
     <div class="profile-section">
-        <div class="section-tab" id="favoritos-tab" onclick="mostrarConteudo('favoritos')">Meus Favoritos</div>
-        <div class="section-tab" id="reservas-tab" onclick="mostrarConteudo('reservas')">Minhas Reservas</div>
+        <h2 class="section-tab" id="favoritos-tab" onclick="mostrarConteudo('favoritos')">Meus Favoritos</h2>
+        <h2 class="section-tab" id="reservas-tab" onclick="mostrarConteudo('reservas')">Minhas Reservas</h2>
     </div>
     
     <br><br>
@@ -73,20 +73,20 @@
                 </div>
             </div>
             <!-- DESCRIÇÃO DO CAFÉ -->
-            <div class="card-description">
-                <div>                    
-                    <form action="{% url 'favorited_coffee_shop' pk=coffee.cnpj %}" method="POST" class="ui form">
-                        {% csrf_token %}
-                        <input type="hidden" name="redirect_to" value="myprofile">
-                        <button type="submit" id="FavSuccess" class="btn btn-success">
+                <div class="card-description">
+                    <div>                    
+                        <form action="{% url 'favorited_coffee_shop' pk=coffee.cnpj %}" method="POST" class="ui form">
+                            {% csrf_token %}
+                            <input type="hidden" name="redirect_to" value="myprofile">
+                            <button type="submit" id="FavSuccess" class="btn btn-remove-favorite">
                             {% if coffee.favorited %}
-                                🗑️ Remover dos Favoritos
+                            Remover
                             {% endif %}
-                        </button>
-                    </form>
-                    
+                            </button>
+                        </form>
+                    </div>
                 </div>
-            </div>
+
         </div>
         {% endfor %}
         </div>
@@ -95,7 +95,7 @@
     <div class="content" id="reservas-content" style="display: none;">
         <!-- Conteúdo de Minhas Reservas -->
         <!-- Você pode adicionar aqui o conteúdo das reservas -->
-        Conteúdo das Reservas
+        
     </div>
 
     <br><br><br>
