@@ -4,104 +4,232 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
     <style>
         body {
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
+            font-family: "Lexend", sans-serif;
+            background-color: #ffffff;
+            background-image: url('https://lh3.googleusercontent.com/u/2/drive-viewer/AKGpiha5g-yr4smFca6VS6SH_uCh85gVK_FE8bsN9f3OA7Gt4Epx9IbNe7S20UylQQ7Hnmp8hpWnsGILNtegCqVVzzUBfcCopk31aTk=w1920-h886-rw-v1');
+            background-size: cover;
+            background-position: center;
         }
+
+        .background {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
         .container {
             display: flex;
             flex-direction: column;
             align-items: center;
-        }
-        form {
-            width: 300px; /* ajuste a largura conforme necessário */
-            background-color: #fff;
-            padding: 30px; /* aumentado para 30px */
+            background: rgba(246, 246, 246, 0.97);
+            padding: 20px;
+            width: 320px;
             border-radius: 20px;
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
         }
+
+        form {
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #404248;
+            margin-bottom: 20px;
+        }
+
+        .input-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .input-row div {
+            width: 48%;
+        }
+
         input {
             width: 100%;
             padding: 8px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: 1px solid #ccc;
+            margin-bottom: 15px;
+            border-radius: 15px;
+            background: rgba(226, 226, 226, 1.0);
+            border: 0px solid #cfcfcf;
+            box-sizing: border-box;
+            font-size: 14px;
+            font-weight: 400;
         }
+
+        input::placeholder {
+            color: black;
+            opacity: 0.8;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-left: 10px;
+            font-size: 14px;
+            margin-bottom: 2px;
+            color: #8F8F8F;
+        }
+
         button {
-            width: 100%;
-            padding: 10px;
+            margin-top: 10px;
+            width: 50%;
+            padding: 8px;
             border: none;
-            border-radius: 5px; 
-            background-color: #cdaf7b;
+            border-radius: 15px;
+            background-color: #DC5F4A;
             color: #fff;
+            font-size: 16px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
         }
+
         button:hover {
-            background-color: #8d7259; 
+            background-color: #e57361;
         }
+
         .error {
             color: red;
             margin-top: 10px;
         }
+
+        .login-link {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .login-link a {
+            color: #DC5F4A;
+            text-decoration: underline;
+        }
+
+        .terms {
+            display: flex;
+            align-items: center;
+            margin-top: -5px;
+            margin-bottom: 10px; /* Adjusted spacing */
+        }
+
+        .terms input {
+            margin-right: 5px;
+            vertical-align: middle; /* Align checkbox with the text */
+        }
+
+        .terms label {
+            display: inline;
+            margin-left: 0;
+            white-space: nowrap; /* Prevent line breaks */
+        }
+
+        .terms a {
+            text-decoration: none;
+            color: #DC5F4A; /* Link color */
+        }
+
+        .terms a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+
     </style>
 </head>
-<script>
-    window.onload = function() {
-        document.getElementById('cpf').addEventListener('input', function (e) {
-            var input = e.target,
-                value = input.value;
-
-            value = value.replace(/\D/g, ""); 
-            value = value.replace(/(\d{3})(\d)/, "$1.$2"); 
-            value = value.replace(/(\d{3})(\d)/, "$1.$2"); 
-            value = value.replace(/(\d{3})(\d{2})$/, "$1-$2"); 
-            input.value = value;
-        });
-
-        document.getElementById('phone_number').addEventListener('input', function (e) {
-            var input = e.target,
-                value = input.value;
-
-            value = value.replace(/\D/g, ""); 
-            value = value.replace(/(\d{2})(\d)/, "($1) $2");
-            value = value.replace(/(\d{4})(\d)/, "$1-$2"); 
-
-            input.value = value;
-        });
-    }
-</script>
 <body>
-    <div class="container">
-        <form method="post">
-            <img style="margin-left: 45px;"src="https://lh3.googleusercontent.com/fife/ALs6j_FyrMZVmFEdJWTPK8KhSIs3eQXwC0Z9JTcTRElILAbM9aM-HKHwcRWR14sHsUir0Kd9bVfL3bYutVIJn33-34qQYIKjxEhCytPKroocVA3fHDfxj_98Ab81rNOffofQ7GycUQEu87VlqoUoqiIwK86eGxRcWcDoKGY6iw-tfiM2HhUlkATJ6wXHTk-n1Th_R7xO6_x6-scIYYFBiSwtdiiURnHR4YZGM8cPVSqvo1HM_3qV7nNOBlGY6WHmHphA8u6KdaRGY8wPZ-VJLFGRlFIltipLpy5kr5uNTwttbYYf9wNKLZNTy2gXxOrZjVBGDbLsb7g3YUSLraZhEQKUc8YcWn31GZJmg7qgqzzzeYhDNBv1oABIxbYOMG4vrLrqgPH0NTkBE1tCXroSMA008kj1nCQrniMBy8BjJfFXFPuKIknDdCFywRgAoxOXb31CkSNEeuVH23Uo__2GncNrbD4MaV1P98DF5Xm7c9xJJN4B5TpoTGzC7Cu0S1JBju5wBCT2tgNOYpofZ546qJi4G9fxkFsooJovjmbu8xqyd4nH2OJ_Z5Pgmq8gOgN1oLNbsYuAmvfJj_SR5M4lsaFEcDT5rAtC_GACaQcPDA52CdITguFAo6JzjwtGACkUH6_0Gpgvvt1vZNCBIiWjON02ZzN9hd8vbVsKFQ3d-bjkr_59QcUfWvbfA3TXtz9S-TaTUQPo2zmgAEwBaF3RWRTMez-t6y_AAJaY159p9g34Ioa0S6JP_TGVLznTacoLBnBCl9tn1NFoazKZDrZhyMrhHzW1lMAVKoGHdgR6T_bMhvaGn2HZR4m4f2bSTSLNpXS6WVYg0VQj-JuCEtka9Ht8nJOYwC0fplfr78DAVxXEvI0_6aTPvMBRvAqxGTj-BNNGpDBoz54s7EYbtcKa-DsFYGOBFO3ZfEJy6LRLSjkobavh1hhgBA4WvTZC_kV6fS8YJOCGYjdmsgOjthSAEO5bKF7EEhQC0aHvdn0oqBpoOvvlvx1PwLWptfklM2VGmKnX2nm6s104VvFgZIcLANJ6MreOl9SLbOMS_M6VRdHeq_iNFNhMz5s=w1920-h957-v0" height="40" style="width: 180px;"> <br>
-            {% csrf_token %}
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" maxlength="10">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="user@gmail.com" maxlength="50">
-            <label for="first_name">First Name</label>
-            <input type="text" id="first_name" name="first_name" maxlength="30">
-            <label for="last_name">Last Name</label>
-            <input type="text" name="last_name" id="last_name" maxlength="30">
-            <label for="cpf">CPF</label>
-            <input type="text" name="cpf" id="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="123.456.789-10" maxlength="14">
-            <label for="phone_number">Phone Number</label>
-            <input type="text" name="phone_number" id="phone_number" placeholder="(XX) 9XXXXXXXX" maxlength= "15">
-            <label for="password1">Password:</label>
-            <input type="password" id="password1" name="password1" maxlength="30">
-            <label for="password2">Confirm Password:</label>
-            <input type="password" id="password2" name="password2" maxlength="30">
-            <button type="submit" id="registerButton">Register</button>
-            {% if error %}
-                <p class="error"><strong>{{ error }}</strong></p>
-            {% endif %}
-        </form>
+    <div class="background">
+        <div class="container">
+            <h1>Criar conta</h1>
+            <form method="post">
+                {% csrf_token %}
+                <div class="input-row">
+                    <div>
+                        <label for="username">Usuário:</label>
+                        <input type="text" id="username" name="username" maxlength="10">
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" maxlength="50">
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div>
+                        <label for="first_name">Nome:</label>
+                        <input type="text" id="first_name" name="first_name" maxlength="30">
+                    </div>
+                    <div>
+                        <label for="last_name">Sobrenome:</label>
+                        <input type="text" name="last_name" id="last_name" maxlength="30">
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div>
+                        <label for="cpf">CPF:</label>
+                        <input type="text" name="cpf" id="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14">
+                    </div>
+                    <div>
+                        <label for="phone_number">Número de telefone:</label>
+                        <input type="text" name="phone_number" id="phone_number" maxlength="15">
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div>
+                        <label for="password1">Senha:</label>
+                        <input type="password" id="password1" name="password1" maxlength="30">
+                    </div>
+                    <div>
+                        <label for="password2">Confirmação da Senha:</label>
+                        <input type="password" id="password2" name="password2" maxlength="30">
+                    </div>
+                </div>
+                <div class="terms">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">Aceitar os <a href="#">termos e políticas da Coffice</a></label>
+                </div>
+                <button type="submit" id="registerButton">Registrar-se</button>
+                {% if error %}
+                    <p class="error"><strong>{{ error }}</strong></p>
+                {% endif %}
+            </form>
+            <div class="login-link">
+                Tem uma conta? <a href="http://127.0.0.1:8000/login/">Fazer login.</a>
+            </div>
+        </div>
     </div>
+    <script>
+        function formatCPF(value) {
+            return value
+                .replace(/\D/g, '')
+                .replace(/(\d{3})(\d)/, '$1.$2')
+                .replace(/(\d{3})(\d)/, '$1.$2')
+                .replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+        }
+
+        function formatPhoneNumber(value) {
+            return value
+                .replace(/\D/g, '')
+                .replace(/(\d{2})(\d)/, '($1) $2')
+                .replace(/(\d{5})(\d)/, '$1-$2')
+                .replace(/(-\d{4})\d+?$/, '$1');
+        }
+
+        document.getElementById('cpf').addEventListener('input', function(e) {
+            e.target.value = formatCPF(e.target.value);
+        });
+
+        document.getElementById('phone_number').addEventListener('input', function(e) {
+            e.target.value = formatPhoneNumber(e.target.value);
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffice</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}" />
+    <link rel="icon" href="https://pbs.twimg.com/media/GPbxz5CbkAAYo_b?format=png&name=900x900" type="image/x-icon">
+</head>
+<body>
+    
+    <div class="header">
+        <a href="{% url 'home.html' %}"><img
+            class="header-logo"
+            src="https://pbs.twimg.com/media/GPWhLuzbIAAcsfx?format=png&name=small"
+            height="40"
+        /></a>
+        <div class="dropdown">
+            <img
+                onclick="myFunction()"
+                class="dropbtn"
+                src="https://cdn-icons-png.freepik.com/512/64/64572.png"
+                height="40"
+            />
+            <div id="myDropdown" class="dropdown-content">
+                {% if user.is_authenticated %}
+                <a href="/logout/">Logout</a>
+                {% else %}
+                <a href="/login/">Login</a>
+                <a href="/register/">Register</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <h2 id="msg-filter">Olá, {{ user.username }}</h2>
+
+    <br>
+    <a href="{% url 'home.html' %}" class="btn btn-home">Editar Perfil</a>
+    <br><br><br><br><br>
+    <div class="profile-section">
+        <div class="section-tab" id="favoritos-tab" onclick="mostrarConteudo('favoritos')">Meus Favoritos</div>
+        <div class="section-tab" id="reservas-tab" onclick="mostrarConteudo('reservas')">Minhas Reservas</div>
+    </div>
+    
+    <br><br>
+    <div class="content" id="favoritos-content">
+        <div class="coffees-list">
+            {% for coffee in coffee_shops %}
+        <!-- CADA CARD -->
+        <div class="card">
+            <a href="{% url 'coffee_shop_detail' pk=coffee.cnpj %}" class="card-link">
+                <!-- BACKGROUND IMAGE -->
+                <div class="background-image" style="background-image: url('https://sebraemg.com.br/wp-content/uploads/2018/10/terceira-onda-1-980x588.jpg')"></div>
+                <!-- LOGO -->
+                <div class="card-logo">
+                    <img src="https://static.ifood-static.com.br/image/upload/t_high/logosgde/5263af65-50db-482d-8ce9-239ce3b4cc32/201908161622_mXdZ_i.png" alt="Coffee Shop Logo">
+                </div>
+            </a>
+            <!-- NOME DO CAFÉ E AVALIAÇÃO -->
+            <div class="title-rating">
+                <!-- NOME DO CAFÉ -->
+                <div class="card-title">
+                    <span class="title-text">{{ coffee.name }}</span>
+                </div>
+                <!-- AVALIAÇÃO DO CAFÉ -->
+                <div class="card-rating">
+                    <span class="rating-text">4.5</span>
+                </div>
+            </div>
+            <!-- DESCRIÇÃO DO CAFÉ -->
+            <div class="card-description">
+                <div>                    
+                    <form action="{% url 'favorited_coffee_shop' pk=coffee.cnpj %}" method="POST" class="ui form">
+                        {% csrf_token %}
+                        <input type="hidden" name="redirect_to" value="myprofile">
+                        <button type="submit" id="FavSuccess" class="btn btn-success">
+                            {% if coffee.favorited %}
+                                🗑️ Remover dos Favoritos
+                            {% endif %}
+                        </button>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+    
+    <div class="content" id="reservas-content" style="display: none;">
+        <!-- Conteúdo de Minhas Reservas -->
+        <!-- Você pode adicionar aqui o conteúdo das reservas -->
+        Conteúdo das Reservas
+    </div>
+
+    <br><br><br>
+
+</body>
+
+<script>
+
+function mostrarConteudo(tab) {
+    var tabs = document.getElementsByClassName("content");
+    for (var i = 0; i < tabs.length; i++) {
+        tabs[i].style.display = "none";
+    }
+    var tabButtons = document.getElementsByClassName("section-tab");
+    for (var i = 0; i < tabButtons.length; i++) {
+        tabButtons[i].classList.remove("selected");
+    }
+    document.getElementById(tab + "-content").style.display = "block";
+    document.getElementById(tab + "-tab").classList.add("selected");
+}
+
+</script>

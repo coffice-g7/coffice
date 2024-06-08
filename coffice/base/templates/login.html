@@ -6,83 +6,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
+        @import url("https://fonts.googleapis.com/css2?family=Lexend&display=swap");
+
         body {
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
+            font-family: "Lexend", sans-serif;
+            background: url('https://lh3.googleusercontent.com/u/2/drive-viewer/AKGpiha5g-yr4smFca6VS6SH_uCh85gVK_FE8bsN9f3OA7Gt4Epx9IbNe7S20UylQQ7Hnmp8hpWnsGILNtegCqVVzzUBfcCopk31aTk=w1920-h886-rw-v1') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .background {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
         }
 
         .container {
             display: flex;
             flex-direction: column;
             align-items: center;
+            background: rgba(246, 246, 246, 0.97);
+            padding: 30px;
+            width: 400px;
+            border-radius: 30px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            
         }
 
         form {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 20px;
-            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+            font-size: 54px;
+            color: #404248  ;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-left: 10px;
+            font-size: 15px;
+            margin-bottom: 2px;
+            color: #8F8F8F;
         }
 
         input {
             width: 100%;
-            padding: 8px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: 1px solid #ccc;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 15px;
+            background: rgba(226, 226, 226, 1.0);
+            border: 0px solid #cfcfcf;
+            box-sizing: border-box;
         }
 
+        input::placeholder {
+            color: black;
+            opacity: 0.8    ;
+        }
+
+
         button {
-            width: 100%;
+            margin-top: 20px;
+            width: 40%;
             padding: 10px;
             border: none;
-            border-radius: 5px;
-            background-color: #cdaf7b;
+            border-radius: 15px;
+            background-color: #DC5F4A;
             color: #fff;
+            font-size: 16px;
             cursor: pointer;
         }
 
         button:hover {
-            background-color: #8d7259;
+            background-color: #c0392b;
+        }
+        .registar-a {
+            color: #DC5F4A;
+            text-decoration: underline;
+        }
+
+        .forgot-pass {
+            display: block;
+            margin-top: -8px;
+            margin-left: 150px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #DC5F4A;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
 
         .error {
             color: red;
             margin-top: 10px;
         }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        img {
-            width: 100px;
-            /* ajuste o tamanho conforme necessário */
-            margin-bottom: 20px;
-        }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <img src="https://lh3.googleusercontent.com/fife/ALs6j_FyrMZVmFEdJWTPK8KhSIs3eQXwC0Z9JTcTRElILAbM9aM-HKHwcRWR14sHsUir0Kd9bVfL3bYutVIJn33-34qQYIKjxEhCytPKroocVA3fHDfxj_98Ab81rNOffofQ7GycUQEu87VlqoUoqiIwK86eGxRcWcDoKGY6iw-tfiM2HhUlkATJ6wXHTk-n1Th_R7xO6_x6-scIYYFBiSwtdiiURnHR4YZGM8cPVSqvo1HM_3qV7nNOBlGY6WHmHphA8u6KdaRGY8wPZ-VJLFGRlFIltipLpy5kr5uNTwttbYYf9wNKLZNTy2gXxOrZjVBGDbLsb7g3YUSLraZhEQKUc8YcWn31GZJmg7qgqzzzeYhDNBv1oABIxbYOMG4vrLrqgPH0NTkBE1tCXroSMA008kj1nCQrniMBy8BjJfFXFPuKIknDdCFywRgAoxOXb31CkSNEeuVH23Uo__2GncNrbD4MaV1P98DF5Xm7c9xJJN4B5TpoTGzC7Cu0S1JBju5wBCT2tgNOYpofZ546qJi4G9fxkFsooJovjmbu8xqyd4nH2OJ_Z5Pgmq8gOgN1oLNbsYuAmvfJj_SR5M4lsaFEcDT5rAtC_GACaQcPDA52CdITguFAo6JzjwtGACkUH6_0Gpgvvt1vZNCBIiWjON02ZzN9hd8vbVsKFQ3d-bjkr_59QcUfWvbfA3TXtz9S-TaTUQPo2zmgAEwBaF3RWRTMez-t6y_AAJaY159p9g34Ioa0S6JP_TGVLznTacoLBnBCl9tn1NFoazKZDrZhyMrhHzW1lMAVKoGHdgR6T_bMhvaGn2HZR4m4f2bSTSLNpXS6WVYg0VQj-JuCEtka9Ht8nJOYwC0fplfr78DAVxXEvI0_6aTPvMBRvAqxGTj-BNNGpDBoz54s7EYbtcKa-DsFYGOBFO3ZfEJy6LRLSjkobavh1hhgBA4WvTZC_kV6fS8YJOCGYjdmsgOjthSAEO5bKF7EEhQC0aHvdn0oqBpoOvvlvx1PwLWptfklM2VGmKnX2nm6s104VvFgZIcLANJ6MreOl9SLbOMS_M6VRdHeq_iNFNhMz5s=w1920-h957-v0"
-            height="40" style="width: 180px;">
-        <form method="post">
-            {% csrf_token %}
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password">
-            <button type="submit">Login</button>
-            {% if error %}
-            <p class="error"><strong>{{ error }}</strong></p>
-            {% endif %}
-        </form>
+    <div class="background">
+        <div class="container">
+            <form method="post">
+                {% csrf_token %}
+                <h1>Login</h1>
+                <label for="username">Login:</label>
+                <input type="text" id="username" name="username">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password">
+                <a class="forgot-pass" href="#">Esqueci minha senha</a>
+                <button type="submit">Entrar</button>
+                <p style="color: #8F8F8F; margin-top: 30px;">Não tem uma conta? <a class="registar-a" href="/register/">Fazer cadastro.</a></p>
+                {% if error %}
+                <p class="error"><strong>{{ error }}</strong></p>
+                {% endif %}
+            </form>
+        </div>
     </div>
 </body>
 

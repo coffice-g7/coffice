@@ -182,6 +182,23 @@ A aplicação da programação em par foi fundamental para o sucesso do projeto.
 
 Nesta seção, você encontrará os screencasts demonstrando o funcionamento da plataforma Coffice.
 
+<p style="text-align: center; text-decoration: none;">
+  🎥
+  <a href="" style="text-decoration: none;"> <span>ScreenCast do Protótipo de Baixa Fidelidade</span>
+  </a>
+</p>
+<p>
+  🎥
+  <a href="" style="text-decoration: none;"> <span>ScreenCast do Sistema em Produção</span>
+  </a>
+</p>
+<p>
+  🎥
+  <a href="" style="text-decoration: none;"> <span>ScreenCast Execução dos testes</span>
+  </a>
+</p>
+
+
 
 ## 👥 Pair Programming
 
@@ -233,7 +250,7 @@ Nesta seção, você encontrará os screencasts demonstrando o funcionamento da 
 ## 📊 Jira
 
 
-## 🪲 Issue / Bug Tracker
+## 🐛 Issue / Bug Tracker
 
 
 </details>
