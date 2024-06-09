@@ -32,7 +32,7 @@ def make_reservation(request, cnpj):
             reservation = form.save(commit=False)
             reservation.user = request.user
             reservation.save()
-            return redirect('reservation_list')
+            return redirect('myprofile')
     else:
         form = ReservationForm(initial={'cafe': cafe})
     return render(request, 'make_reservation.html', {'form': form, 'cafe': cafe})
