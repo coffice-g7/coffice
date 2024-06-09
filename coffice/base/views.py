@@ -12,7 +12,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import logout as auth_logout
 from django.views.generic import DetailView
 from django.utils import timezone
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm, EmailAuthenticationForm
 from .models import Cliente
 
 from .forms import CustomUserCreationForm
@@ -57,18 +57,16 @@ def cancel_reservation(request, reservation_id):
 def login_view(request):
     error_message = None
     if request.method == 'POST':
-        form = AuthenticationForm(request, request.POST)
+        form = EmailAuthenticationForm(request, request.POST)
         if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(username=username, password=password)
+            user = form.get_user()
             if user is not None:
                 login(request, user)
-                return redirect('home')  
+                return redirect('home')
         else:
-            error_message = "Nome de usuário ou senha inválidos."        
+            error_message = "Email ou senha inválidos."
     else:
-        form = AuthenticationForm()
+        form = EmailAuthenticationForm()
     return render(request, 'login.html', {'form': form, 'error': error_message})
 
 def register_view(request):
