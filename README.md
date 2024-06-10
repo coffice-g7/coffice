@@ -197,6 +197,11 @@ Nesta seção, você encontrará os screencasts demonstrando o funcionamento da 
   <a href="" style="text-decoration: none;"> <span>ScreenCast Execução dos testes</span>
   </a>
 </p>
+<p>
+  🎥
+  <a href="" style="text-decoration: none;"> <span>ScreenCast CI/CD</span>
+  </a>
+</p>
 
 
 
