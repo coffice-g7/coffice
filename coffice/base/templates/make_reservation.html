@@ -227,16 +227,29 @@
             {% if cafe %}
             <p>Reservando para: {{ cafe.name }}</p>
             {% endif %}
-            <form method="post">
+            <form method="post" onsubmit="return validateForm()">
                 {% csrf_token %}
                 {{ form.non_field_errors }}
                 {{ form.cafe }}
+
                 <label for="date">Data:</label>
                 <input type="datetime-local" id="date" name="date" required>
+                {% if form.date.errors %}
+                <p class="error">{{ form.date.errors }}</p>
+                {% endif %}
+
                 <label for="num_people">Número de pessoas:</label>
                 <input type="number" id="num_people" name="num_people" placeholder="Número de pessoas" required min="1">
+                {% if form.num_people.errors %}
+                <p class="error">{{ form.num_people.errors }}</p>
+                {% endif %}
+
                 <label for="duration">Duração em minutos:</label>
                 <input type="number" id="duration" name="duration" placeholder="Duração em minutos" required min="0">
+                {% if form.duration.errors %}
+                <p class="error">{{ form.duration.errors }}</p>
+                {% endif %}
+
                 <button type="submit">Reservar</button>
                 <button type="button" onclick="window.history.back();">Voltar</button>
             </form>
@@ -264,6 +277,18 @@ window.onclick = function(event) {
             }
         }
     }
+}
+
+function validateForm() {
+    var dateInput = document.getElementById('date').value;
+    var date = new Date(dateInput);
+    var now = new Date();
+
+    if (date < now) {
+        alert("Essa data já passou.");
+        return false;
+    }
+    return true;
 }
 </script>
 

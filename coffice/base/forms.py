@@ -5,6 +5,7 @@ from .models import Reservation
 from django.contrib.auth import authenticate
 from django.utils import timezone
 from .models import Cliente
+from django.core.exceptions import ValidationError
 
 
 class EmailAuthenticationForm(forms.Form):
@@ -38,6 +39,12 @@ class ReservationForm(forms.ModelForm):
             'num_people': forms.NumberInput(attrs={'min': 1}),
             'duration': forms.NumberInput(attrs={'min': 0}),
         }
+
+def clean_date(self):
+        date = self.cleaned_data['date']
+        if date < timezone.now():
+            raise ValidationError("Essa data já passou.")
+        return date
         
 class CustomUserCreationForm(UserCreationForm):
     username = forms.CharField(max_length=30, required=True, label="Nome de usuário")

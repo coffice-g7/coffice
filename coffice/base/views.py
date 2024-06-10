@@ -32,27 +32,36 @@ def make_reservation(request, cnpj):
             reservation = form.save(commit=False)
             reservation.user = request.user
             reservation.save()
+            messages.success(request, 'Reserva realizada com sucesso!')
             return redirect('myprofile')
+        else:
+            for error in form.non_field_errors():
+                messages.error(request, error)
     else:
         form = ReservationForm(initial={'cafe': cafe})
     return render(request, 'make_reservation.html', {'form': form, 'cafe': cafe})
 
 @login_required
 def reservation_list(request):
-    reservations = Reservation.objects.filter(user=request.user)
     current_datetime = timezone.now()
-    for res in reservations:
-        if res.date < current_datetime:
-            res.delete()
+    # Filtrar e deletar reservas antigas
+    Reservation.objects.filter(user=request.user, date__lt=current_datetime).delete()
+    # Obter todas as reservas atualizadas
+    reservations = Reservation.objects.filter(user=request.user)
     return render(request, 'reservation_list.html', {'reservations': reservations})
 
 @login_required
 def cancel_reservation(request, reservation_id):
-    reservation = Reservation.objects.get(id=reservation_id, user=request.user)
-    if reservation.status == 'P':
-        reservation.status = 'X'
-        reservation.save()
-    return redirect('reservation_list')
+    try:
+        reservation = Reservation.objects.get(id=reservation_id, user=request.user)
+        if reservation.status == 'P':
+            reservation.status = 'X'
+            reservation.save()
+            messages.success(request, 'Reserva cancelada com sucesso.')
+    except Reservation.DoesNotExist:
+        messages.error(request, 'Reserva não encontrada ou já cancelada.')
+    return redirect('myprofile')
+
 
 def login_view(request):
     error_message = None
@@ -169,15 +178,17 @@ def favorited_coffee_shop(request, pk):
 
     return redirect(redirect_to)
 
+@login_required
 def myprofile(request):
     user = request.user
     
     # Busca todas as instâncias de favoritos do usuário
     favorites = Favorite.objects.filter(user=user)
-
+    reservations = Reservation.objects.filter(user=user)
+    
     coffee_shops = []
     
-    # Inicializa o array de coffee shops favoritadas
+    # Inicializa o array de coffee shops favoritos
     for favorite in favorites:
         coffee_shop_obj = favorite.coffee
         coffee_shop_data = {
@@ -202,6 +213,7 @@ def myprofile(request):
     # Monta o contexto da página de perfil
     context = {
         'coffee_shops': coffee_shops,
+        'reservations': reservations,
         'user': user
     }
 

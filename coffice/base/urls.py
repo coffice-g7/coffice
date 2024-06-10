@@ -15,5 +15,4 @@ urlpatterns = [
     path('cancel/<int:reservation_id>/', views.cancel_reservation, name='cancel_reservation'),
     path('myprofile/', views.myprofile, name="myprofile"),
     path('home/', views.home, name="home.html"),
-
 ]
