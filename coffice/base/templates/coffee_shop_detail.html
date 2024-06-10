@@ -8,6 +8,14 @@
     <link rel="stylesheet" type="text/css" href="{% static 'coffee_shop.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'custom_styles.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}" />
+    <style>
+        a.make-reservation {
+            color: #FF4500; 
+        }
+        a.make-reservation:hover {
+            color: #ff9100;
+        }
+    </style>
 </head>
 <body>
   <div class="header">
@@ -44,7 +52,7 @@
             <h2>{{ coffee_shop.street }}, {{ coffee_shop.number }}</h2>
             <p>{{ coffee_shop.description }}</p>
             <p>{{ coffee_shop.id}}</p>
-            <a href="{% url 'make_reservation' coffee_shop.cnpj %}">Fazer Reserva</a>
+            <a class="make-reservation" href="{% url 'make_reservation' coffee_shop.cnpj %}">Fazer Reserva</a>
         </div>
         <div class="box">
             <h1>Sala de Reunião</h1>
@@ -82,11 +90,6 @@
                 <img src="https://lh3.googleusercontent.com/d/10UQysCHlbHIkWmY5EVkpIKFYxPaV12tj" width="100" height="50"alt="Imagem 4">
             </div>
         </div>
-        
-
-
-    
-        
     </div>
 </body>
     <script>
@@ -114,8 +117,4 @@
           }
         };
       </script>
-
-    
-
-</body>
 </html>
