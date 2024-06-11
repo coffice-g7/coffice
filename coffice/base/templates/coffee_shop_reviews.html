@@ -1,8 +1,18 @@
-<h1>Avaliações para {{ coffee_shop.name }}</h1>
-{% for review in reviews %}
-    <div>
-        <h2>{{ review.user.username }}</h2>
-        <p>Pontuação: {{ review.score }}</p>
-        <p>Comentário: {{ review.comment }}</p>
-    </div>
-{% endfor %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'review.css' %}">
+
+
+<h1 class="coffee-shop-name">{{ coffee_shop.name }}</h1>
+<div class="container">
+    {% for review in reviews %}
+        <div class="review">
+            <h2 class="review h2">{{ review.user.username }}</h2>
+            <p class="review">Pontuação: {{ review.score }}</p>
+            <p class="review">Comentário: {{ review.comment }}</p>
+        </div>
+    {% endfor %}
+    <form action="{% url 'new_review' coffee_shop.cnpj %}" method="get" class="reservation form">
+        <button type="submit" class="reservation form button">Avaliar Cafeteria</button>
+    </form>
+</div>

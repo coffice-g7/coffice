@@ -101,6 +101,14 @@
             </div>
         </div>
         <a href="{% url 'coffee_shop_reviews' coffee_shop.cnpj %}">Ver avaliações</a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'new_review' coffee_shop.cnpj %}">Adicionar avaliação</a>
+        {% endif %}
+        
+
+
+    
+        
     </div>
 </body>
 
