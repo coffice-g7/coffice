@@ -66,6 +66,8 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+}
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -79,11 +81,12 @@ body {
 }
 
 .dropdown-content a {
-  color: #333;
+  color: #DC5F4A;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
   font-family: 'Lexend', sans-serif;
+  font-size: 20px;
   transition: background-color 0.3s ease;
 }
 
@@ -382,7 +385,6 @@ label:hover, label.active {
 .filter-checkbox:checked + label {
   background-color: #4B3621;
 }
-}
 
 /* BOTÃO DE VER AVALIAÇÕES */
 
@@ -507,4 +509,34 @@ label:hover, label.active {
   background-size: cover;
   background-position: center;
   border-radius: 40px;
+}
+
+.avaliacoes-button-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #DC5F4A;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 100%;
+  height: 53px;
+  text-decoration: none;
+  color: white;
+  font-size: 19.7px;
+  font-weight: 400;
+}
+
+.avaliacoes-button-2-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #DC5F4A;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 100%;
+  height: 53px;
+  text-decoration: none;
+  color: white;
+  font-size: 19.7px;
+  font-weight: 400;
 }

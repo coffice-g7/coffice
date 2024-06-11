@@ -6,74 +6,6 @@
     <title>{{ coffee_shop.name }}</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'coffee_shop.css' %}" />
-    <style>
-        .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #fff;
-    width: 100%;
-    box-sizing: border-box;
-    border: none;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
-  }
-  
-  .header-logo {
-    margin-left: 20px;
-  }
-  
-  .header h1 {
-    margin: 0;
-  }
-  
-  .no-style-button {
-    border: none;
-    background: none;
-    padding: 0;
-    cursor: pointer;
-  }
-  
-  .no-style-button img {
-    width: 30px;
-    height: 30px;
-  }
-  
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-content {
-  display: none;
-  position: absolute;
-  right: 0;
-  background-color: #fff; /* Fundo branco para combinar com o resto do design */
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
-  z-index: 1;
-  border-radius: 8px; /* Bordas arredondadas para um visual mais suave */
-  overflow: hidden; /* Para manter as bordas arredondadas */
-}
-  
-.dropdown-content a {
-  color: #333; /* Cor do texto */
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  font-family: 'Lexend', sans-serif; /* Fonte consistente */
-  transition: background-color 0.3s ease; /* Transição suave para o efeito hover */
-}
-  
-.dropdown-content a:hover {
-  background-color: #f1f1f1; /* Cor de fundo ao passar o mouse */
-}
-  
-  .show {
-    display: block;
-  }
-  
-    </style>
 </head>
 <body>
     <div class="header">
@@ -100,7 +32,7 @@
                 <a href="/logout/">Logout</a>
                 {% else %}
                 <a href="/login/">Login</a>
-                <a href="/register/">Register</a>
+                <a href="/register/">Cadastrar</a>
                 {% endif %}
             </div>
             <img onclick="myFunction()" class="dropbtn" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZCyoLhRKN0a0vSgLblevrTdpS6CVmV6iB_5-FuuNQhB6qUKTzNUevbfRkbojipz1TtPWJuANlPUFYyDg4-5Y4SsL1SJKOwAVM=w950-h959" alt="setadropdown" style="margin-bottom: 5px;">
@@ -212,7 +144,7 @@
         <div class="container-btn-1">
 
             <div class="avaliacoes-button">
-                <a href="{% url 'coffee_shop_reviews' coffee_shop.cnpj %}">Ver mais avaliações</a>
+                <a class="avaliacoes-button-link" href="{% url 'coffee_shop_reviews' coffee_shop.cnpj %}">Ver mais avaliações</a>
             </div>
         
         </div>
@@ -239,11 +171,18 @@
             </div>
             <div class="buttons-aux">
                 <div class="avaliacoes-button-2">
-                    <a href="{% url 'make_reservation' coffee_shop.cnpj %}">Solicitar reserva</a>
+                    <a class="avaliacoes-button-2-link" href="{% url 'make_reservation' coffee_shop.cnpj %}">Solicitar reserva</a>
                 </div>
+                {% if user.is_authenticated %}
                 <div class="avaliacoes-button-2">
-                    <a href="{% url 'new_review' coffee_shop.cnpj %}">Avaliar cafeteria</a>
+                    <a class="avaliacoes-button-2-link" href="{% url 'new_review' coffee_shop.cnpj %}">Avaliar cafeteria</a>
                 </div>
+                {% else %}
+                <div class="avaliacoes-button-2">
+                    <a class="avaliacoes-button-2-link" href="{% url 'login' %}">Avaliar cafeteria</a>
+                </div>
+                {% endif %}
+                
             </div>
         </div>
         <div class="box-info-3">
