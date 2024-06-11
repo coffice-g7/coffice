@@ -9,7 +9,7 @@ class coffee_shop(models.Model):
     email = models.EmailField(max_length=100)
     description = models.TextField()
     rating = models.DecimalField(max_digits=10, decimal_places=2, default=3.0)
-
+    has_silent_environment = models.BooleanField(default=False)
     cnpj = models.CharField(max_length=100, primary_key=True)
     allow_reservation = models.BooleanField(default=False)
     reservation_cost = models.DecimalField(max_digits=10, decimal_places=2)
@@ -20,10 +20,14 @@ class coffee_shop(models.Model):
     gluten_free_options = models.BooleanField(default=False)
     accessibility  = models.BooleanField(default=False)
     has_parking = models.BooleanField(default=False)
-
+    has_meeting_room = models.BooleanField(default=False)
     street = models.CharField(max_length=100)
     number = models.CharField(max_length=100)
     neighborhood = models.CharField(max_length=100)
+    zip_code = models.CharField(max_length=15, default='00000-000')
+    phone = models.CharField(max_length=20, default='(00) 0000-0000')
+    instagram = models.CharField(max_length=100, default='@coffice')
+    site_url = models.URLField(max_length=100, default='https://coffice.com.br')
     
     def __str__(self):
         return self.cnpj

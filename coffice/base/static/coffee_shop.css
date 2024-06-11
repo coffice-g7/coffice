@@ -70,25 +70,25 @@ body {
   display: none;
   position: absolute;
   right: 0;
-  background-color: #fff; /* Fundo branco para combinar com o resto do design */
+  background-color: #fff;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  border-radius: 8px; /* Bordas arredondadas para um visual mais suave */
-  overflow: hidden; /* Para manter as bordas arredondadas */
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .dropdown-content a {
-  color: #333; /* Cor do texto */
+  color: #333;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  font-family: 'Lexend', sans-serif; /* Fonte consistente */
-  transition: background-color 0.3s ease; /* Transição suave para o efeito hover */
+  font-family: 'Lexend', sans-serif;
+  transition: background-color 0.3s ease;
 }
 
 .dropdown-content a:hover {
-  background-color: #f1f1f1; /* Cor de fundo ao passar o mouse */
+  background-color: #f1f1f1;
 }
 
 .show {
@@ -103,7 +103,7 @@ body {
 
 .main-picture {
   width: 77%;
-  height: 400px; /* Adjust as needed */
+  height: 400px;
   background-size: cover;
   background-position: center;
   border-radius: 20px;
@@ -133,14 +133,16 @@ body {
 .box-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; /* Para alinhar itens verticalmente ao topo */
-  height: auto; /* Alterado para 'auto' para que a altura seja determinada pelo conteúdo */
+  align-items: flex-start;
+  height: auto;
+  margin-top: 30px;
 }
 
 .box-body {
     display: flex;
     justify-content: space-between; 
     flex-direction: row;
+    margin-top: 40px;
 }
 
 .box-name {
@@ -150,11 +152,16 @@ body {
 
 .box-name h1 {
   font-size: 55px;
+  font-weight: 500;
   margin: 0;
-}
-
-.box-name h2 {
+  color: #2A4B48;
+;
+  }
+  
+  .box-name h2 {
+  color: #8a8a8a;
   font-size: 20px;
+  font-weight: 200;
   margin: 0;
 }
 
@@ -169,23 +176,26 @@ body {
 .box-ratings div {
   display: flex;
   align-items: center;
-  margin-right: 5px; /* Adicionando margem entre as estrelas e o número */
+  margin-right: 5px;
 }
 
 .box-ratings img {
-  width: 20px;
-  height: 20px;
-  margin-right: 5px; /* Adicionando margem entre as estrelas */
+  width: auto;
+  height: 37px;
+  margin-right: 5px;
 }
 
 .box-ratings span {
     text-align: right;
     margin-right: 10px;
+    font-size: 30px;
+    font-weight: 300;
+    color: #726E6E;
 }
 
 .box-description {
     width: 48%;
-    max-height: 300px; /* Defina a altura máxima */
+    max-height: 300px;
     overflow: hidden;
     text-align: justify;
 }
@@ -196,7 +206,7 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 14; /* Defina o número de linhas que deseja exibir antes de truncar */
+    -webkit-line-clamp: 14;
     -webkit-box-orient: vertical;
 }
 
@@ -211,7 +221,7 @@ body {
     position: relative;
     display: flex;
     margin-bottom: 20px;
-    align-items: center; /* Centralizar verticalmente */
+    align-items: center;
 }
 
 .profile-picture {
@@ -236,7 +246,7 @@ body {
 .review-info {
     overflow: hidden;
     width: 97%;
-    flex-grow: 1; /* Ocupar todo o espaço disponível */
+    flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -247,7 +257,7 @@ body {
     width: auto;
     height: 9px;
     display: inline-block;
-    margin-right: 2px; /* Ajuste o espaço entre as estrelas conforme necessário */
+    margin-right: 2px;
 }
 
 .star-rating {
@@ -259,10 +269,9 @@ body {
 }
 
 .star-icon {
-    width: 20px; /* Ajuste o tamanho conforme necessário */
-    height: auto; /* Manter a proporção */
-    margin-right: 2px;
-    /* display: inline; */
+  width: 20px;
+  height: auto;
+  margin-right: 2px;
   text-align: right;
 }
 
@@ -373,4 +382,129 @@ label:hover, label.active {
 .filter-checkbox:checked + label {
   background-color: #4B3621;
 }
+}
+
+/* BOTÃO DE VER AVALIAÇÕES */
+
+.container-btn-1 {
+  display: flex;
+  justify-content:flex-end;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.avaliacoes-button {
+  background-color: #DC5F4A;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 48%;
+  height: 53px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.avaliacoes-button a {
+  text-decoration: none;
+  color: white;
+  font-size: 19.7;
+  font-weight: 400;
+}
+
+/* CARACTERÍSTICAS */
+
+.box-info-2 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.caracteristicas {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 48%;
+  margin: 20px 0;
+}
+
+.caracteristicas h2 {
+  margin: 20px 0px 0px 0px;
+  font-size: 30px;
+  color: #2a4b48;
+}
+
+.caracteristicas-icons img {
+  width: 30%;
+  height: auto;
+}
+
+.buttons-aux {
+    width: 48%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 45px;
+}
+
+.avaliacoes-button-2 {
+  background-color: #DC5F4A;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 100%;
+  height: 53px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.avaliacoes-button-2 a {
+  text-decoration: none;
+  color: white;
+  font-size: 19.7;
+  font-weight: 400;
+}
+
+.box-info-3 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 478px;
+}
+
+.informacoes {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  width: 29%;
+  margin: 20px 0px 0px 0px;
+  line-height: 1;
+}
+
+.informacoes h1 {
+  margin: 20px 0px 20px 0px;
+  font-size: 55px;
+  font-weight: 600;
+  text-align: justify;
+  color: #2a4b48;
+}
+
+.informacoes h2 {
+  margin: 0px 0px 0px 0px;
+  font-size: 20px;
+  font-weight: 300;
+  text-align: justify;
+  color: #726e6e;
+}
+
+.maps {
+  width: 65%;
+  height: 478px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 40px;
 }
