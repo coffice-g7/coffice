@@ -198,3 +198,12 @@
     }
 
 
+    .coffee-shop-name {
+        align-self: flex-start;
+    }
+
+    .review {
+        border: 1px solid #ddd;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
