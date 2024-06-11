@@ -30,6 +30,9 @@ class EmailAuthenticationForm(forms.Form):
     def get_user(self):
         return self.user_cache
      
+from .models import Review 
+
+
 class ReservationForm(forms.ModelForm):
     class Meta:
         model = Reservation
@@ -47,6 +50,9 @@ def clean_date(self):
             raise ValidationError("Essa data já passou.")
         return date
         
+        
+
+
 class CustomUserCreationForm(UserCreationForm):
     username = forms.CharField(max_length=30, required=True, label="Nome de usuário")
     cpf = forms.CharField(max_length=14, required=True, label="CPF")

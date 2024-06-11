@@ -17,4 +17,6 @@ urlpatterns = [
     path('home/', views.home, name="home.html"),
     path('coffee_shop_reviews/<str:pk>/', views.coffee_shop_reviews, name='coffee_shop_reviews'),
     path('review/new/<str:pk>/', views.new_review, name='new_review'),
+   
+
 ]
