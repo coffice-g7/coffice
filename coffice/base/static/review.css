@@ -161,105 +161,122 @@
     margin-bottom: 0px; /* adiciona um espaço abaixo da imagem */
 }
     
-    .image-container img {
-        height: 400px;
-        width: 600px;
-        border-radius: 40px; /* bordas arredondadas */
+.image-container img {
+    height: 400px;
+    width: 600px;
+    border-radius: 40px; /* bordas arredondadas */
+}
+
+.review-form {
+    display: flex;
+    justify-content: center; /* alinha o botão ao centro */
+    margin-top: 20px; /* adiciona um espaço acima do botão */
+    margin-left: 300px; /* adiciona um espaço à esquerda do botão */
+}
+
+.review-form-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #DC5F4A;
+    color: white;
+    cursor: pointer;
+}
+
+.review-form-button:hover {
+    background-color: #c0392b;
+}
+
+
+.review-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.box-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 1200px;
+    margin: 20px 0;
+}
+
+.esquerda{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 58%;
+    margin: 20px 0;
+}
+.main-picture {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
     }
 
-    .review-form {
-        display: flex;
-        justify-content: center; /* alinha o botão ao centro */
-        margin-top: 20px; /* adiciona um espaço acima do botão */
-        margin-left: 300px; /* adiciona um espaço à esquerda do botão */
-    }
-    
-    .review-form-button {
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        background-color: #DC5F4A;
-        color: white;
-        cursor: pointer;
-    }
-    
-    .review-form-button:hover {
-        background-color: #c0392b;
-    }
-
-
-    .review-container {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-
-    .box-info{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        width: 1200px;
-        margin: 20px 0;
-    }
-
-    .esquerda{
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        width: 58%;
-        margin: 20px 0;
-    }
-    .main-picture {
-        height: 400px;
-        background-size: cover;
-        background-position: center;
-        border-radius: 20px;
-      }
-
-    .direita{
+.direita{
     width: 40%;
-      }
+}
 
-      .avaliacoes-button-2 {
-        background-color: #DC5F4A;
-        border-radius: 20px;
-        cursor: pointer;
-        width: 32%;
-        height: 53px;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-      }
-      
-      .avaliacoes-button-2 a{
-        text-decoration: none;
-        color: white;
-        font-size: 19.7;
-        font-weight: 400;
-      }
-
-      .filtros-botao{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        margin-top: 20px;
-        flex-direction: row;
-        gap: 10px; 
-
-      }
-
-      .ordenar{
-        display: flex;
-        justify-content: flex-start; 
-        align-items: center;
-        width: 100%;
-        margin-top: 20px;
-        flex-direction: row;    
-        gap: 10px; 
-    }
+.avaliacoes-button-2 {
+    background-color: #DC5F4A;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 32%;
+    height: 53px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+}
     
-    
+.avaliacoes-button-2 a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.filtros-botao{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-top: 20px;
+    flex-direction: row;
+    gap: 10px; 
+}
+
+.ordenar{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80%;
+    margin-top: 20px;
+    flex-direction: row;
+    gap: 10px; 
+}
+
+.estrela {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.estrela img {
+    margin-right: 5px;
+}
+
+.estrela h3 {
+    /* fonte lexend mais fina */
+    font-weight: 300;
+    margin-left: 15px;
+    font-size: 20px;
+    color: #8f8f8f;
+}

@@ -232,11 +232,18 @@ def myprofile(request):
 
     return render(request, 'myprofile.html', context)
 
-
 def coffee_shop_reviews(request, pk):
     coffee_shop_obj = get_object_or_404(coffee_shop, pk=pk)
+
     #buscando reviews pelo id da cafeteria
     reviews = Review.objects.filter(coffee_shop_id=pk)
+
+    # contar a quantidade de reviews
+    reviews_count = reviews.count()
+
+    # adicionar a quantidade de reviews ao coffee_shop_obj
+    coffee_shop_obj.count = reviews_count
+
     return render(request, 'coffee_shop_reviews.html', {'coffee_shop': coffee_shop_obj, 'reviews': reviews})
 
 @login_required
