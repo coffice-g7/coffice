@@ -63,13 +63,30 @@
 
         /* Estilo para o campo de comentário */
         .comment-field textarea {
-            width: 500px; /* Defina o tamanho desejado */
-            height: 300px; /* Defina o comprimento desejado */
+            width: 400px; /* Defina o tamanho desejado */
+            height: 200px; /* Defina o comprimento desejado */
             border-radius: 10px; /* Borda arredondada */
             padding: 10px; /* Espaçamento interno */
             border: 1px solid #ccc; /* Borda */
         }
-        
+
+        .rating {
+            display: flex;
+            justify-content: center;
+            gap: 5px; /* Espaçamento entre as estrelas */
+        }
+
+        .rating .star {
+            cursor: pointer;
+            font-size: 2rem;
+            color: #ccc;
+        }
+
+        .rating .star.selected,
+        .rating .star:hover,
+        .rating .star:hover ~ .star {
+            color: gold;
+        }
     </style>
 </head>
 <body>
@@ -104,12 +121,9 @@
         </div>
     </div>
 
-   
     <h1>Avalie {{ coffee_shop.name }}</h1>
     <p>Compartilhe conosco sua opinião</p>
     
-    
-
     <form method="post">
         {% csrf_token %}
         <div class="field fields-container">
@@ -153,41 +167,41 @@
         document.addEventListener('DOMContentLoaded', function () {
             var commentInput = document.querySelector('.comment-field textarea');
             var commentPlaceholder = document.querySelector('.comment-placeholder');
-    
+
             // Esconder a mensagem quando o campo tem foco
             commentInput.addEventListener('focus', function () {
                 commentPlaceholder.style.display = 'none';
             });
-    
+
             // Mostrar a mensagem se o campo estiver vazio
             commentInput.addEventListener('blur', function () {
                 if (commentInput.value === '') {
                     commentPlaceholder.style.display = 'inline';
                 }
             });
-    
+
             // Verificar se o campo já está preenchido ao carregar a página
             if (commentInput.value !== '') {
                 commentPlaceholder.style.display = 'none';
             }
 
-            document.addEventListener('DOMContentLoaded', function () {
-                const stars = document.querySelectorAll('.star');
-                const scoreInput = document.querySelector('input[name="score"]');
-                const scoreError = document.querySelector('.score-error');
-                
-                stars.forEach(star => {
-                    star.addEventListener('click', () => {
-                        const value = parseInt(star.getAttribute('data-value'));
-                        scoreInput.value = value;
-                        // Adicione a classe 'selected' para as estrelas selecionadas
-                        stars.forEach(s => {
-                            s.classList.remove('selected');
-                        });
-                        star.classList.add('selected');
-                        // Limpe qualquer mensagem de erro
-                        scoreError.textContent = '';
+            const stars = document.querySelectorAll('.star');
+            const scoreInput = document.querySelector('input[name="score"]');
+            const scoreError = document.querySelector('.score-error');
+
+            stars.forEach(star => {
+                star.addEventListener('click', () => {
+                    const value = parseInt(star.getAttribute('data-value'));
+                    scoreInput.value = value;
+                    // Adicione a classe 'selected' para as estrelas selecionadas e anteriores
+                    stars.forEach(s => {
+                        s.classList.remove('selected');
                     });
+                    for (let i = 0; i < value; i++) {
+                        stars[i].classList.add('selected');
+                    }
+                    // Limpe qualquer mensagem de erro
+                    scoreError.textContent = '';
                 });
             });
         });
