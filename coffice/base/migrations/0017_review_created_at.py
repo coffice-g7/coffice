@@ -7,7 +7,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('base', '0014_coffee_shop_instagram_coffee_shop_phone_and_more'),
+        ('base', '0016_remove_coffee_shop_group'),
     ]
 
     operations = [
