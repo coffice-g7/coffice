@@ -11,6 +11,14 @@ body {
   overflow-x: hidden;
 }
 
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    flex: 1;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -20,6 +28,7 @@ body {
   width: 100%;
   box-sizing: border-box;
   border: none;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
 }
 
 .header-logo {
@@ -30,27 +39,50 @@ body {
   margin: 0;
 }
 
-.header button {
+.no-style-button {
   border: none;
-  border-radius: 5px;
-  color: #fff;
+  background: none;
+  padding: 0;
   cursor: pointer;
 }
 
-.header button:hover {
-  background-color: #4b3621;
+.no-style-button img {
+  width: 30px;
+  height: 30px;
 }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #fff; /* Fundo branco para combinar com o resto do design */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+  z-index: 1;
+  border-radius: 8px; /* Bordas arredondadas para um visual mais suave */
+  overflow: hidden; /* Para manter as bordas arredondadas */
+}
+
+.dropdown-content a {
+  color: #333; /* Cor do texto */
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: 'Lexend', sans-serif; /* Fonte consistente */
+  transition: background-color 0.3s ease; /* Transição suave para o efeito hover */
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1; /* Cor de fundo ao passar o mouse */
+}
+
+.show {
+  display: block;
 }
 
 .pictures {
@@ -83,60 +115,60 @@ body {
 }
 
 .box-info {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .box-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start; /* Para alinhar itens verticalmente ao topo */
-    height: auto; /* Alterado para 'auto' para que a altura seja determinada pelo conteúdo */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Para alinhar itens verticalmente ao topo */
+  height: auto; /* Alterado para 'auto' para que a altura seja determinada pelo conteúdo */
 }
 
 .box-body {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .box-name {
-    width: 49%;
-    height: 100px;
+  width: 49%;
+  height: 100px;
 }
 
 .box-name h1 {
-    font-size: 55px;
-    margin: 0;
+  font-size: 55px;
+  margin: 0;
 }
 
 .box-name h2 {
-    font-size: 20px;
-    margin: 0;
+  font-size: 20px;
+  margin: 0;
 }
 
 .box-ratings {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  flex-direction: column;
 }
 
 .box-ratings div {
-    display: flex;
-    align-items: center;
-    margin-right: 5px; /* Adicionando margem entre as estrelas e o número */
+  display: flex;
+  align-items: center;
+  margin-right: 5px; /* Adicionando margem entre as estrelas e o número */
 }
 
 .box-ratings img {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px; /* Adicionando margem entre as estrelas */
+  width: 20px;
+  height: 20px;
+  margin-right: 5px; /* Adicionando margem entre as estrelas */
 }
 
 .box-ratings span {
-    text-align: right;
+  text-align: right;
 }
 
 p {
@@ -171,11 +203,6 @@ strong {
 
 .details-item .no {
   color: red;
-}
-
-.header {
-  text-align: center;
-  margin-bottom: 20px;
 }
 
 .box {
@@ -233,31 +260,6 @@ strong {
   display: inline-block;
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  right: 0;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-.show {
-  display: block;
-}
-
 label {
   background-color: #4B3621;
   color: white;
@@ -272,35 +274,4 @@ label:hover, label.active {
 
 .filter-checkbox:checked + label {
   background-color: #4B3621;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
-}
-
-.header h1 {
-  margin: 0;
-}
-
-.header button {
-  margin-left: 10px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background-color: #6B8E23;
-  color: #fff;
-  cursor: pointer;
-}
-
-.header button:hover {
-  background-color: #4B3621;
-}
-
-.content {
-  padding: 20px;
 }
