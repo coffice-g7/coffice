@@ -7,6 +7,7 @@
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'make_reservation.css' %}" />
     <link rel="icon" href="https://pbs.twimg.com/media/GPbxz5CbkAAYo_b?format=png&name=900x900" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600&family=Lexend+Deca:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="header">
@@ -26,14 +27,13 @@
                 {% endif %}
             </div>
             <img onclick="myFunction()" class="dropbtn" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZCyoLhRKN0a0vSgLblevrTdpS6CVmV6iB_5-FuuNQhB6qUKTzNUevbfRkbojipz1TtPWJuANlPUFYyDg4-5Y4SsL1SJKOwAVM=w950-h959" alt="setadropdown" style="margin-bottom: 5px;">
-            
         </div>
     </div>
     
     <main class="reservation">
         <div class="background">
             <div class="container">
-                <h2>Realizar reserva</h2>
+                <h2>Solicitar reserva</h2>
                 {% if cafe %}
                 <p>Reservando para: {{ cafe.name }}</p>
                 {% endif %}
@@ -41,41 +41,54 @@
                     {% csrf_token %}
                     {{ form.non_field_errors }}
                     {{ form.cafe }}
-                    <label for="name">Nome:</label>
-                    <input type="text" id="name" name="name" placeholder="Nome" required>
-                    {%if form.name.errors%}
-                    <p class="error">{{form.name.errors}}</p>
-                    {% endif %}
-
-                    <label for="date">Data:</label>
-                    <input type="datetime-local" id="date" name="date" required>
-                    {% if form.date.errors %}
-                    <p class="error">{{ form.date.errors }}</p>
-                    {% endif %}
+                    <div class="form-group">
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" name="name" placeholder="Nome" required>
+                        {% if form.name.errors %}
+                        <p class="error">{{ form.name.errors }}</p>
+                        {% endif %}
+                    </div>
     
-                    <label for="num_people">Número de pessoas:</label>
-                    <input type="number" id="num_people" name="num_people" placeholder="Número de pessoas" required min="1">
-                    {% if form.num_people.errors %}
-                    <p class="error">{{ form.num_people.errors }}</p>
-                    {% endif %}
+                    <div class="form-group">
+                        <label for="num_people">Número de pessoas:</label>
+                        <input type="number" id="num_people" name="num_people" placeholder="Número de pessoas" required min="1">
+                        {% if form.num_people.errors %}
+                        <p class="error">{{ form.num_people.errors }}</p>
+                        {% endif %}
+                    </div>
     
-                    <label for="duration">Duração em minutos:</label>
-                    <input type="number" id="duration" name="duration" placeholder="Duração em minutos" required min="0">
-                    {% if form.duration.errors %}
-                    <p class="error">{{ form.duration.errors }}</p>
-                    {% endif %}
+                    <div class="date-duration-container">
+                        <div class="form-group">
+                            <label for="date">Data:</label>
+                            <input type="datetime-local" id="date" name="date" required>
+                            {% if form.date.errors %}
+                            <p class="error">{{ form.date.errors }}</p>
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            <label for="duration">Duração em minutos:</label>
+                            <input type="number" id="duration" name="duration" placeholder="Duração em minutos" required min="0">
+                            {% if form.duration.errors %}
+                            <p class="error">{{ form.duration.errors }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
     
-                    <button type="submit">Reservar</button>
-                    <button type="button" onclick="window.history.back();">Voltar</button>
+                    <div class="button-container">
+                        <button type="button" onclick="window.history.back();">Voltar</button>
+                        <button type="submit">Reservar</button>
+                    </div>
                 </form>
             </div>
         </div>
     </main>
     
     <footer class="footer">
-        <p>© 2024 Coffice</p>
-        <a href="#">Política de privacidade</a>
-        <a href="#">Termos e condições</a>
+        <div class="footer-content">
+            <p>© 2024 Coffice</p>
+            <span>Política de privacidade</span>
+            <span>Termos e condições</span>
+        </div>
     </footer>
     
     <script>
@@ -108,5 +121,3 @@
     </script>
 </body>
 </html>
-
-
