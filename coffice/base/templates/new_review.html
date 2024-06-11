@@ -1,6 +1,191 @@
-<h1>Adicionar avaliação para {{ coffee_shop.name }}</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Adicionar avaliação</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ coffee_shop.name }}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}" />
+    <style>
+        .campo {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .campo label {
+            flex-basis: 45%; /* Largura do label */
+            text-align: right; /* Alinhamento do label */
+            margin-right: 10px; /* Espaçamento entre o label e o input */
+        }
+        .campo input[type="text"],
+        .campo textarea {
+            flex-basis: 50%; /* Largura do input */
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center; /* Centraliza o conteúdo do formulário */
+        }
+    
+        /* Estilo para os campos */
+        .field {
+            margin-bottom: 20px;
+        }
+    
+        button[type="submit"] {
+            background-color: #dc5f4a; 
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            align-items: center; /* Centraliza os campos */
+        }
+    
+        button[type="submit"]:hover {
+            background-color: #dc5f4a; 
+        }
+        
+        .fields-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .left-align {
+            text-align: left;
+            margin-left: 20px;
+        }
+
+        .score-field {
+            margin-right: 200px; /* Aumenta a separação entre os boxes */
+        }
+
+        /* Estilo para o campo de comentário */
+        .comment-field textarea {
+            width: 500px; /* Defina o tamanho desejado */
+            height: 300px; /* Defina o comprimento desejado */
+            border-radius: 10px; /* Borda arredondada */
+            padding: 10px; /* Espaçamento interno */
+            border: 1px solid #ccc; /* Borda */
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="{% url 'home' %}">
+            <img class="header-logo" src="https://pbs.twimg.com/media/GPWhLuzbIAAcsfx?format=png&name=small" height="40"/>
+        </a>
+        <div class="dropdown">
+            <img
+                onclick="myFunction()"
+                class="dropbtn"
+                src="https://cdn-icons-png.freepik.com/512/64/64572.png"
+                height="40"
+            />
+            <div id="myDropdown" class="dropdown-content">
+                {% if user.is_authenticated %}
+                <a href="/myprofile/">Meu Perfil</a>
+                <a href="/logout/">Logout</a>
+                {% else %}
+                <a href="/login/">Login</a>
+                <a href="/register/">Register</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+   
+    <h1>Avalie {{ coffee_shop.name }}</h1>
+    <p>Compartilhe conosco sua opinião</p>
+    
+    
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="field fields-container">
+            <div class="score-field">
+                <div class="rating">
+                    <input type="hidden" name="score" value="0">
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                </div>
+                <span class="score-error">{{ form.score.errors }}</span>
+            </div>
+            <div class="comment-field">
+                <span class="comment-placeholder">Escreva aqui sua avaliação...</span>
+                {{ form.comment }}
+                {{ form.comment.errors }}
+            </div>
+        </div>
+        <button type="submit">Adicionar avaliação</button>
+    </form>
+
+    <script>
+        document.querySelector(".dropdown").addEventListener("mouseover", function () {
+            document.getElementById("myDropdown").classList.add("show");
+        });
+
+        document.querySelector(".dropdown").addEventListener("mouseout", function () {
+            document.getElementById("myDropdown").classList.remove("show");
+        });
+
+        window.onclick = function (event) {
+            if (!event.target.matches(".dropbtn")) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains("show")) {
+                        openDropdown.classList.remove("show");
+                    }
+                }
+            }
+        };
+        document.addEventListener('DOMContentLoaded', function () {
+            var commentInput = document.querySelector('.comment-field textarea');
+            var commentPlaceholder = document.querySelector('.comment-placeholder');
+    
+            // Esconder a mensagem quando o campo tem foco
+            commentInput.addEventListener('focus', function () {
+                commentPlaceholder.style.display = 'none';
+            });
+    
+            // Mostrar a mensagem se o campo estiver vazio
+            commentInput.addEventListener('blur', function () {
+                if (commentInput.value === '') {
+                    commentPlaceholder.style.display = 'inline';
+                }
+            });
+    
+            // Verificar se o campo já está preenchido ao carregar a página
+            if (commentInput.value !== '') {
+                commentPlaceholder.style.display = 'none';
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                const stars = document.querySelectorAll('.star');
+                const scoreInput = document.querySelector('input[name="score"]');
+                const scoreError = document.querySelector('.score-error');
+                
+                stars.forEach(star => {
+                    star.addEventListener('click', () => {
+                        const value = parseInt(star.getAttribute('data-value'));
+                        scoreInput.value = value;
+                        // Adicione a classe 'selected' para as estrelas selecionadas
+                        stars.forEach(s => {
+                            s.classList.remove('selected');
+                        });
+                        star.classList.add('selected');
+                        // Limpe qualquer mensagem de erro
+                        scoreError.textContent = '';
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
