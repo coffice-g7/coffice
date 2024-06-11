@@ -51,11 +51,11 @@
         <div class="box-info">
             <div class="box-header">
                 <div class="box-name">
-                    <h1>{{ coffee_shop.name }}</h1>
+                    <h1 id="NomeCafeteria">{{ coffee_shop.name }}</h1>
                     <h2>{{ coffee_shop.street }}, {{ coffee_shop.number }} - Recife, PE</h2>
                 </div>
                 <div class="box-ratings">
-                    <div>
+                    <div id="CaixaNotas">
                         {% if coffee_shop.rating >= 1 and coffee_shop.rating < 2.0 %}
                         <!-- RENDERIZA UMA ESTRELA -->
                         <img class="star-icon" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZ-hnnZOZxvOnRRUThOJACLioRnbouJ9iBb635GpoTIO5ON0nITrSqS1TqHhupsZdBzs5OcDJeTsp2pxK8aohj60hVpL2B5vJI=w1912-h976-rw-v1" alt="Star" width="20" height="20">
@@ -92,7 +92,7 @@
             </div>
             <div class="box-body">
                 <div class="box-description">
-                    <p>{{ coffee_shop.description }}</p>
+                    <p id="DescricaoCafeteria">{{ coffee_shop.description }}</p>
                 </div>
                 <div class="box-reviews">
                     <!-- AQUI VÃO 3 REVIEWS NO MÁXIMO -->
@@ -151,7 +151,7 @@
         <div class="box-info-2">
             <div class="caracteristicas">
                 <h2>Características da cafeteria:</h2>
-                <div class="caracteristicas-icons">
+                <div class="caracteristicas-icons" id="CaracteristicasCafeteria">
                     {% if coffee_shop.vegan_options %}
                     <img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihYnze7K4EswMBTS8C4PlK2gVfWb-DKfZlZVDEcdDCy1Bt1fyn6DwephTQFKyzRac-bHDpogPkZM3VoS11g4rj5041hKLwpIkXo=w1012-h976-rw-v1">
                     {% endif %}

@@ -1,9 +1,5 @@
-//Cenário: Remover da Lista uma Cafeteria Favoritada com sucesso
-//Dado que tenho um perfil de usuário registrado no site
-//E tenha uma cafeteria favoritada
-//Quando eu acessar a minha lista de favoritos
-//E remover da minha lista de favoritos
-//Então essa cafeteria deve não estar mais presente na lista
+
+// Funcionalidade: Visualizar Lista de Cafeterias Favoritas
 
 // Cenário 1: Visualizar Lista de Cafeterias Favoritas com sucesso
 
