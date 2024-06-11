@@ -166,14 +166,14 @@ A aplicação da programação em par foi fundamental para o sucesso do projeto.
 
 | Número | Descrição |
 |--------|-----------|
-| 1. | **Posso filtrar cafeterias** <br> Como usuário cliente, posso filtrar a lista de sugestões de cafeterias na plataforma Coffice, por critérios como "estou sozinho" ou "estou em grupo" para encontrar o local ideal para mim. |
-| 2. | **Posso favoritar cafeterias** <br> Como usuário cliente, posso favoritar minhas cafeterias favoritas na plataforma Coffice, para que eu possa visualizá-las facilmente. |
-| 3. | **Posso ver minha lista de favoritos** <br> Como usuário cliente, posso acessar uma lista com as cafeterias que favoritei na plataforma Coffice, para que eu possa encontrá-las facilmente. |
-| 4. | **Posso solicitar reserva em uma cafeteria** <br> Como usuário cliente, posso solicitar uma reserva em uma cafeteria específica através da plataforma Coffice, para garantir um lugar para trabalhar ou encontrar amigos. |
-| 5. | **Posso ver minhas solicitações de reserva** <br> Como usuário cliente, posso visualizar minhas solicitações de reserva em cafeterias através da plataforma Coffice, para acompanhar o status. |
-| 6. | **Posso adicionar uma avaliação em uma cafeteria** <br> Como usuário cliente, posso adicionar uma avaliação para uma cafeteria através da plataforma Coffice, para compartilhar minha experiência com outros usuários. |
-| 7. | **Posso visualizar as avaliações de uma cafeteria** <br> Como usuário cliente, posso visualizar as avaliações de outros usuários para uma cafeteria específica na plataforma Coffice, para tomar uma decisão informada sobre onde ir. |
-| 8. | **Posso visualizar meu histórico de avaliações** <br> Como usuário cliente, posso acessar meu histórico de avaliações de cafeterias na plataforma Coffice, para ver o que escrevi e acompanhar minhas experiências passadas. |
+| 1. | **Posso filtrar cafeterias** <br> Como usuário cliente, posso filtrar a lista de sugestões de cafeterias, por critérios como "estou sozinho" ou "estou em grupo" para encontrar o local ideal para mim. |
+| 2. | **Posso favoritar cafeterias** <br> Como usuário cliente, posso favoritar minhas cafeterias favoritas, para que eu possa visualizá-las facilmente. |
+| 3. | **Posso ver minha lista de favoritos** <br> Como usuário cliente, posso acessar uma lista com as cafeterias que favoritei, para que eu possa encontrá-las facilmente. |
+| 4. | **Posso solicitar reserva em uma cafeteria** <br> Como usuário cliente, posso solicitar uma reserva em uma cafeteria específica, para garantir um lugar para trabalhar ou encontrar amigos. |
+| 5. | **Posso ver minhas solicitações de reserva** <br> Como usuário cliente, posso visualizar minhas solicitações de reserva em cafeterias, para acompanhar o status. |
+| 6. | **Posso adicionar uma avaliação em uma cafeteria** <br> Como usuário cliente, posso adicionar uma avaliação para uma cafeteria, para compartilhar minha experiência com outros usuários. |
+| 7. | **Posso visualizar as avaliações de uma cafeteria** <br> Como usuário cliente, posso visualizar as avaliações de outros usuários para uma cafeteria específica, para tomar uma decisão informada sobre onde ir. |
+| 8. | **Posso visualizar de Resumo de Avaliações de Cafeterias** <br> Como usuário cliente, posso visualizar um resumo das avaliações de uma cafeteria, para conhecer as experiências de outros usuários. |
 
 ## 🔄 Diagrama de Atividades
 
