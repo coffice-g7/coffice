@@ -131,6 +131,14 @@ def home(request):
             'neighborhood': coffee_shop_obj.neighborhood,
             'cnpj': coffee_shop_obj.cnpj,
             'favorited': is_favorited,
+            'alone': coffee_shop_obj.alone,
+            'has_meeting_room': coffee_shop_obj.has_meeting_room,
+            'has_silent_environment': coffee_shop_obj.has_silent_environment,
+            'allow_reservation': coffee_shop_obj.allow_reservation,
+            'zero_lactose_options': coffee_shop_obj.zero_lactose_options,
+            'gluten_free_options': coffee_shop_obj.gluten_free_options,
+            'has_parking': coffee_shop_obj.has_parking,
+            'accessibility': coffee_shop_obj.accessibility,
         }
         
         # Adiciona o coffee shop ao array de coffee shops
@@ -138,6 +146,36 @@ def home(request):
     
     # Ordena as babás pelo atributo favorited
     coffee_shops.sort(key=lambda x: x['favorited'], reverse=True)
+
+    print(coffee_shops)
+    if 'Sozinho' in request.GET:
+        coffee_shops = [x for x in coffee_shops if x['alone']]
+
+    if 'Em grupo' in request.GET:
+        coffee_shops = [x for x in coffee_shops if x['has_meeting_room']]
+
+    if 'Ambiente silencioso' in request.GET:
+        coffee_shops = [x for x in coffee_shops if x['has_silent_environment']]
+
+    if 'Possibilidade de reserva' in request.GET:
+        coffee_shops = [x for x in coffee_shops if x['allow_reservation']]
+
+    if 'veggie' in request.GET:
+        coffee_shops = [x for x in coffee_shops if x['vegan_options']]
+
+    if 'zero-lactose' in request.GET:
+        coffee_shops = [x for x in coffee_shops if x['zero_lactose_options']]
+
+    if 'gluten free' in request.GET:
+        coffee_shops = [x for x in coffee_shops if x['gluten_free_options']]
+
+    if 'estacionamento' in request.GET:
+ 
+        coffee_shops = [x for x in coffee_shops if x['has_parking']]        
+
+    if 'acessibilidade' in request.GET:
+        coffee_shops = [x for x in coffee_shops if x['accessibility']]
+    
 
     # Monta o contexto da home
     context = {
@@ -232,11 +270,18 @@ def myprofile(request):
 
     return render(request, 'myprofile.html', context)
 
-
 def coffee_shop_reviews(request, pk):
     coffee_shop_obj = get_object_or_404(coffee_shop, pk=pk)
+
     #buscando reviews pelo id da cafeteria
     reviews = Review.objects.filter(coffee_shop_id=pk)
+
+    # contar a quantidade de reviews
+    reviews_count = reviews.count()
+
+    # adicionar a quantidade de reviews ao coffee_shop_obj
+    coffee_shop_obj.count = reviews_count
+
     return render(request, 'coffee_shop_reviews.html', {'coffee_shop': coffee_shop_obj, 'reviews': reviews})
 
 @login_required

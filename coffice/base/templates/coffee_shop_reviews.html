@@ -1,18 +1,155 @@
-{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'custom_styles.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'review.css' %}">
+    
 
-<link rel="stylesheet" type="text/css" href="{% static 'review.css' %}">
-
-
-<h1 class="coffee-shop-name">{{ coffee_shop.name }}</h1>
-<div class="container">
-    {% for review in reviews %}
-        <div class="review">
-            <h2 class="review h2">{{ review.user.username }}</h2>
-            <p class="review">Pontuação: {{ review.score }}</p>
-            <p class="review">Comentário: {{ review.comment }}</p>
+</head>
+<body>
+    
+    <div class="header">
+        <div class="logo-home-container" style="display: flex;
+            align-items: center;">
+            <img class="header-logo" src="https://pbs.twimg.com/media/GPWhLuzbIAAcsfx?format=png&name=small" height="41" />
+            <a href="/" class="home-button" style="font-family: 'Lexend', sans-serif;
+            font-size: 20px;
+            color: #333;
+            text-decoration: none;
+            margin-top: 7px;
+            margin-left: 20px;">Home</a>
         </div>
-    {% endfor %}
-    <form action="{% url 'new_review' coffee_shop.cnpj %}" method="get" class="reservation form">
-        <button type="submit" class="reservation form button">Avaliar Cafeteria</button>
-    </form>
-</div>
+        <div class="dropdown">
+            <img
+                onclick="myFunction()"
+                class="dropbtn"
+                src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihb67HQT9jP6_0eVWC2VQJHnm9YY7SXD9rCcqpuE2OmaSjWfNt1a2lUYDzOiX68GdBBP3TuSWbL1Xpih3PDlGjvHM4asQ3xLWQ=w1912-h976-rw-v1"
+                height="40"
+            />
+            <div id="myDropdown" class="dropdown-content">
+                {% if user.is_authenticated %}
+                <a href="/myprofile/">Meu Perfil</a>
+                <a href="/logout/">Logout</a>
+                {% else %}
+                <a href="/login/">Login</a>
+                <a href="/register/">Register</a>
+                {% endif %}
+            </div>
+            <img onclick="myFunction()" class="dropbtn" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZCyoLhRKN0a0vSgLblevrTdpS6CVmV6iB_5-FuuNQhB6qUKTzNUevbfRkbojipz1TtPWJuANlPUFYyDg4-5Y4SsL1SJKOwAVM=w950-h959" alt="setadropdown" style="margin-bottom: 5px;">
+        </div>
+    </div>
+
+    <div class="box-info">
+        <div class="esquerda">
+            <div class="superior">
+                <div class="estrela">
+                    {% if coffee_shop.rating >= 1 and coffee_shop.rating < 2.0 %}
+                    <!-- RENDERIZA UMA ESTRELA -->
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZ-hnnZOZxvOnRRUThOJACLioRnbouJ9iBb635GpoTIO5ON0nITrSqS1TqHhupsZdBzs5OcDJeTsp2pxK8aohj60hVpL2B5vJI=w1912-h976-rw-v1" alt="Star" width="20" height="20">
+                    <h3>1/5 ({{ coffee_shop.count }})</h3>
+                    {% endif%}
+                    {% if coffee_shop.rating >= 2.0 and coffee_shop.rating < 3.0 %}
+                    <!-- RENDERIZA DUAS ESTRELAS -->
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZ-hnnZOZxvOnRRUThOJACLioRnbouJ9iBb635GpoTIO5ON0nITrSqS1TqHhupsZdBzs5OcDJeTsp2pxK8aohj60hVpL2B5vJI=w1912-h976-rw-v1" alt="Star" width="20" height="20">
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZ-hnnZOZxvOnRRUThOJACLioRnbouJ9iBb635GpoTIO5ON0nITrSqS1TqHhupsZdBzs5OcDJeTsp2pxK8aohj60hVpL2B5vJI=w1912-h976-rw-v1" alt="Star" width="20" height="20">
+                    <h3>2/5 ({{ coffee_shop.count }})</h3>
+                    {% endif%}
+                    {% if coffee_shop.rating >= 3.0 and coffee_shop.rating < 4.0 %}
+                    <!-- RENDERIZA TRÊS ESTRELAS -->
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZ-hnnZOZxvOnRRUThOJACLioRnbouJ9iBb635GpoTIO5ON0nITrSqS1TqHhupsZdBzs5OcDJeTsp2pxK8aohj60hVpL2B5vJI=w1912-h976-rw-v1" alt="Star" width="20" height="20">
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZ-hnnZOZxvOnRRUThOJACLioRnbouJ9iBb635GpoTIO5ON0nITrSqS1TqHhupsZdBzs5OcDJeTsp2pxK8aohj60hVpL2B5vJI=w1912-h976-rw-v1" alt="Star" width="20" height="20">
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZ-hnnZOZxvOnRRUThOJACLioRnbouJ9iBb635GpoTIO5ON0nITrSqS1TqHhupsZdBzs5OcDJeTsp2pxK8aohj60hVpL2B5vJI=w1912-h976-rw-v1" alt="Star" width="20" height="20">
+                    <h3>3/5 ({{ coffee_shop.count }})</h3>
+                    {% endif%}
+                    {% if coffee_shop.rating >= 4.0 and coffee_shop.rating < 5.0 %}
+                    <!-- RENDERIZA QUATRO ESTRELAS -->
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZ-hnnZOZxvOnRRUThOJACLioRnbouJ9iBb635GpoTIO5ON0nITrSqS1TqHhupsZdBzs5OcDJeTsp2pxK8aohj60hVpL2B5vJI=w1912-h976-rw-v1" alt="Star" width="20" height="20">
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZ-hnnZOZxvOnRRUThOJACLioRnbouJ9iBb635GpoTIO5ON0nITrSqS1TqHhupsZdBzs5OcDJeTsp2pxK8aohj60hVpL2B5vJI=w1912-h976-rw-v1" alt="Star" width="20" height="20">
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZ-hnnZOZxvOnRRUThOJACLioRnbouJ9iBb635GpoTIO5ON0nITrSqS1TqHhupsZdBzs5OcDJeTsp2pxK8aohj60hVpL2B5vJI=w1912-h976-rw-v1" alt="Star" width="20" height="20">
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZ-hnnZOZxvOnRRUThOJACLioRnbouJ9iBb635GpoTIO5ON0nITrSqS1TqHhupsZdBzs5OcDJeTsp2pxK8aohj60hVpL2B5vJI=w1912-h976-rw-v1" alt="Star" width="20" height="20">
+                    <h3>4/5 ({{ coffee_shop.count }})</h3>
+                    {% endif%}
+                    {% if coffee_shop.rating >= 5.0 %}
+                    <!-- RENDERIZA CINCO ESTRELAS -->
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZ-hnnZOZxvOnRRUThOJACLioRnbouJ9iBb635GpoTIO5ON0nITrSqS1TqHhupsZdBzs5OcDJeTsp2pxK8aohj60hVpL2B5vJI=w1912-h976-rw-v1" alt="Star" width="20" height="20">
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZ-hnnZOZxvOnRRUThOJACLioRnbouJ9iBb635GpoTIO5ON0nITrSqS1TqHhupsZdBzs5OcDJeTsp2pxK8aohj60hVpL2B5vJI=w1912-h976-rw-v1" alt="Star" width="20" height="20">
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZ-hnnZOZxvOnRRUThOJACLioRnbouJ9iBb635GpoTIO5ON0nITrSqS1TqHhupsZdBzs5OcDJeTsp2pxK8aohj60hVpL2B5vJI=w1912-h976-rw-v1" alt="Star" width="20" height="20">
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZ-hnnZOZxvOnRRUThOJACLioRnbouJ9iBb635GpoTIO5ON0nITrSqS1TqHhupsZdBzs5OcDJeTsp2pxK8aohj60hVpL2B5vJI=w1912-h976-rw-v1" alt="Star" width="20" height="20">
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZ-hnnZOZxvOnRRUThOJACLioRnbouJ9iBb635GpoTIO5ON0nITrSqS1TqHhupsZdBzs5OcDJeTsp2pxK8aohj60hVpL2B5vJI=w1912-h976-rw-v1" alt="Star" width="20" height="20">
+                    <h3>5/5 ({{ coffee_shop.count }})</h3>
+                    {% endif%}
+                </div>
+                <h1>{{ coffee_shop.name }}</h1>
+                <h2>{{ coffee_shop.street }}, {{ coffee_shop.number }} - Recife, PE</h2>
+            </div>
+            <div class="inferior">
+                <div class="filtros">
+                    <h2>Filtros</h2>
+                    <div class="filtros-botao">
+                        <div class="avaliacoes-button-2">
+                            <a href="{% url 'make_reservation' coffee_shop.cnpj %}">Todos</a>
+                        </div>
+                        <div class="avaliacoes-button-2">
+                            <a href="{% url 'make_reservation' coffee_shop.cnpj %}">Sala de reunião</a>
+                        </div>
+                        <div class="avaliacoes-button-2">
+                            <a href="{% url 'new_review' coffee_shop.cnpj %}">Comida</a>
+                        </div>
+                    </div>
+                </div>
+                <h2>Ordenar por</h2>
+                <div class="ordenar">
+                    <div class="avaliacoes-button-2">
+                        <a href="{% url 'make_reservation' coffee_shop.cnpj %}">Mais relevante</a>
+                    </div>
+                    <div class="avaliacoes-button-2">
+                        <a href="{% url 'new_review' coffee_shop.cnpj %}">Mais recentes</a>
+                    </div>
+                </div>
+            </div>
+       </div>
+
+       <div class="direita">
+        <div class="main-picture" style="background-image: url('https://sebraemg.com.br/wp-content/uploads/2018/10/terceira-onda-1-980x588.jpg')"></div>
+        <div class="avaliacoes-button-2">
+            <a class="avaliacoes-button-2-link" href="{% url 'new_review' coffee_shop.cnpj %}">Avaliar</a>
+       </div>
+        </div>
+    </div>
+
+    <div class="container review-container">
+        {% for review in reviews %}
+            <div class="review">
+                <h2 class="review_1 h2">{{ review.user.username }}</h2>
+                <p class="review_2">Pontuação: {{ review.score }}</p>
+                <p class="review_3">Comentário: {{ review.comment }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+        <script>
+            document.querySelector(".dropdown").addEventListener("mouseover", function () {
+                document.getElementById("myDropdown").classList.add("show");
+            });
+
+            document.querySelector(".dropdown").addEventListener("mouseout", function () {
+                document.getElementById("myDropdown").classList.remove("show");
+            });
+
+            window.onclick = function (event) {
+                if (!event.target.matches(".dropbtn")) {
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    for (var i = 0; i < dropdowns.length; i++) {
+                        var openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains("show")) {
+                            openDropdown.classList.remove("show");
+                        }
+                    }
+                }
+            };
+        </script>
+</body>
+</html>

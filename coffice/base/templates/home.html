@@ -175,20 +175,31 @@
     </div>
 
     <script>
-    function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
-    window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            for (var i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                }
-            }
-        }
-    }
+      document.querySelectorAll('.div-filter-option, .div-filter-option-2, .div-filter-option-3').forEach(function(button) {
+        button.addEventListener('click', function() {
+          this.classList.toggle('active');
+        });
+      });
+
+      document.querySelector(".dropdown").addEventListener("mouseover", function () {
+          document.getElementById("myDropdown").classList.add("show");
+      });
+
+      document.querySelector(".dropdown").addEventListener("mouseout", function () {
+          document.getElementById("myDropdown").classList.remove("show");
+      });
+
+      window.onclick = function (event) {
+          if (!event.target.matches(".dropbtn")) {
+              var dropdowns = document.getElementsByClassName("dropdown-content");
+              for (var i = 0; i < dropdowns.length; i++) {
+                  var openDropdown = dropdowns[i];
+                  if (openDropdown.classList.contains("show")) {
+                      openDropdown.classList.remove("show");
+                  }
+              }
+          }
+      };
 
      function generateOptions() {
       // Inicializa um array para armazenar os valores dos filtros selecionados
@@ -271,5 +282,6 @@
 
       // ...
     </script>
+
   </body>
 </html>
