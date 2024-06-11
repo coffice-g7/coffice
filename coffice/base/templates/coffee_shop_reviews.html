@@ -1,0 +1,8 @@
+<h1>Avaliações para {{ coffee_shop.name }}</h1>
+{% for review in reviews %}
+    <div>
+        <h2>{{ review.user.username }}</h2>
+        <p>Pontuação: {{ review.score }}</p>
+        <p>Comentário: {{ review.comment }}</p>
+    </div>
+{% endfor %}

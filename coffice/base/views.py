@@ -20,7 +20,8 @@ from .forms import ReservationForm
 from .models import Reservation
 from .models import Cliente
 from .models import coffee_shop, Favorite
-
+from .models import Review
+from .forms import ReviewForm
 # Create your views here.
 
 @login_required
@@ -219,3 +220,24 @@ def myprofile(request):
 
     return render(request, 'myprofile.html', context)
 
+
+def coffee_shop_reviews(request, pk):
+    coffee_shop_obj = get_object_or_404(coffee_shop, pk=pk)
+    #buscando reviews pelo id da cafeteria
+    reviews = Review.objects.filter(coffee_shop_id=pk)
+    return render(request, 'coffee_shop_reviews.html', {'coffee_shop': coffee_shop_obj, 'reviews': reviews})
+
+@login_required
+def new_review(request, cnpj):
+    coffee_shop_obj = get_object_or_404(coffee_shop, cnpj=cnpj)
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.user = request.user
+            review.coffee_shop = coffee_shop_obj
+            review.save()
+            return redirect('coffee_shop_reviews', cnpj=coffee_shop_obj.cnpj)
+    else:
+        form = ReviewForm()
+    return render(request, 'new_review.html', {'form': form, 'coffee_shop': coffee_shop_obj})

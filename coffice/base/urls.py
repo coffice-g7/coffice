@@ -15,4 +15,6 @@ urlpatterns = [
     path('cancel/<int:reservation_id>/', views.cancel_reservation, name='cancel_reservation'),
     path('myprofile/', views.myprofile, name="myprofile"),
     path('home/', views.home, name="home.html"),
+    path('coffee_shop_reviews/<str:pk>/', views.coffee_shop_reviews, name='coffee_shop_reviews'),
+    path('review/new/<str:pk>/', views.new_review, name='new_review'),
 ]

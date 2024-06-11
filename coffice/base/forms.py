@@ -6,6 +6,7 @@ from django.contrib.auth import authenticate
 from django.utils import timezone
 from .models import Cliente
 from django.core.exceptions import ValidationError
+from .models import Review 
 
 
 class EmailAuthenticationForm(forms.Form):
@@ -67,3 +68,8 @@ class CustomUserCreationForm(UserCreationForm):
             number = self.cleaned_data["number"]
             Cliente.objects.create(user=user, cpf=cpf, cep=cep, number=number)
         return user
+    
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = ['score', 'comment']
