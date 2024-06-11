@@ -228,16 +228,19 @@ def coffee_shop_reviews(request, pk):
     return render(request, 'coffee_shop_reviews.html', {'coffee_shop': coffee_shop_obj, 'reviews': reviews})
 
 @login_required
-def new_review(request, cnpj):
-    coffee_shop_obj = get_object_or_404(coffee_shop, cnpj=cnpj)
+def new_review(request, pk):
+    coffee_shop_obj = get_object_or_404(coffee_shop, pk=pk)
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
             review = form.save(commit=False)
-            review.user = request.user
-            review.coffee_shop = coffee_shop_obj
-            review.save()
-            return redirect('coffee_shop_reviews', cnpj=coffee_shop_obj.cnpj)
+            if 0 <= review.score <= 5:
+                review.user = request.user
+                review.coffee_shop = coffee_shop_obj
+                review.save()
+                return redirect('coffee_shop_reviews', pk=coffee_shop_obj.pk)
+            else:
+                form.add_error('score', 'A nota deve ser entre 0 e 5.')
     else:
         form = ReviewForm()
     return render(request, 'new_review.html', {'form': form, 'coffee_shop': coffee_shop_obj})
