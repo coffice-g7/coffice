@@ -28,6 +28,8 @@ class coffee_shop(models.Model):
     phone = models.CharField(max_length=20, default='(00) 0000-0000')
     instagram = models.CharField(max_length=100, default='@coffice')
     site_url = models.URLField(max_length=100, default='https://coffice.com.br')
+    alone = models.BooleanField(default=False)
+    
     
     def __str__(self):
         return self.cnpj

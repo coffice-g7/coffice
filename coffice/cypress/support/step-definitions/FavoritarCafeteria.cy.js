@@ -27,7 +27,7 @@ Given('que tenho um perfil de usuário no site', () => {
 
   // Cenário 2: Desfavoritar uma cafeteria com sucesso
 
-Given('que tenho um perfil de usuário registrado no site', () => {
+Given('que tenho um perfil de usuário registrado na plataforma', () => {
     cy.visit('/register');
     cy.cadastrar('testefav2', 'tt2@cesar.school', '92£*B3>N.Ut8', '12345698911', '12345678', '123');
   });
