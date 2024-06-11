@@ -227,3 +227,19 @@ label {
 .content {
     padding: 20px;
 }
+
+
+.review-link {
+    margin-left: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6B8E23;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none; 
+}
+
+.review-link:hover {
+    background-color: #4B3621;
+}
