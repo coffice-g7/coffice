@@ -6,65 +6,75 @@
     <title>{{ coffee_shop.name }}</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'coffee_shop.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'custom_styles.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}" />
-    <style>
-        a.make-reservation {
-            color: #FF4500; 
-        }
-        a.make-reservation:hover {
-            color: #ff9100;
-        }
-    </style>
 </head>
 <body>
-  <div class="header">
-    <img
-        class="header-logo"
-        src="https://pbs.twimg.com/media/GPWhLuzbIAAcsfx?format=png&name=small"
-        height="41"
-    />
-    <div class="dropdown">
+    <div class="header">
         <img
-            onclick="myFunction()"
-            class="dropbtn"
-            src="https://cdn-icons-png.freepik.com/512/64/64572.png"
-            height="40"
+            class="header-logo"
+            src="https://pbs.twimg.com/media/GPWhLuzbIAAcsfx?format=png&name=small"
+            height="41"
         />
-        <div id="myDropdown" class="dropdown-content">
-            {% if user.is_authenticated %}
-            <a href="/myprofile/">Meu Perfil</a>
-            <a href="/logout/">Logout</a>
-            {% else %}
-            <a href="/login/">Login</a>
-            <a href="/register/">Register</a>
-            {% endif %}
+        <div class="dropdown">
+            <img
+                onclick="myFunction()"
+                class="dropbtn"
+                src="https://cdn-icons-png.freepik.com/512/64/64572.png"
+                height="40"
+            />
+            <div id="myDropdown" class="dropdown-content">
+                {% if user.is_authenticated %}
+                <a href="/myprofile/">Meu Perfil</a>
+                <a href="/logout/">Logout</a>
+                {% else %}
+                <a href="/login/">Login</a>
+                <a href="/register/">Register</a>
+                {% endif %}
+            </div>
         </div>
     </div>
-</div>
 
     <div class="container">
-        <div class="header">
-            <img src="https://sebraemg.com.br/wp-content/uploads/2018/10/terceira-onda-1-980x588.jpg" alt="Cafeteria Photo">
+        <div class="pictures">
+            <div class="main-picture" style="background-image: url('https://sebraemg.com.br/wp-content/uploads/2018/10/terceira-onda-1-980x588.jpg')"></div>
+            <div class="secondary-pictures">
+                <div class="secondary-pictures-imgs" style="background-image: url('https://lh3.googleusercontent.com/d/1ue6DjMWb1kJu4V47-MhirY5x_gPdmYi_')"></div>
+                <div class="secondary-pictures-imgs" style="background-image: url('https://lh3.googleusercontent.com/d/1iyrxuYb70pKSuzqxcOtTUeeRNBHh1RhK')"></div>
+                <div class="secondary-pictures-imgs" style="background-image: url('https://lh3.googleusercontent.com/d/10UQysCHlbHIkWmY5EVkpIKFYxPaV12tj')"></div>
+            </div>
         </div>
-        <div class="box">
-            <h1>{{ coffee_shop.name }}</h1>
-            <h2>{{ coffee_shop.street }}, {{ coffee_shop.number }}</h2>
-            <p>{{ coffee_shop.description }}</p>
-            <p>{{ coffee_shop.id}}</p>
-            <a class="make-reservation" href="{% url 'make_reservation' coffee_shop.cnpj %}">Fazer Reserva</a>
+        <div class="box-info">
+            <div class="box-header">
+                <div class="box-name">
+                    <h1>{{ coffee_shop.name }}</h1>
+                    <h2>{{ coffee_shop.street }}, {{ coffee_shop.number }} - Recife, PE</h2>
+                </div>
+                <div class="box-ratings">
+                    <div>
+                        {% for _ in coffee_shop.rating.as_integer_ratio %}
+                            <img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZ-hnnZOZxvOnRRUThOJACLioRnbouJ9iBb635GpoTIO5ON0nITrSqS1TqHhupsZdBzs5OcDJeTsp2pxK8aohj60hVpL2B5vJI=w1912-h976-rw-v1" alt="Star" width="20" height="20">
+                        {% endfor %}
+                    </div>
+                    <span>{{ coffee_shop.rating }}</span>
+                </div>
+            </div>
+            <div class="box-body">
+                <div class="box-description">
+                    <p>{{ coffee_shop.description }}</p>
+                </div>
+                <div class="box-reviews">
+                    <!-- AQUI VÃO 3 REVIEWS NO MÁXIMO -->
+                </div>
+            </div>
         </div>
         <div class="box">
             <h1>Sala de Reunião</h1>
-            <span class="{% if coffee_shop.allow_reservation%}yes{% else %}no{% endif %}">
+            <span class="{% if coffee_shop.allow_reservation %}yes{% else %}no{% endif %}">
                 {% if coffee_shop.allow_reservation %}
                     <h2>Custo da reserva:</h2>
                     <span>1 hora = R$ {{ coffee_shop.reservation_cost }}</span>
                 {% else %}
                 {% endif %}
             </span>
-           
-           
         </div>
         <div class="box-container">
             <div class="box-1">
@@ -91,39 +101,33 @@
             </div>
         </div>
         <a href="{% url 'coffee_shop_reviews' coffee_shop.cnpj %}">Ver avaliações</a>
-        {% if user.is_authenticated %}
-            <a href="{% url 'new_review' coffee_shop.cnpj %}">Adicionar avaliação</a>
-        {% endif %}
-        
-
-
-    
-        
     </div>
 </body>
-    <script>
-        document
-          .querySelector(".dropdown")
-          .addEventListener("mouseover", function () {
-            document.getElementById("myDropdown").classList.add("show");
-          });
-  
-        document
-          .querySelector(".dropdown")
-          .addEventListener("mouseout", function () {
-            document.getElementById("myDropdown").classList.remove("show");
-          });
-  
-        window.onclick = function (event) {
-          if (!event.target.matches(".dropbtn")) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            for (var i = 0; i < dropdowns.length; i++) {
-              var openDropdown = dropdowns[i];
-              if (openDropdown.classList.contains("show")) {
-                openDropdown.classList.remove("show");
-              }
+
+<script>
+    document
+        .querySelector(".dropdown")
+        .addEventListener("mouseover", function () {
+        document.getElementById("myDropdown").classList.add("show");
+        });
+
+    document
+        .querySelector(".dropdown")
+        .addEventListener("mouseout", function () {
+        document.getElementById("myDropdown").classList.remove("show");
+        });
+
+    window.onclick = function (event) {
+        if (!event.target.matches(".dropbtn")) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+            openDropdown.classList.remove("show");
             }
-          }
-        };
-      </script>
+        }
+        }
+    };
+</script>
+
 </html>
