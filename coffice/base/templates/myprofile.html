@@ -12,23 +12,29 @@
         /* Estilo do dropdown para aparecer ao passar o mouse */
 
         .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            z-index: 1;
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: #fff;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 8px;
+        overflow: hidden;
         }
 
         .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
+        color: #DC5F4A;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-family: 'Lexend', sans-serif;
+        font-size: 20px;
+        transition: background-color 0.3s ease;
         }
 
         .dropdown-content a:hover {
-            background-color: #f1f1f1
+        background-color: #f1f1f1;
         }
 
         /* Estilo da seção de favoritos e reservas */
@@ -138,35 +144,35 @@
 <body>
 
     <div class="header">
-        <div class="logo-home-container" style="display: flex;
-            align-items: center;">
-            <img class="header-logo" src="https://pbs.twimg.com/media/GPWhLuzbIAAcsfx?format=png&name=small"
-                height="41" />
-            <a href="/" class="home-button" style="font-family: 'Lexend', sans-serif;
-            font-size: 20px;
-            color: #333;
-            text-decoration: none;
-            margin-top: 7px;
-            margin-left: 20px;">Home</a>
-        </div>
-        <div class="dropdown">
-            <img onclick="myFunction()" class="dropbtn"
-                src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihb67HQT9jP6_0eVWC2VQJHnm9YY7SXD9rCcqpuE2OmaSjWfNt1a2lUYDzOiX68GdBBP3TuSWbL1Xpih3PDlGjvHM4asQ3xLWQ=w1912-h976-rw-v1"
-                height="40" />
-            <div id="myDropdown" class="dropdown-content">
-                {% if user.is_authenticated %}
-                <a href="/myprofile/">Meu Perfil</a>
-                <a href="/logout/">Logout</a>
-                {% else %}
-                <a href="/login/">Login</a>
-                <a href="/register/">Register</a>
-                {% endif %}
-            </div>
-            <img onclick="myFunction()" class="dropbtn"
-                src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZCyoLhRKN0a0vSgLblevrTdpS6CVmV6iB_5-FuuNQhB6qUKTzNUevbfRkbojipz1TtPWJuANlPUFYyDg4-5Y4SsL1SJKOwAVM=w950-h959"
-                alt="setadropdown" style="margin-bottom: 5px;">
-        </div>
-    </div>
+        <a href="{% url 'home' %}">
+  
+          <img
+              class="header-logo"
+              src="https://pbs.twimg.com/media/GPWhLuzbIAAcsfx?format=png&name=small"
+              height="41"
+          />
+  
+        </a>
+          
+          <div class="dropdown">
+              <img
+                  onclick="myFunction()"
+                  class="dropbtn"
+                  src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihb67HQT9jP6_0eVWC2VQJHnm9YY7SXD9rCcqpuE2OmaSjWfNt1a2lUYDzOiX68GdBBP3TuSWbL1Xpih3PDlGjvHM4asQ3xLWQ=w1912-h976-rw-v1"
+                  height="40"
+              />
+              <div id="myDropdown" class="dropdown-content">
+                  {% if user.is_authenticated %}
+                  <a href="/myprofile/">Meu Perfil</a>
+                  <a href="/logout/">Logout</a>
+                  {% else %}
+                  <a href="/login/">Login</a>
+                  <a href="/register/">Register</a>
+                  {% endif %}
+              </div>
+              <img onclick="myFunction()" class="dropbtn" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZCyoLhRKN0a0vSgLblevrTdpS6CVmV6iB_5-FuuNQhB6qUKTzNUevbfRkbojipz1TtPWJuANlPUFYyDg4-5Y4SsL1SJKOwAVM=w950-h959" alt="setadropdown" style="margin-bottom: 5px;">
+          </div>
+      </div>
 
     <br><br><br>
     <h1 id="msg-filter">Olá, {{ user.username }}</h1>
