@@ -171,7 +171,7 @@ A aplicação da programação em par foi fundamental para o sucesso do projeto.
 | 3. | **Posso ver minha lista de favoritos** <br> Como usuário cliente, posso acessar uma lista com as cafeterias que favoritei, para que eu possa encontrá-las facilmente. |
 | 4. | **Posso solicitar reserva em uma cafeteria** <br> Como usuário cliente, posso solicitar uma reserva em uma cafeteria específica, para garantir um lugar para trabalhar ou encontrar amigos. |
 | 5. | **Posso ver minhas solicitações de reserva** <br> Como usuário cliente, posso visualizar minhas solicitações de reserva em cafeterias, para acompanhar o status. |
-| 6. | **Posso adicionar uma avaliação em uma cafeteria** <br> Como usuário cliente, posso adicionar uma avaliação para uma cafeteria através, para compartilhar minha experiência com outros usuários. |
+| 6. | **Posso adicionar uma avaliação em uma cafeteria** <br> Como usuário cliente, posso adicionar uma avaliação para uma cafeteria, para compartilhar minha experiência com outros usuários. |
 | 7. | **Posso visualizar as avaliações de uma cafeteria** <br> Como usuário cliente, posso visualizar as avaliações de outros usuários para uma cafeteria específica, para tomar uma decisão informada sobre onde ir. |
 | 8. | **Posso visualizar de Resumo de Avaliações de Cafeterias** <br> Como usuário cliente, posso visualizar um resumo das avaliações de uma cafeteria, para conhecer as experiências de outros usuários. |
 
