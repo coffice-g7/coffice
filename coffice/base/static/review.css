@@ -14,18 +14,6 @@
         justify-content: center;
     }
 
-    .container {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0;
-        padding: 20px;
-        flex: 1;
-        justify-content: space-between;
-        align-items: flex-start; 
-        flex-direction: row; 
-        flex-wrap: wrap; 
-    }
-
     /* Header styles */
     .header {
         display: flex;
@@ -142,16 +130,6 @@
         margin-top: 30px; /* adiciona um esp */
     }
 
-
-    .review {
-    border: 1px solid #ddd;
-    margin: 10px; /* adiciona 10px de espaçamento em todos os lados */
-    border-radius: 40px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.15);
-    flex-basis: calc(25% - 20px); /* Aumentado de 10% para 30% */
-    font-size: 14px;
-    width: calc(25% - 20px); /* Define a largura para ser a mesma que a base flex */
-}
     
 .image-container {
     display: flex;
@@ -202,7 +180,7 @@
     justify-content: space-between;
     align-items: center;
     width: 1200px;
-    margin: 20px 0;
+    margin: 20px 0px 50px 0px;
 }
 
 .esquerda{
@@ -211,43 +189,80 @@
     flex-direction: column;
     width: 58%;
     margin: 20px 0;
+    height: 100%;
 }
+
+.inferior {
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    width: 100%;
+}
+
+.esquerda h1 {
+    font-size: 96px;
+    color: #2A4B48;
+    margin: 0;
+    height: 100px;
+}
+
+.superior h2 {
+    font-size: 14px;
+    color: #8f8f8f;
+    margin: 10px 0px 10px 0px;
+}
+
 .main-picture {
-    height: 400px;
+    height: 300px;
+    width: auto;
     background-size: cover;
     background-position: center;
-    border-radius: 20px;
-    }
+    border-radius: 52px;
+}
 
 .direita{
     width: 40%;
 }
 
+.direita .avaliacoes-button-2 {
+    margin-top: 20px;
+}
+
 .avaliacoes-button-2 {
-    background-color: #DC5F4A;
-    border-radius: 20px;
-    cursor: pointer;
+    cursor: pointer; /* Adiciona o cursor de ponteiro para indicar que é clicável */
     width: 32%;
     height: 53px;
     align-items: center;
     display: flex;
     justify-content: center;
     border-radius: 20px;
+    background-color: #DC5F4A;
 }
-    
-.avaliacoes-button-2 a{
+
+.avaliacoes-button-2 a {
     text-decoration: none;
     color: white;
     font-size: 16px;
     font-weight: 400;
+    opacity: 0; /* Esconde o texto do link */
 }
+
+.avaliacoes-button-2:hover {
+    background-color: #c0392b; /* Altera a cor de fundo ao passar o mouse */
+}
+
+.avaliacoes-button-2.clicked {
+    background-color: #DC5F4A; /* Restaura a cor de fundo quando clicado */
+}
+
+
 
 .filtros-botao{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 80%;
-    margin-top: 20px;
+    margin-top: 7px;
     flex-direction: row;
     gap: 10px; 
 }
@@ -257,7 +272,7 @@
     justify-content: flex-start;
     align-items: center;
     width: 80%;
-    margin-top: 20px;
+    margin-top: 7px;
     flex-direction: row;
     gap: 10px; 
 }
@@ -267,6 +282,7 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    height: 16px;
 }
 
 .estrela img {
@@ -280,3 +296,101 @@
     font-size: 20px;
     color: #8f8f8f;
 }
+
+.inferior h2 {
+    font-size: 20px;
+    color: #575756;
+    margin: 30px 0px 0px 0px;
+}
+
+/* CARDS */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row; 
+    flex-wrap: wrap;
+}
+
+.review {
+    margin: 10px; 
+    border-radius: 28px;
+    font-size: 14px;
+    width: 22%;
+    background-color: #f2f2f2;
+    min-width: 300px;
+    box-sizing: border-box;
+    height: 214px;
+}
+
+.profile-picture {
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 20px 5px 5px 20px;
+}
+
+.topo {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+
+.topo-info {
+    margin-left: 10px;
+    height: 40px;
+    margin: 20px 5px 5px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.topo-info h3 {
+    font-size: 13px;
+    color: #3c3c3b;
+    font-weight: 600;
+}
+
+.topo-info h4 {
+    font-size: 10px;
+    color: #8b898f;
+    font-weight: 400;
+    margin-top: 3px;
+}
+
+.review_1 {
+    text-align: left;
+    margin: 0;
+}
+
+.estrela-cinza {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 16px;
+    margin: 10px 0px 15px 20px;
+}
+
+.estrela-cinza img {
+    margin-right: 5px;
+}
+
+.review_3 {
+    margin: 0px 20px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* Limita o número de linhas a 5 */
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis; /* Adiciona "..." no final do texto */
+    word-break: break-word; /* Garante que palavras longas sejam quebradas corretamente */
+    height: calc(1.2em * 5); /* Ajusta a altura para caber exatamente 5 linhas de texto */
+    max-height: calc(1.2em * 5); /* Limita a altura máxima para garantir que não haja expansão */
+    line-height: 1.2em; /* Define a altura da linha para garantir que o cálculo da altura esteja correto */
+    text-align: justify;
+}
+

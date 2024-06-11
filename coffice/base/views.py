@@ -238,6 +238,10 @@ def coffee_shop_reviews(request, pk):
     #buscando reviews pelo id da cafeteria
     reviews = Review.objects.filter(coffee_shop_id=pk)
 
+    # transformar a data em formato dd/mm/aaaa
+    for review in reviews:
+        review.created_at = review.created_at.strftime('%d/%m/%Y')
+
     # contar a quantidade de reviews
     reviews_count = reviews.count()
 

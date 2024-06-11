@@ -71,8 +71,10 @@ class Favorite(models.Model):
 
     def __str__(self):
         return f'{self.coffee} - {self.user}'
+
 class Review(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     coffee_shop = models.ForeignKey(coffee_shop, on_delete=models.CASCADE)
     score = models.IntegerField()
     comment = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)

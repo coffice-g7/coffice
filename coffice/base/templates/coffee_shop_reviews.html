@@ -6,8 +6,23 @@
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'custom_styles.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'review.css' %}">
-    
-
+    <script>
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body>
     
@@ -89,15 +104,9 @@
                 <div class="filtros">
                     <h2>Filtros</h2>
                     <div class="filtros-botao">
-                        <div class="avaliacoes-button-2">
-                            <a href="{% url 'make_reservation' coffee_shop.cnpj %}">Todos</a>
-                        </div>
-                        <div class="avaliacoes-button-2">
-                            <a href="{% url 'make_reservation' coffee_shop.cnpj %}">Sala de reunião</a>
-                        </div>
-                        <div class="avaliacoes-button-2">
-                            <a href="{% url 'new_review' coffee_shop.cnpj %}">Comida</a>
-                        </div>
+                            <div class="avaliacoes-button-2" onclick="applyFilter(this.innerText)">Todos</div>
+                            <div class="avaliacoes-button-2" onclick="applyFilter(this.innerText)">Sala de reunião</div>
+                            <div class="avaliacoes-button-2" onclick="applyFilter(this.innerText)">Comida</div>
                     </div>
                 </div>
                 <h2>Ordenar por</h2>
@@ -120,36 +129,88 @@
         </div>
     </div>
 
-    <div class="container review-container">
+    <div class="container">
         {% for review in reviews %}
             <div class="review">
-                <h2 class="review_1 h2">{{ review.user.username }}</h2>
-                <p class="review_2">Pontuação: {{ review.score }}</p>
-                <p class="review_3">Comentário: {{ review.comment }}</p>
+                <div class="topo">
+                    <div class="profile-picture" style="background-image: url('https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZehXxrd0lv1_o9xjjaCeF3Le2fEIiQZgZasNYYFuvx9LmXTkUlsLthQ6_MYA_TQB1g8IH8llCax92Mc3_LYZeuYsYCDW44HyI=w1912-h976-rw-v1')"></div>
+                    <div class="topo-info">
+                        <h3 class="review_1">{{ review.user.username }}</h3>
+                        <h4>{{ review.created_at }}</h4>
+                    </div>
+                </div>
+                <div class="estrela-cinza">
+                    {% if review.score >= 1 and review.score < 2.0 %}
+                    <!-- RENDERIZA UMA ESTRELA -->
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/3/drive-viewer/AKGpihbmhSBuhRrBItedxacVmnK6HzUBM4AKyGGuL0xOfcyZO8LIk5JpgC7dTqLeg5LThKMHoSrD8xIcVMRVtU0eRcg3x5hrJdIAQSU=w1912-h976-rw-v1" alt="Star" width="15" height="15">
+                    {% endif%}
+                    {% if review.score >= 2.0 and review.score < 3.0 %}
+                    <!-- RENDERIZA DUAS ESTRELAS -->
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/3/drive-viewer/AKGpihbmhSBuhRrBItedxacVmnK6HzUBM4AKyGGuL0xOfcyZO8LIk5JpgC7dTqLeg5LThKMHoSrD8xIcVMRVtU0eRcg3x5hrJdIAQSU=w1912-h976-rw-v1" alt="Star" width="15" height="15">
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/3/drive-viewer/AKGpihbmhSBuhRrBItedxacVmnK6HzUBM4AKyGGuL0xOfcyZO8LIk5JpgC7dTqLeg5LThKMHoSrD8xIcVMRVtU0eRcg3x5hrJdIAQSU=w1912-h976-rw-v1" alt="Star" width="15" height="15">
+                    {% endif%}
+                    {% if review.score >= 3.0 and review.score < 4.0 %}
+                    <!-- RENDERIZA TRÊS ESTRELAS -->
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/3/drive-viewer/AKGpihbmhSBuhRrBItedxacVmnK6HzUBM4AKyGGuL0xOfcyZO8LIk5JpgC7dTqLeg5LThKMHoSrD8xIcVMRVtU0eRcg3x5hrJdIAQSU=w1912-h976-rw-v1" alt="Star" width="15" height="15">
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/3/drive-viewer/AKGpihbmhSBuhRrBItedxacVmnK6HzUBM4AKyGGuL0xOfcyZO8LIk5JpgC7dTqLeg5LThKMHoSrD8xIcVMRVtU0eRcg3x5hrJdIAQSU=w1912-h976-rw-v1" alt="Star" width="15" height="15">
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/3/drive-viewer/AKGpihbmhSBuhRrBItedxacVmnK6HzUBM4AKyGGuL0xOfcyZO8LIk5JpgC7dTqLeg5LThKMHoSrD8xIcVMRVtU0eRcg3x5hrJdIAQSU=w1912-h976-rw-v1" alt="Star" width="15" height="15">
+                    {% endif%}
+                    {% if review.score >= 4.0 and review.score < 5.0 %}
+                    <!-- RENDERIZA QUATRO ESTRELAS -->
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/3/drive-viewer/AKGpihbmhSBuhRrBItedxacVmnK6HzUBM4AKyGGuL0xOfcyZO8LIk5JpgC7dTqLeg5LThKMHoSrD8xIcVMRVtU0eRcg3x5hrJdIAQSU=w1912-h976-rw-v1" alt="Star" width="15" height="15">
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/3/drive-viewer/AKGpihbmhSBuhRrBItedxacVmnK6HzUBM4AKyGGuL0xOfcyZO8LIk5JpgC7dTqLeg5LThKMHoSrD8xIcVMRVtU0eRcg3x5hrJdIAQSU=w1912-h976-rw-v1" alt="Star" width="15" height="15">
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/3/drive-viewer/AKGpihbmhSBuhRrBItedxacVmnK6HzUBM4AKyGGuL0xOfcyZO8LIk5JpgC7dTqLeg5LThKMHoSrD8xIcVMRVtU0eRcg3x5hrJdIAQSU=w1912-h976-rw-v1" alt="Star" width="15" height="15">
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/3/drive-viewer/AKGpihbmhSBuhRrBItedxacVmnK6HzUBM4AKyGGuL0xOfcyZO8LIk5JpgC7dTqLeg5LThKMHoSrD8xIcVMRVtU0eRcg3x5hrJdIAQSU=w1912-h976-rw-v1" alt="Star" width="15" height="15">
+                    {% endif%}
+                    {% if review.score >= 5.0 %}
+                    <!-- RENDERIZA CINCO ESTRELAS -->
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/3/drive-viewer/AKGpihbmhSBuhRrBItedxacVmnK6HzUBM4AKyGGuL0xOfcyZO8LIk5JpgC7dTqLeg5LThKMHoSrD8xIcVMRVtU0eRcg3x5hrJdIAQSU=w1912-h976-rw-v1" alt="Star" width="15" height="15">
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/3/drive-viewer/AKGpihbmhSBuhRrBItedxacVmnK6HzUBM4AKyGGuL0xOfcyZO8LIk5JpgC7dTqLeg5LThKMHoSrD8xIcVMRVtU0eRcg3x5hrJdIAQSU=w1912-h976-rw-v1" alt="Star" width="15" height="15">
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/3/drive-viewer/AKGpihbmhSBuhRrBItedxacVmnK6HzUBM4AKyGGuL0xOfcyZO8LIk5JpgC7dTqLeg5LThKMHoSrD8xIcVMRVtU0eRcg3x5hrJdIAQSU=w1912-h976-rw-v1" alt="Star" width="15" height="15">
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/3/drive-viewer/AKGpihbmhSBuhRrBItedxacVmnK6HzUBM4AKyGGuL0xOfcyZO8LIk5JpgC7dTqLeg5LThKMHoSrD8xIcVMRVtU0eRcg3x5hrJdIAQSU=w1912-h976-rw-v1" alt="Star" width="15" height="15">
+                    <img class="star-icon" src="https://lh3.googleusercontent.com/u/3/drive-viewer/AKGpihbmhSBuhRrBItedxacVmnK6HzUBM4AKyGGuL0xOfcyZO8LIk5JpgC7dTqLeg5LThKMHoSrD8xIcVMRVtU0eRcg3x5hrJdIAQSU=w1912-h976-rw-v1" alt="Star" width="15" height="15">
+                    {% endif%}
+                </div>
+                <p class="review_3">{{ review.comment }}</p>
             </div>
         {% endfor %}
     </div>
-
-        <script>
-            document.querySelector(".dropdown").addEventListener("mouseover", function () {
-                document.getElementById("myDropdown").classList.add("show");
-            });
-
-            document.querySelector(".dropdown").addEventListener("mouseout", function () {
-                document.getElementById("myDropdown").classList.remove("show");
-            });
-
-            window.onclick = function (event) {
-                if (!event.target.matches(".dropbtn")) {
-                    var dropdowns = document.getElementsByClassName("dropdown-content");
-                    for (var i = 0; i < dropdowns.length; i++) {
-                        var openDropdown = dropdowns[i];
-                        if (openDropdown.classList.contains("show")) {
-                            openDropdown.classList.remove("show");
-                        }
-                    }
-                }
-            };
-        </script>
 </body>
+
+<script>
+    function applyFilter(filter) {
+        const url = new URL(window.location.href);
+        url.searchParams.set('filter', filter);
+        window.location.href = url.toString();
+    }
+
+    document.querySelector(".dropdown").addEventListener("mouseover", function () {
+        document.getElementById("myDropdown").classList.add("show");
+    });
+
+    document.querySelector(".dropdown").addEventListener("mouseout", function () {
+        document.getElementById("myDropdown").classList.remove("show");
+    });
+
+    document.querySelector('.avaliacoes-button-2').addEventListener('click', function() {
+    applyFilter(); // Chama a função applyFilter ao clicar na div
+    });
+
+    document.querySelector('.avaliacoes-button-2').addEventListener('click', function() {
+        this.classList.toggle('button-pressed'); // Alterna a classe para remover a aparência de botão
+    });
+
+    window.onclick = function (event) {
+        if (!event.target.matches(".dropbtn")) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains("show")) {
+                    openDropdown.classList.remove("show");
+                }
+            }
+        }
+    };
+</script>
+
 </html>

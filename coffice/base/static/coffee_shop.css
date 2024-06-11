@@ -223,7 +223,7 @@ body {
 .review-card {
     position: relative;
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     align-items: center;
 }
 
@@ -243,7 +243,18 @@ body {
 
 .review-info-try p {
     height: 80%;
-    width: 100%;
+    width: 90%;
+    margin: 5px 20px 0px 10px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    height: calc(1.2em * 4);
+    max-height: calc(1.2em * 4);
+    line-height: 1.2em; 
+    text-align: justify
 }
 
 .review-info {
@@ -253,6 +264,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    margin-right: 20px;
+}
+
+.review-info div {
+  margin-right: 15px;
 }
 
 /* Estilo para as estrelas das reviews */
