@@ -74,14 +74,21 @@
 </head>
 <body>
     <div class="header">
-        <a href="{% url 'home' %}">
-            <img class="header-logo" src="https://pbs.twimg.com/media/GPWhLuzbIAAcsfx?format=png&name=small" height="40"/>
-        </a>
+        <div class="logo-home-container" style="display: flex;
+            align-items: center;">
+            <img class="header-logo" src="https://pbs.twimg.com/media/GPWhLuzbIAAcsfx?format=png&name=small" height="41" />
+            <a href="/" class="home-button" style="font-family: 'Lexend', sans-serif;
+            font-size: 20px;
+            color: #333;
+            text-decoration: none;
+            margin-top: 7px;
+            margin-left: 20px;">Home</a>
+        </div>
         <div class="dropdown">
             <img
                 onclick="myFunction()"
                 class="dropbtn"
-                src="https://cdn-icons-png.freepik.com/512/64/64572.png"
+                src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihb67HQT9jP6_0eVWC2VQJHnm9YY7SXD9rCcqpuE2OmaSjWfNt1a2lUYDzOiX68GdBBP3TuSWbL1Xpih3PDlGjvHM4asQ3xLWQ=w1912-h976-rw-v1"
                 height="40"
             />
             <div id="myDropdown" class="dropdown-content">
@@ -90,9 +97,10 @@
                 <a href="/logout/">Logout</a>
                 {% else %}
                 <a href="/login/">Login</a>
-                <a href="/register/">Register</a>
+                <a href="/register/">Cadastrar</a>
                 {% endif %}
             </div>
+            <img onclick="myFunction()" class="dropbtn" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZCyoLhRKN0a0vSgLblevrTdpS6CVmV6iB_5-FuuNQhB6qUKTzNUevbfRkbojipz1TtPWJuANlPUFYyDg4-5Y4SsL1SJKOwAVM=w950-h959" alt="setadropdown" style="margin-bottom: 5px;">
         </div>
     </div>
 
@@ -126,25 +134,22 @@
     </form>
 
     <script>
-        document.querySelector(".dropdown").addEventListener("mouseover", function () {
-            document.getElementById("myDropdown").classList.add("show");
-        });
+        function myFunction() {
+        var dropdownContent = document.getElementById("myDropdown");
+        dropdownContent.classList.toggle("show");
+    }
 
-        document.querySelector(".dropdown").addEventListener("mouseout", function () {
-            document.getElementById("myDropdown").classList.remove("show");
-        });
-
-        window.onclick = function (event) {
-            if (!event.target.matches(".dropbtn")) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                for (var i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains("show")) {
-                        openDropdown.classList.remove("show");
-                    }
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
                 }
             }
-        };
+        }
+    };
         document.addEventListener('DOMContentLoaded', function () {
             var commentInput = document.querySelector('.comment-field textarea');
             var commentPlaceholder = document.querySelector('.comment-placeholder');
