@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,22 +10,26 @@
     <link rel="icon" href="https://pbs.twimg.com/media/GPbxz5CbkAAYo_b?format=png&name=900x900" type="image/x-icon">
     <style>
         /* Estilo do dropdown para aparecer ao passar o mouse */
-        
+
         .dropdown-content {
             display: none;
             position: absolute;
             background-color: #f9f9f9;
             min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
             z-index: 1;
         }
+
         .dropdown-content a {
             color: black;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
         }
-        .dropdown-content a:hover {background-color: #f1f1f1}
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
 
         /* Estilo da seção de favoritos e reservas */
         .profile-section {
@@ -32,82 +37,111 @@
             justify-content: center;
             gap: 20px;
         }
+
         .section-tab {
             cursor: pointer;
             padding: 10px 20px;
             border-bottom: 2px solid transparent;
         }
+
         .section-tab.selected {
             border-bottom: 2px solid #000;
         }
+
         .content {
             display: none;
         }
+
         .content.active {
             display: block;
         }
 
         /* Estilo da lista de reservas */
-        .reservations-list, .coffees-list {
+        .reservations-list,
+        .coffees-list {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
         }
+
         .reservation-card {
             display: flex;
             align-items: center;
             width: 250px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
+            background: rgba(237, 237, 237, 0.97);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 10px;
+            padding: 2px;
         }
+
         .reservation-card img {
-            width: 60px; /* Aumentei o tamanho da imagem */
-            height: 60px; /* Aumentei o tamanho da imagem */
-            border-radius: 4px;
+            width: 60px;
+            /* Aumentei o tamanho da imagem */
+            height: 60px;
+            /* Aumentei o tamanho da imagem */
+            border-radius: 8px;
             margin-right: 10px;
             object-fit: cover;
         }
+
         .reservation-card-body {
             display: flex;
             flex-direction: column;
         }
+
         .reservation-card-title {
-            font-size: 16px; /* Aumentei o tamanho da fonte */
+            font-size: 16px;
+            /* Aumentei o tamanho da fonte */
             font-weight: bold;
+            color: #575756;
         }
-        .reservation-card-date {
+
+        .reservation-card-date,
+        .reservation-card-cost {
             font-size: 12px;
-            color: #555;
+            color: #8F8F8F;
         }
+
         .reservation-card-status {
             font-size: 12px;
-            color: #FF6600; /* Laranja */
+            color: #DC5F4A;
+            /* Laranja */
         }
+
         /* Estilo dos botões */
         .btn-cancel {
-            background-color: #D97D54; /* Cor laranja */
+            background-color: #D97D54;
+            /* Cor laranja */
             color: white;
-            padding: 5px 10px;
+            padding: 2px 10px;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
         }
+
+        .reservation-card-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
         .btn-cancel:hover {
-            background-color: #3A6F8F; /* Azul no hover */
+            background-color: #3A6F8F;
+            /* Azul no hover */
         }
     </style>
 </head>
+
 <body>
-    
+
     <div class="header">
         <div class="logo-home-container" style="display: flex;
             align-items: center;">
-            <img class="header-logo" src="https://pbs.twimg.com/media/GPWhLuzbIAAcsfx?format=png&name=small" height="41" />
+            <img class="header-logo" src="https://pbs.twimg.com/media/GPWhLuzbIAAcsfx?format=png&name=small"
+                height="41" />
             <a href="/" class="home-button" style="font-family: 'Lexend', sans-serif;
             font-size: 20px;
             color: #333;
@@ -116,12 +150,9 @@
             margin-left: 20px;">Home</a>
         </div>
         <div class="dropdown">
-            <img
-                onclick="myFunction()"
-                class="dropbtn"
+            <img onclick="myFunction()" class="dropbtn"
                 src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihb67HQT9jP6_0eVWC2VQJHnm9YY7SXD9rCcqpuE2OmaSjWfNt1a2lUYDzOiX68GdBBP3TuSWbL1Xpih3PDlGjvHM4asQ3xLWQ=w1912-h976-rw-v1"
-                height="40"
-            />
+                height="40" />
             <div id="myDropdown" class="dropdown-content">
                 {% if user.is_authenticated %}
                 <a href="/myprofile/">Meu Perfil</a>
@@ -131,7 +162,9 @@
                 <a href="/register/">Register</a>
                 {% endif %}
             </div>
-            <img onclick="myFunction()" class="dropbtn" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZCyoLhRKN0a0vSgLblevrTdpS6CVmV6iB_5-FuuNQhB6qUKTzNUevbfRkbojipz1TtPWJuANlPUFYyDg4-5Y4SsL1SJKOwAVM=w950-h959" alt="setadropdown" style="margin-bottom: 5px;">
+            <img onclick="myFunction()" class="dropbtn"
+                src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZCyoLhRKN0a0vSgLblevrTdpS6CVmV6iB_5-FuuNQhB6qUKTzNUevbfRkbojipz1TtPWJuANlPUFYyDg4-5Y4SsL1SJKOwAVM=w950-h959"
+                alt="setadropdown" style="margin-bottom: 5px;">
         </div>
     </div>
 
@@ -147,7 +180,7 @@
     </div>
 
     <br><br>
-    
+
     <!-- Mensagens de feedback -->
     {% if messages %}
     <div class="messages">
@@ -164,9 +197,12 @@
             {% for coffee in coffee_shops %}
             <div class="card">
                 <a href="{% url 'coffee_shop_detail' pk=coffee.cnpj %}" class="card-link">
-                    <div class="background-image" style="background-image: url('https://sebraemg.com.br/wp-content/uploads/2018/10/terceira-onda-1-980x588.jpg')"></div>
+                    <div class="background-image"
+                        style="background-image: url('https://sebraemg.com.br/wp-content/uploads/2018/10/terceira-onda-1-980x588.jpg')">
+                    </div>
                     <div class="card-logo">
-                        <img src="https://static.ifood-static.com.br/image/upload/t_high/logosgde/5263af65-50db-482d-8ce9-239ce3b4cc32/201908161622_mXdZ_i.png" alt="Coffee Shop Logo">
+                        <img src="https://static.ifood-static.com.br/image/upload/t_high/logosgde/5263af65-50db-482d-8ce9-239ce3b4cc32/201908161622_mXdZ_i.png"
+                            alt="Coffee Shop Logo">
                     </div>
                 </a>
                 <div class="card-body">
@@ -176,11 +212,11 @@
                         {% csrf_token %}
                         <input type="hidden" name="redirect_to" value="myprofile">
                         <button type="submit" id="FavSuccess" class="btn btn-home">
-                        {% if coffee.favorited %}
-                        Remover
-                        {% else %}
-                        Adicionar
-                        {% endif %}
+                            {% if coffee.favorited %}
+                            Remover
+                            {% else %}
+                            Adicionar
+                            {% endif %}
                         </button>
                     </form>
                 </div>
@@ -191,13 +227,17 @@
 
     <div class="content" id="reservas-content">
         <div class="reservations-list">
-            {% if reservations %}
-            {% for reservation in reservations %}
+            {% if reservations_with_costs %}
+            {% for reservation, cost in reservations_with_costs %}
             <div class="reservation-card">
-                <img src="https://sebraemg.com.br/wp-content/uploads/2018/10/terceira-onda-1-980x588.jpg" alt="{{ reservation.cafe.name }}">
+                <img src="https://sebraemg.com.br/wp-content/uploads/2018/10/terceira-onda-1-980x588.jpg"
+                    alt="{{ reservation.cafe.name }}">
                 <div class="reservation-card-body">
                     <div class="reservation-card-title">{{ reservation.cafe.name }}</div>
-                    <div class="reservation-card-date">{{ reservation.date|date:"d \d\e M, H:i" }}</div>
+                    <div class="reservation-card-info">
+                        <div class="reservation-card-date">{{ reservation.date|date:"d \d\e M, H:i" }}, </div>
+                        <div class="reservation-card-cost"> R$ {{ cost|floatformat:2 }}</div>
+                    </div>
                     <div class="reservation-card-status {{ reservation.status|lower }}">
                         {{ reservation.get_status_display }}
                     </div>
@@ -220,28 +260,28 @@
 
     <script>
         function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
-    window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            for (var i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
                 }
             }
         }
-    }
 
-document.addEventListener("DOMContentLoaded", function() {
-    var dropdown = document.querySelector('.dropdown');
+        document.addEventListener("DOMContentLoaded", function () {
+            var dropdown = document.querySelector('.dropdown');
 
-    dropdown.addEventListener('click', function() {
-        var dropdownContent = document.querySelector('.dropdown-content');
-        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-    });
-});
+            dropdown.addEventListener('click', function () {
+                var dropdownContent = document.querySelector('.dropdown-content');
+                dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+            });
+        });
 
 
         function mostrarConteudo(tab) {
@@ -258,8 +298,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         // Função para remover mensagens após 2 segundos
-        window.onload = function() {
-            setTimeout(function() {
+        window.onload = function () {
+            setTimeout(function () {
                 var messages = document.querySelector('.messages');
                 if (messages) {
                     messages.style.display = 'none';
@@ -268,4 +308,5 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     </script>
 </body>
+
 </html>

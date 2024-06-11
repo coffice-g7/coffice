@@ -41,7 +41,12 @@
                     {% csrf_token %}
                     {{ form.non_field_errors }}
                     {{ form.cafe }}
-    
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" placeholder="Nome" required>
+                    {%if form.name.errors%}
+                    <p class="error">{{form.name.errors}}</p>
+                    {% endif %}
+
                     <label for="date">Data:</label>
                     <input type="datetime-local" id="date" name="date" required>
                     {% if form.date.errors %}

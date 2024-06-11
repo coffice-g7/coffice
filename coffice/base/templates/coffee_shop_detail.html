@@ -146,6 +146,7 @@
                 {% if coffee_shop.allow_reservation %}
                     <h2>Custo da reserva:</h2>
                     <span>1 hora = R$ {{ coffee_shop.reservation_cost }}</span>
+                    <a href="{% url 'make_reservation' coffee_shop.cnpj %}">Fazer reserva</a>
                 {% else %}
                 {% endif %}
             </span>

@@ -212,10 +212,18 @@ def myprofile(request):
         coffee_shops.append(coffee_shop_data)
     
     # Monta o contexto da página de perfil
+    reservations_with_costs = []  # Lista de tuplas (reserva, custo)
+    for reservation in reservations:
+        duration = float(reservation.duration)
+        cost_var = float(reservation.cafe.reservation_cost)
+        cost =  cost_var * duration/60
+        reservations_with_costs.append((reservation, cost))
+        
     context = {
         'coffee_shops': coffee_shops,
-        'reservations': reservations,
-        'user': user
+        'reservations_with_costs': reservations_with_costs,
+        'user': user,
+        
     }
 
     return render(request, 'myprofile.html', context)
