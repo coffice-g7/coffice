@@ -42,7 +42,7 @@ body {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 925px;
   margin: 0 auto;
   padding: 20px;
   background-color: #fff;
@@ -97,7 +97,7 @@ body {
 
 .box-body {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
 }
 
 .box-name {
@@ -118,7 +118,7 @@ body {
 .box-ratings {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items:flex-end;
     height: 100px;
     flex-direction: column;
 }
@@ -137,10 +137,96 @@ body {
 
 .box-ratings span {
     text-align: right;
+    margin-right: 10px;
+}
+
+.box-description {
+    width: 48%;
+    max-height: 300px; /* Defina a altura máxima */
+    overflow: hidden;
+    text-align: justify;
+}
+
+.box-description p {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 14; /* Defina o número de linhas que deseja exibir antes de truncar */
+    -webkit-box-orient: vertical;
+}
+
+.box-reviews {
+    width: 48%;
+    background-color: #f2f2f2;
+    max-height: 300px;
+    border-radius: 30px;
+}
+
+.review-card {
+    position: relative;
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center; /* Centralizar verticalmente */
+}
+
+.profile-picture {
+    background-size: cover;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    margin: 10px 5px 5px 10px;
+}
+
+.review-info-try {
+    display: flex;
+    flex-direction: column;
+    width: 87%;
+}
+
+.review-info-try p {
+    height: 80%;
+    width: 100%;
+}
+
+.review-info {
+    overflow: hidden;
+    width: 97%;
+    flex-grow: 1; /* Ocupar todo o espaço disponível */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* Estilo para as estrelas das reviews */
+.review-info .star-icon {
+    width: auto;
+    height: 9px;
+    display: inline-block;
+    margin-right: 2px; /* Ajuste o espaço entre as estrelas conforme necessário */
+}
+
+.star-rating {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.star-icon {
+    width: 20px; /* Ajuste o tamanho conforme necessário */
+    height: auto; /* Manter a proporção */
+    margin-right: 2px;
+    /* display: inline; */
 }
 
 p {
   margin-bottom: 10px;
+  width: 60%;
+  font-size: 15px;
+  color: #adadad;
 }
 
 strong {

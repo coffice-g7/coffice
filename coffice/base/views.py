@@ -13,7 +13,6 @@ from django.contrib.auth import logout as auth_logout
 from django.views.generic import DetailView
 from django.utils import timezone
 from .forms import CustomUserCreationForm, EmailAuthenticationForm
-from .models import Cliente
 
 from .forms import CustomUserCreationForm
 from .forms import ReservationForm
@@ -22,6 +21,7 @@ from .models import Cliente
 from .models import coffee_shop, Favorite
 from .models import Review
 from .forms import ReviewForm
+
 # Create your views here.
 
 @login_required
@@ -63,7 +63,6 @@ def cancel_reservation(request, reservation_id):
         messages.error(request, 'Reserva não encontrada ou já cancelada.')
     return redirect('myprofile')
 
-
 def login_view(request):
     error_message = None
     if request.method == 'POST':
@@ -99,7 +98,6 @@ def register_view(request):
     else:
         form = CustomUserCreationForm()
     return render(request, 'signup.html', {'form': form})
-
 
 def home(request):
     # Recebe o usuário logado
@@ -149,7 +147,6 @@ def home(request):
     
     return render(request, 'home.html', context)
 
-
 def room(request):
     return render(request, 'room.html')
 
@@ -159,6 +156,13 @@ def logout(request):
 
 def coffee_shop_detail(request, pk):
     coffee_shop_obj = get_object_or_404(coffee_shop, pk=pk)
+
+    # Buscar as reviews da cafeteria, limitando a 3
+    reviews = Review.objects.filter(coffee_shop_id=pk).order_by('-score')[:3]
+
+    # Adiciona as reviews ao coffee_shop_obj
+    coffee_shop_obj.reviews = reviews
+
     return render(request, 'coffee_shop_detail.html', {'coffee_shop': coffee_shop_obj})
 
 def favorited_coffee_shop(request, pk):
