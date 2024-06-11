@@ -173,7 +173,7 @@ A aplicação da programação em par foi fundamental para o sucesso do projeto.
 | 5. | **Posso ver minhas solicitações de reserva** <br> Como usuário cliente, posso visualizar minhas solicitações de reserva em cafeterias através da plataforma Coffice, para acompanhar o status. |
 | 6. | **Posso adicionar uma avaliação em uma cafeteria** <br> Como usuário cliente, posso adicionar uma avaliação para uma cafeteria através da plataforma Coffice, para compartilhar minha experiência com outros usuários. |
 | 7. | **Posso visualizar as avaliações de uma cafeteria** <br> Como usuário cliente, posso visualizar as avaliações de outros usuários para uma cafeteria específica na plataforma Coffice, para tomar uma decisão informada sobre onde ir. |
-| 8. | **Posso visualizar um resumo de avaliações de uma cafeteria** <br> Como usuário cliente, posso visualizar um resumo de avaliações de cafeterias na plataforma Coffice, para acompanhar experiências alheias passadas. |
+| 8. | **Posso visualizar de Resumo de Avaliações de Cafeterias** <br> Como usuário cliente, posso visualizar um resumo das avaliações de uma cafeteria na plataforma Coffice para conhecer as experiências de outros usuários. |
 
 ## 🔄 Diagrama de Atividades
 
