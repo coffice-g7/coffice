@@ -232,7 +232,7 @@ Nesta seção, você encontrará os screencasts demonstrando o funcionamento da 
   <h4> História: Como usuário cliente posso ver minhas solicitações de reserva</h4>
   <p>...</p>
 
-  <h4> FeedBack: </h4>
+  <h4> FeedBack: Trabalhar em par foi uma experiência extremamente enriquecedora para nós, Antonio e Thiago. Antonio focou no backend, implementando as rotas e a lógica para processar e exibir reservas, enquanto Thiago desenvolveu as interfaces intuitivas no frontend. Nossa comunicação constante permitiu alinhar expectativas e resolver problemas rapidamente. </h4>
   <p>...</p>
 </details>
 
