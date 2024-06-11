@@ -3,7 +3,7 @@
 
 Funcionalidade: Filtrar cafeterias
   Cenário: Apenas um filtro aplicado na filtragem
-    Dado que estou na página 'home'
+    Dado que estou na página 'home'..
     Quando seleciono um filtro específico
     E clico em 'Gerar opções'
     E entro na página de detalhes da cafeteria

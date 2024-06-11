@@ -2,7 +2,7 @@
 
 // Cenário 1:  Apenas um filtro aplicado na filtragem
 
-Given("que estou na página 'home'", () => {
+Given("que estou na página 'home'..", () => {
 
     cy.visit('http://127.0.0.1:8000/');
     cy.wait(2000);
@@ -10,8 +10,8 @@ Given("que estou na página 'home'", () => {
 
 When("seleciono um filtro específico", () => {
 
-    cy.get('.third-line-filters').eq(1).within(() => {
-        cy.get('.div-filter-option-3').click();
+    cy.get('.third-line-filters').within(() => {
+        cy.get('#VeganFilter').click();
     });
 });
 
@@ -42,11 +42,11 @@ Given("que estou na página 'home'", () => {
 
 When("seleciono dois filtros específicos", () => {
 
-    cy.get('.third-line-filters').eq(4).within(() => {
-        cy.get('.div-filter-option-1').click();
+    cy.get('.third-line-filters').within(() => {
+        cy.get('#ParkingFilter').click();
     });
-    cy.get('.third-line-filters').eq(5).within(() => {
-        cy.get('.div-filter-option-2').click();
+    cy.get('.third-line-filters').within(() => {
+        cy.get('#AcessFilter').click();
     });
 });
 
