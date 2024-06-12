@@ -211,45 +211,45 @@ Nesta seção, você encontrará os screencasts demonstrando o funcionamento da 
 <summary>Arthur Silva - Bernardo Heuer</summary>
 
   <h4> História: Como usuário cliente posso filtrar cafeterias</h4>
-  <p>...</p>
+  <p></p>
   
   <h4> História: Como usuário cliente posso favoritar cafeterias</h4>
-  <p>...</p>
+  <p></p>
 
   <h4> História: Como usuário cliente posso ver minha lista de favoritos</h4>
-  <p>...</p>
+  <p></p>
 
   <h4> FeedBack: </h4> 
-  <p>...</p>
+  <p>No desenvolvimento dessas 3 histórias pudemos mesclar sobre o front e back end durante todo o processo, foi uma etapa mais de auxiliar um ao outro durante esse processo. Funcionou bem a programação em par, pois pudemos aprender um pouco a mais de cada "área". Bernardo esteve mais confortável no desenvolvimento front end enquanto Arthur no back end, as funções foram se alterando para nos pudessemos entender tudo que estávamos desenvolvendo, no fim, foi uma ótima prática e que, provavelmente, em momentos que um conheça mais de algo sobre o outro, voltar a realizar o pair programming. </p>
   </details>
 
 <details>
 <summary>Thiago Queiroz - Antônio Neto</summary>
 
   <h4> História: Como usuário cliente posso solicitar reserva em uma cafeteria</h4>
-  <p>...</p>
+  <p></p>
 
   <h4> História: Como usuário cliente posso ver minhas solicitações de reserva</h4>
-  <p>...</p>
+  <p></p>
 
   <h4>FeedBack: </h4><p>Trabalhar em par foi uma experiência extremamente enriquecedora para nós, Antonio e Thiago. Antonio focou no backend, implementando as rotas e a lógica para processar e exibir reservas, enquanto Thiago desenvolveu as interfaces intuitivas no frontend. Nossa comunicação constante permitiu alinhar expectativas e resolver problemas rapidamente. </p>
-  <p>...</p>
+  <p></p>
 </details>
 
 <details>
 <summary>Vinícius Cahu - George Filho</summary>
 
   <h4> História: Como usuário cliente posso adicionar uma avaliação em uma cafeteria</h4>
-  <p>...</p>
+  <p></p>
   
   <h4> História: Como usuário cliente posso visualizar as avaliações de uma cafeteria</h4>
-  <p>...</p>
+  <p></p>
   
-  <h4> História: Como usuário cliente posso visualizar meu histórico de avaliações</h4>
-  <p>...</p>
+  <h4> História: Como usuário cliente posso ordenar as avaliações</h4>
+  <p></p>
   
   <h4> FeedBack: </h4>
- <p>...</p>
+ <p>Trabalhar em par foi uma experiência extremamente enriquecedora para nós. Ficamos com as historias das avaliações, Dividimos as telas para agilizar o processo, enquanto eu(Cahu) fazia o back da tela de ver avaliações,  George ja adiantava o front e o back da outra tela de avaliar cafeteria, e no final, fizemos a parte de ordenar avaliações. Foi uma experiencia muito bacana para nós, pelo trabalho em grupo. PS: Gheyson ajudou em algumas partes das nossas histórias.  </p>
  </details>
 
 ## 📊 Jira

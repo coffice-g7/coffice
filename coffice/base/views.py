@@ -147,7 +147,6 @@ def home(request):
     # Ordena as babás pelo atributo favorited
     coffee_shops.sort(key=lambda x: x['favorited'], reverse=True)
 
-    print(coffee_shops)
     if 'Sozinho' in request.GET:
         coffee_shops = [x for x in coffee_shops if x['alone']]
 
@@ -275,6 +274,13 @@ def coffee_shop_reviews(request, pk):
 
     #buscando reviews pelo id da cafeteria
     reviews = Review.objects.filter(coffee_shop_id=pk)
+
+    # ordenar reviews por data ou relevância
+    if 'filter' in request.GET:
+        if 'Mais recentes' in request.GET.getlist('filter'):
+            reviews = reviews.order_by('-created_at')
+        if 'Mais relevantes' in request.GET.getlist('filter'):
+            reviews = reviews.order_by('-score')
 
     # transformar a data em formato dd/mm/aaaa
     for review in reviews:

@@ -1,0 +1,317 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend&display=swap");
+
+/* General styles */
+body {
+    font-family: 'Lexend', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px 10px 20px;
+    background-color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); 
+}
+
+.header-logo {
+  margin-left: 20px;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.header button {
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.header button:hover {
+  background-color: #4b3621;
+}
+
+.header .home-button {
+  font-family: 'Lexend', sans-serif;
+  font-size: 20px;
+  color: #333;
+  text-decoration: none;
+  margin-top: 7px;
+  margin-left: 20px; /* Adicionado */
+}
+
+.campo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.campo label {
+    flex-basis: 45%; /* Largura do label */
+    text-align: right; /* Alinhamento do label */
+    margin-right: 10px; /* Espaçamento entre o label e o input */
+}
+
+.campo input[type="text"],
+.campo textarea {
+    flex-basis: 50%; /* Largura do input */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Estilo para os campos */
+.field {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+button[type="submit"] {
+    background-color: #dc5f4a; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-items: center; /* Centraliza os campos */
+}
+
+button[type="submit"]:hover {
+    background-color: #dc5f4a; 
+}
+
+.fields-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 970px;
+}
+
+.left-align {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.score-field {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.score-field h3 {
+    margin: 0;
+}
+
+.comment-field {
+    width: 48%;
+    min-height: 360px;
+}
+
+.comment-field .textarea-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.comment-field textarea {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px; /* Borda arredondada */
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid #ccc; /* Borda */
+    resize: none; /* Impede redimensionamento */
+    box-sizing: border-box; /* Tamanho total do elemento */
+    background-color: #f2f2f2;
+}
+
+.comment-field .comment-placeholder {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #adadad;
+    pointer-events: none; /* Permite clicar através do texto */
+    transition: opacity 0.3s ease;
+}
+
+.comment-field textarea:focus + .comment-placeholder,
+.comment-field textarea:not(:placeholder-shown) + .comment-placeholder {
+    opacity: 0;
+}
+
+.rating {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px; /* Espaçamento entre as estrelas */
+    height: 30px;
+}
+
+.rating .star {
+    cursor: pointer;
+    font-size: 2rem;
+    color: #ccc;
+}
+
+.rating .star.selected,
+.rating .star.hover {
+    color: #dc5f4a;
+}
+
+.rating .star:hover,
+.rating .star:hover ~ .star {
+    color: #dc5f4a;
+}
+
+.rating .star:hover ~ .star {
+    color: #ccc;
+}
+
+/* rating 2 ------------------ */
+
+.rating-2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px; /* Espaçamento entre as estrelas */
+    height: 30px;
+}
+
+.rating-2 .star-2 {
+    cursor: pointer;
+    font-size: 2rem;
+    color: #ccc;
+}
+
+.rating-2 .star-2.selected,
+.rating-2 .star-2.hover {
+    color: #dc5f4a;
+}
+
+.rating-2 .star-2:hover,
+.rating-2 .star-2:hover ~ .star-2 {
+    color: #dc5f4a;
+}
+
+.rating-2 .star-2:hover ~ .star-2 {
+    color: #ccc;
+}
+
+#segundo {
+    margin-top: 8px;
+}
+
+/* rating 3 ------------------ */
+
+.rating-3 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px; /* Espaçamento entre as estrelas */
+    height: 30px;
+}
+
+.rating-3 .star-3 {
+    cursor: pointer;
+    font-size: 2rem;
+    color: #ccc;
+}
+
+.rating-3 .star-3.selected,
+.rating-3 .star-3.hover {
+    color: #dc5f4a;
+}
+
+.rating-3 .star-3:hover,
+.rating-3 .star-3:hover ~ .star-3 {
+    color: #dc5f4a;
+}
+
+.rating-3 .star-3:hover ~ .star-3 {
+    color: #ccc;
+}
+
+#terceiro {
+    margin-top: 8px;
+}
+
+/* rating 4 ------------------ */
+
+.rating-4 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px; /* Espaçamento entre as estrelas */
+    height: 30px;
+}
+
+.rating-4 .star-4 {
+    cursor: pointer;
+    font-size: 2rem;
+    color: #ccc;
+}
+
+.rating-4 .star-4.selected,
+.rating-4 .star-4.hover {
+    color: #dc5f4a;
+}
+
+.rating-4 .star-4:hover,
+.rating-4 .star-4:hover ~ .star-4 {
+    color: #dc5f4a;
+}
+
+.rating-4 .star-4:hover ~ .star-4 {
+    color: #ccc;
+}
+
+#quarto {
+    margin-top: 8px;
+}
+
+.esquerda {
+    display: flex;
+    width: 48%;
+    flex-direction: column;
+}
+
+.esquerda h1 {
+    margin: 0;
+    color: #2a4b48;
+    font-size: 55px;
+    font-weight: 500;
+    font-family: 'Lexend', sans-serif;
+    height: 66px;
+}
+
+.esquerda p {
+    margin: 0;
+    color: #575756;
+    font-size: 20px;
+    font-weight: 300;
+    font-family: 'Lexend', sans-serif;
+    margin-bottom: 30px;
+}
