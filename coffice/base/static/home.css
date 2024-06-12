@@ -197,7 +197,8 @@ body {
 .div-filter-option.active,
 .div-filter-option-2.active,
 .div-filter-option-3.active {
-  background-color: #e2e2e2;
+  background-color: #DC5F4A;
+  color: white;
 }
 
 .div-filter-option {
@@ -234,7 +235,7 @@ body {
 
 label:hover,
 label.active {
-  background-color: #e2e2e2;
+  background-color: #DC5F4A;
 }
 
 
