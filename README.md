@@ -245,11 +245,11 @@ Nesta seção, você encontrará os screencasts demonstrando o funcionamento da 
   <h4> História: Como usuário cliente posso visualizar as avaliações de uma cafeteria</h4>
   <p>...</p>
   
-  <h4> História: Como usuário cliente posso visualizar meu histórico de avaliações</h4>
+  <h4> História: Como usuário cliente posso ordenar as avaliações</h4>
   <p>...</p>
   
   <h4> FeedBack: </h4>
- <p>...</p>
+ <p>Trabalhar em par foi uma experiência extremamente enriquecedora para nós. Ficamos com as historias das avaliações, Dividimos as telas para agilizar o processo, enquanto eu(Cahu) fazia o back da tela de ver avaliações,  George ja adiantava o front e o back da outra tela de avaliar cafeteria, e no final, fizemos a parte de ordenar avaliações. Foi uma experiencia muito bacana para nós, pelo trabalho em grupo. PS: Gheyson ajudou em algumas partes das nossas histórias.  </p>
  </details>
 
 ## 📊 Jira
