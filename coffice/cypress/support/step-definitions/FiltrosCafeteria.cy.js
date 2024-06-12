@@ -24,7 +24,7 @@ And("clico em 'Gerar opções'", () => {
 
 And("entro na página de detalhes da cafeteria", () => {
 
-    cy.get('.card').eq(0).click();
+    cy.get('#cards').eq(0).click();
 
 });
 
@@ -63,7 +63,7 @@ And("clico em 'Gerar opções'", () => {
 
 And("entro na página de detalhes da cafeteria", () => {
 
-    cy.get('.card').eq(0).click();
+    cy.get('#cards').eq(0).click();
     cy.wait(2000);
 });
 

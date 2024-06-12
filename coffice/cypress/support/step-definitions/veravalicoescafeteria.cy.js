@@ -8,7 +8,7 @@ Given('que estou logado no sistema como usuário cliente;', () => {
 });
 
 And('estou na página de detalhes de uma cafeteria específica', () => {
-    cy.get('.card').eq(0).click(); 
+    cy.get('#cards').eq(0).click(); 
     cy.wait(2000);
 });
 

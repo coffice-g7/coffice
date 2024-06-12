@@ -15,7 +15,7 @@ And("eu esteja na página 'home'", function() {
 
 When('eu favoritar uma cafeteria', function() {
     // Armazena o nome da cafeteria favoritada em uma variável
-    cy.get('.card').eq(1).within(() => {
+    cy.get('#cards').eq(1).within(() => {
         cy.get('.title-text').invoke('text').then((text) => {
             this.favoritedCoffeeName = text.trim();
         });
@@ -30,7 +30,7 @@ Then("essa cafeteria deve ser visualizada na página 'meu perfil' na sessão 'Me
     cy.get('#favoritos-tab').click();
     cy.get('#favoritos-content').within(() => {
         // Verifica se o nome da cafeteria favoritada bate com o que está lá
-        cy.get('.card').eq(0).within(() => {
+        cy.get('#cards').eq(0).within(() => {
             cy.wait(2000);
             cy.get('#NomeCafeteria').should('have.text', this.favoritedCoffeeName);
         });
@@ -49,7 +49,7 @@ Given('que tenho um perfil de usuário no site.', () => {
 // E tenha uma cafeteria favoritada
 And('tenha uma cafeteria favoritada', function() {
     cy.wait(2000);
-    cy.get('.card').eq(1).within(() => {
+    cy.get('#cards').eq(1).within(() => {
         cy.get('.title-text').invoke('text').then((text) => {
             this.favoritedCoffeeName = text.trim();
         });
@@ -67,7 +67,7 @@ When('eu acessar a minha lista de favoritos', () => {
 
 // E remover da minha lista de favoritos
 And('remover da minha lista de favoritos', () => {
-    cy.get('.card').eq(0).within(() => {
+    cy.get('#cards').eq(0).within(() => {
         cy.wait(2000);
         cy.get('#FavSuccess').click(); 
     });
@@ -75,5 +75,5 @@ And('remover da minha lista de favoritos', () => {
 
 // Então essa cafeteria deve não estar mais presente na lista
 Then('essa cafeteria deve não estar mais presente na lista', function() {
-    cy.get('#favoritos-content .card').should('not.exist');
+    cy.get('#favoritos-content #cards').should('not.exist');
 });

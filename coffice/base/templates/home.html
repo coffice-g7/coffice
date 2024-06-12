@@ -120,7 +120,7 @@
     <div class="coffees-list">
         {% for coffee in coffee_shops %}
         <!-- CADA CARD -->
-        <div class="card">
+        <div id="cards" class="card">
           <a href="{% url 'coffee_shop_detail' pk=coffee.cnpj %}" class="card-link">
             <!-- BACKGROUND IMAGE -->
             <div class="background-image" style="background-image: url('https://sebraemg.com.br/wp-content/uploads/2018/10/terceira-onda-1-980x588.jpg')">

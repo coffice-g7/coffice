@@ -13,8 +13,8 @@ And("eu esteja na página 'home'", function () {
 var reservationDate = '2024-06-13T10:00';
 
 When("eu reservar uma cafeteria específica", function () {
-    cy.get('.card').should('have.length.greaterThan', 0); // Verifica se existem cafeterias (cards) disponíveis
-    cy.get('.card').eq(0).click(); // Seleciona a primeira cafeteria (card) disponível
+    cy.get('#cards').should('have.length.greaterThan', 0); // Verifica se existem cafeterias (cards) disponíveis
+    cy.get('#cards').eq(0).click(); // Seleciona a primeira cafeteria (card) disponível
     cy.get(':nth-child(1) > .avaliacoes-button-2-link').click(); // Clica no botão para fazer reserva
     // Preenche os campos do formulário
     cy.get('input[name="name"]').type('Thiago Souls');

@@ -9,12 +9,12 @@ Given('que estou na "home"', () => {
   });
   
   And('existam cafeterias disponíveis', () => {
-    cy.get('.card').should('have.length.greaterThan', 0); // Verifica se existem cafeterias (cards) disponíveis
+    cy.get('#cards').should('have.length.greaterThan', 0); // Verifica se existem cafeterias (cards) disponíveis
     cy.wait(2000);
   });
   
   When('eu selecionar uma cafeteria', () => {
-    cy.get('.card').eq(0).click(); // Seleciona a primeira cafeteria (card) disponível
+    cy.get('#cards').eq(0).click(); // Seleciona a primeira cafeteria (card) disponível
   });
 
   Then('devo visualizar seu nome e seus detalhes', () => {

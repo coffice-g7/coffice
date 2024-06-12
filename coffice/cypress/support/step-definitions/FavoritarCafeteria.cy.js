@@ -35,16 +35,16 @@ Given('que tenho um perfil de usuário registrado na plataforma', () => {
   
   And('uma cafeteria específica está marcada como favorita na minha lista', () => {
     cy.wait(2000);
-    cy.get('.card').first().within(() => {
+    cy.get('#cards').first().within(() => {
       cy.get('#Nao-favoritado').click(); 
     });
-    cy.get('.card').first().within(() => {
+    cy.get('#cards').first().within(() => {
       cy.get('#favoritado').should('be.visible'); 
     });
   });
   
   When('eu clicar em favoritar e clicar novamente para desfavoritar', () => {
-    cy.get('.card').first().within(() => {
+    cy.get('#cards').first().within(() => {
       cy.get('#favoritado').click(); 
     });
     cy.wait(2000);
@@ -52,7 +52,7 @@ Given('que tenho um perfil de usuário registrado na plataforma', () => {
   
   Then('deve ser removida o favorito da cafeteria', () => {
     cy.wait(2000);
-    cy.get('.card').first().within(() => {
+    cy.get('#cards').first().within(() => {
       cy.get('#Nao-favoritado').should('be.visible'); 
     });
   });

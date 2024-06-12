@@ -4,11 +4,11 @@ Given('que tenho um cadastro no sistema como usuário cliente...', () => {
     });
     
     And('tenha cafeterias existentes na home', () => {
-    cy.get('.card').should('have.length.greaterThan', 0); // Verifica se existem cafeterias (cards) disponíveis
+    cy.get('#cards').should('have.length.greaterThan', 0); // Verifica se existem cafeterias (cards) disponíveis
     });
 
     And("estou na página de detalhes da cafeteria..", () => {
-    cy.get('.card').eq(0).click();
+    cy.get('#cards').eq(0).click();
     cy.wait(2000);
     });
     
