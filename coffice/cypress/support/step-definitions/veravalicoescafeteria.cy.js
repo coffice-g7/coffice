@@ -8,17 +8,21 @@ Given('que estou logado no sistema como usuário cliente;', () => {
 });
 
 And('estou na página de detalhes de uma cafeteria específica', () => {
-    cy.get('.card').eq(0).click(); 
+    cy.get('#cards').eq(0).click(); 
+    cy.wait(2000);
 });
 
 When('eu visualizar a seção de avaliações', () => {
     cy.get('#btnavaliar').click(); 
+    cy.wait(2000);
 });
 
 Then('devo ver uma lista de avaliações de outros usuários para essa cafeteria', () => {
     cy.get("#reviewcard").should('be.visible'); 
+    cy.wait(2000);
 });
 
 And('as avaliações devem incluir a nota e o comentário de cada usuário', () => {
     cy.get("#reviewid").should('exist'); 
+    cy.wait(2000);
 });

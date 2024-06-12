@@ -8,7 +8,8 @@ Given('que estou logado no sistema como usuário cliente', () => {
 });
   
 And('estou na página de detalhes de uma cafeteria específica', () => {
-    cy.get('.card').eq(0).click(); 
+    cy.get('#cards').eq(0).click(); 
+    cy.wait(2000);
 });
   
 When('eu visualizar a seção de avaliações', () => {
@@ -17,6 +18,7 @@ When('eu visualizar a seção de avaliações', () => {
   
 And('selecionar a opção "Mais Relevantes" para ordenar as avaliações', () => {
     cy.get("#ordenar1").click();
+    cy.wait(2000);
 });
   
 Then('as avaliações devem ser exibidas na ordem mais relevante', () => {
@@ -32,7 +34,8 @@ Given('que estou logado no sistema com usuário cliente', () => {
   
 And('estou na página de detalhes de uma cafeteria específica', () => {
     cy.wait(2000);
-    cy.get('.card').eq(0).click(); 
+    cy.get('#cards').eq(0).click(); 
+    cy.wait(2000);
 });
   
 When('eu visualizar a seção de avaliações', () => {
@@ -41,6 +44,7 @@ When('eu visualizar a seção de avaliações', () => {
   
 And('selecionar a opção "Mais Recentes" para ordenar as avaliações', () => {
     cy.get("#ordenar2").click();
+    cy.wait(2000);
 });
   
 Then('as avaliações devem ser exibidas na ordem mais recente', () => {

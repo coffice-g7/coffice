@@ -17,6 +17,7 @@
 import './commands';
 require('./pages/cadastro.pages')
 require('./pages/login.pages')
+require('./pages/criarCards.pages')
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

@@ -1,4 +1,4 @@
-name: Build and test pipeline Python app to Azure Web App - Coffice
+name: Build and deploy Python app to Azure Web App - Coffice
 
 on:
   push:
