@@ -176,7 +176,7 @@ A aplicação da programação em par foi fundamental para o sucesso do projeto.
 | 8. | **Posso visualizar de Resumo de Avaliações de Cafeterias** <br> Como usuário cliente, posso visualizar um resumo das avaliações de uma cafeteria, para conhecer as experiências de outros usuários. |
 
 ## 🔄 Diagrama de Atividades
-
+ <a href="https://www.canva.com/design/DAGH5j6wZo4/6JcHpCJgeIYNR4-ZomDSQQ/view?utm_content=DAGH5j6wZo4&utm_campaign=designshare&utm_medium=link&utm_source=editor" style="text-decoration: none;"></a>
 
 ## 🎥 ScreenCasts
 
