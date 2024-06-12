@@ -16,6 +16,7 @@ Given('que tenho um perfil de usuário no site', () => {
     cy.get('.card').eq(1).within(() => {
       cy.get('#Nao-favoritado').click(); 
     });
+    cy.wait(2000);
   });
   
   Then('essa cafeteria deve ser visualizada com prioridade e como favorita no painel de cafeterias', () => {
@@ -46,9 +47,11 @@ Given('que tenho um perfil de usuário registrado na plataforma', () => {
     cy.get('.card').first().within(() => {
       cy.get('#favoritado').click(); 
     });
+    cy.wait(2000);
   });
   
   Then('deve ser removida o favorito da cafeteria', () => {
+    cy.wait(2000);
     cy.get('.card').first().within(() => {
       cy.get('#Nao-favoritado').should('be.visible'); 
     });

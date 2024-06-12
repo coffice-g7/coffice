@@ -10,6 +10,7 @@ Given('que estou na "home"', () => {
   
   And('existam cafeterias disponíveis', () => {
     cy.get('.card').should('have.length.greaterThan', 0); // Verifica se existem cafeterias (cards) disponíveis
+    cy.wait(2000);
   });
   
   When('eu selecionar uma cafeteria', () => {
@@ -19,7 +20,7 @@ Given('que estou na "home"', () => {
   Then('devo visualizar seu nome e seus detalhes', () => {
     // Verifica se o nome da cafeteria é visível e não vazio
     cy.get('#NomeCafeteria').should('be.visible').and('not.be.empty');
-    
+    cy.wait(2000);
     // Verifica se o endereço da cafeteria é visível e não vazio
     cy.get('.box-name h2').should('be.visible').and('not.be.empty');
   
@@ -28,11 +29,11 @@ Given('que estou na "home"', () => {
   
     // Verifica se as avaliações (estrelas) são visíveis e se há pelo menos uma estrela
     cy.get('#CaixaNotas .star-icon').should('be.visible').and('have.length.greaterThan', 0);
-  
+    cy.wait(2000);
     // Verifica se a pontuação da cafeteria é visível
     cy.get('.box-ratings span').should('be.visible').and('not.be.empty');
   
-    
+    cy.wait(2000);
     // Verifica se o link para mais avaliações é visível e não vazio
     cy.get('.avaliacoes-button-link').should('be.visible').and('not.be.empty');
   });

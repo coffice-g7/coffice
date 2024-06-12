@@ -9,9 +9,11 @@ Given('que tenho um cadastro no sistema como usuário cliente...', () => {
 
     And("estou na página de detalhes da cafeteria..", () => {
     cy.get('.card').eq(0).click();
+    cy.wait(2000);
     });
     
     When('eu visualizar a seção de avaliações..', () => {
+    cy.wait(2000);
     cy.get('#AvaliarCafetria').should('be.visible');
     cy.get('#AvaliarCafetria').click(); 
 
@@ -50,10 +52,12 @@ cy.get('#overallRating .star-4').each(($el, index) => {
 cy.get('.comment-field textarea').type('Excelente lugar, adorei a comida e a bebida!');
 
 // Enviar o formulário
+cy.wait(2000);
 cy.get('form').submit();
     });
 
 
 Then('deve haver ao menos uma avaliação a ser exibida na página da cafeteria', () => {
 cy.get('#reviewcard').should('be.visible');
+cy.wait(2000);
 });

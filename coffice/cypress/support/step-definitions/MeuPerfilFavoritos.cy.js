@@ -19,8 +19,10 @@ When('eu favoritar uma cafeteria', function() {
         cy.get('.title-text').invoke('text').then((text) => {
             this.favoritedCoffeeName = text.trim();
         });
+        cy.wait(2000);
         cy.get('#Nao-favoritado').click(); 
     });
+    cy.wait(2000);
 });
 
 Then("essa cafeteria deve ser visualizada na página 'meu perfil' na sessão 'Meus Favoritos'", function() {
@@ -29,6 +31,7 @@ Then("essa cafeteria deve ser visualizada na página 'meu perfil' na sessão 'Me
     cy.get('#favoritos-content').within(() => {
         // Verifica se o nome da cafeteria favoritada bate com o que está lá
         cy.get('.card').eq(0).within(() => {
+            cy.wait(2000);
             cy.get('#NomeCafeteria').should('have.text', this.favoritedCoffeeName);
         });
     });
@@ -50,6 +53,7 @@ And('tenha uma cafeteria favoritada', function() {
         cy.get('.title-text').invoke('text').then((text) => {
             this.favoritedCoffeeName = text.trim();
         });
+        cy.wait(2000);
         cy.get('#Nao-favoritado').click();
     });
 });
@@ -58,11 +62,13 @@ And('tenha uma cafeteria favoritada', function() {
 When('eu acessar a minha lista de favoritos', () => {
     cy.visit('/myprofile');
     cy.get('#favoritos-tab').click();
+    cy.wait(2000);
 });
 
 // E remover da minha lista de favoritos
 And('remover da minha lista de favoritos', () => {
     cy.get('.card').eq(0).within(() => {
+        cy.wait(2000);
         cy.get('#FavSuccess').click(); 
     });
 });
