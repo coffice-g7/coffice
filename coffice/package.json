@@ -13,7 +13,9 @@
     "stepDefinitions": "cypress/support/step-definitions"
   },
   "devDependencies": {
-    "cypress": "^13.11.0",
     "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+  "dependencies": {
+    "cypress": "^13.11.0"
   }
 }

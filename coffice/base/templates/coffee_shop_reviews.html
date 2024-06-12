@@ -132,12 +132,12 @@
 
     <div class="container">
         {% for review in reviews %}
-            <div class="review">
+            <div id="reviewcard" class="review">
                 <div class="topo">
                     <div class="profile-picture" style="background-image: url('https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZehXxrd0lv1_o9xjjaCeF3Le2fEIiQZgZasNYYFuvx9LmXTkUlsLthQ6_MYA_TQB1g8IH8llCax92Mc3_LYZeuYsYCDW44HyI=w1912-h976-rw-v1')"></div>
                     <div class="topo-info">
-                        <h3 class="review_1">{{ review.user.username }}</h3>
-                        <h4>{{ review.created_at }}</h4>
+                        <h3 id= "reviewid" class="review_1">{{ review.user.username }}</h3>
+                        <h4 id= "reviewid1" >{{ review.created_at }}</h4>
                     </div>
                 </div>
                 <div class="estrela-cinza">
