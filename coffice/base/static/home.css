@@ -289,7 +289,7 @@ label.active {
 }
 
 .coffees-list {
-  width: 1200px;
+  width: 1240px;
   margin-top: 30px;
   display: flex;
   flex-wrap: wrap; /* Para os cards envolverem para a próxima linha quando não couberem mais na largura */
