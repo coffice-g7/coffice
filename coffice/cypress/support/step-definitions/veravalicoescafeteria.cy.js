@@ -2,7 +2,7 @@
 
 // Cenário 1: Visualizar Avaliações de Cafeteria com sucesso
 
-Given('que estou logado no sistema como usuário cliente', () => {
+Given('que estou logado no sistema como usuário cliente;', () => {
     cy.visit('/register');
     cy.cadastrar('testeavaliacao', 'tst@cesar.school', '92£*B3>N.Ut8', '12345698922', '12345678', '123');
 });

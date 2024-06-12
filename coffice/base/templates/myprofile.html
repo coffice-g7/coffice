@@ -212,7 +212,7 @@
                     </div>
                 </a>
                 <div class="card-body">
-                    <div class="card-title">{{ coffee.name }}</div>
+                    <div id="NomeCafeteria" class="card-title">{{ coffee.name }}</div>
                     <div class="card-rating">4.5</div>
                     <form action="{% url 'favorited_coffee_shop' pk=coffee.cnpj %}" method="POST" class="ui form">
                         {% csrf_token %}

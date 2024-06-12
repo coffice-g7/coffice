@@ -1,4 +1,4 @@
-const INPUT_LOGIN = '#username'
+const INPUT_LOGIN = '#email'
 const INPUT_PASSWORD = '#password'
 const BUTTON_ENVIAR = '#btnEntrar' 
 

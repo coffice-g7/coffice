@@ -29,7 +29,7 @@ Then("essa cafeteria deve ser visualizada na página 'meu perfil' na sessão 'Me
     cy.get('#favoritos-content').within(() => {
         // Verifica se o nome da cafeteria favoritada bate com o que está lá
         cy.get('.card').eq(0).within(() => {
-            cy.get('.title-text').should('have.text', this.favoritedCoffeeName);
+            cy.get('#NomeCafeteria').should('have.text', this.favoritedCoffeeName);
         });
     });
 });

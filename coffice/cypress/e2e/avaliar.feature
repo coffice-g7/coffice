@@ -2,11 +2,10 @@
 #language: pt
 
 Funcionalidade: Avaliar uma cafeteria
-    Cenário: Avaliar uma cafeteria com sucesso
-    Dado que estou logado no sistema como usuário cliente
-    E estou na página de detalhes de uma cafeteria
-    Quando eu visualizar a seção de avaliações
-    E clicar no botão para adicionar uma nova avaliação
-    Então devo ver um formulário para inserir minha avaliação
-    E após submeter o formulário com sucesso
-    Então a avaliação deve ser exibida na página da cafeteria
+  Cenário: Avaliar uma cafeteria com sucesso
+    Dado que tenho um cadastro no sistema como usuário cliente...
+    E tenha cafeterias existentes na home
+    E estou na página de detalhes da cafeteria..
+    Quando eu visualizar a seção de avaliações..
+    E submeter o formulário de avaliação
+    Entao deve haver ao menos uma avaliação a ser exibida na página da cafeteria
