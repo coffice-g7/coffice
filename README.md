@@ -257,6 +257,9 @@ Nesta seção, você encontrará os screencasts demonstrando o funcionamento da 
 
 ## 🐛 Issue / Bug Tracker
 
+<img src="media/imagens/issues-sr2-open.jpeg" alt="Issues opened" height="400">
+
+<img src="media/imagens/issues-sr2-closed.jpeg" alt="Issues closed" height="400">
 
 </details>
 
