@@ -184,7 +184,7 @@ Nesta seção, você encontrará os screencasts demonstrando o funcionamento da 
 
 <p style="text-align: center; text-decoration: none;">
   🎥
-  <a href="" style="text-decoration: none;"> <span>ScreenCast do Protótipo de Baixa Fidelidade</span>
+  <a href="https://www.youtube.com/watch?v=Bk6yE1WRGJ4&ab_channel=G7projetos2" style="text-decoration: none;"> <span>ScreenCast do Protótipo de Baixa Fidelidade</span>
   </a>
 </p>
 <p>
