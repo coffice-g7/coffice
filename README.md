@@ -197,11 +197,6 @@ Nesta seção, você encontrará os screencasts demonstrando o funcionamento da 
   <a href="https://www.youtube.com/watch?v=fC3OhSjGkPA&ab_channel=G7projetos2" style="text-decoration: none;"> <span>ScreenCast Execução dos testes</span>
   </a>
 </p>
-<p>
-  🎥
-  <a href="" style="text-decoration: none;"> <span>ScreenCast CI/CD</span>
-  </a>
-</p>
 
 
 
