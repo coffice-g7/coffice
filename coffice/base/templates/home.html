@@ -1,230 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Coffice</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-  </head>
-  <body>
-    <!-- Header da página -->
+    <link rel="icon" href="https://pbs.twimg.com/media/GPbxz5CbkAAYo_b?format=png&name=900x900" type="image/x-icon">
+</head>
+<body>
+    
     <div class="header">
-      <img
-        src="https://lh3.googleusercontent.com/fife/ALs6j_GWDqMeSpMkIfnltflaInDtBaJE2MkkgHU55wrCRl0al7OQwJpVnEUEwBFAWcH2kY_iDUSDsDPbXbgySm-URCbBH_1KPHkCS__ivaJMViu83NmCiZXFZXw4pBus8nZri55XRZwvd61ee-XlKoREDo5TaWgP27tLTzi1V-VxgdIJt-TnorllfvoT5A5NWNx_bajEeL2OuD9J1Npz_YRmyDdIKHkkSpoF0NMDc4C5wcJIxeP1LkRua9V2MVMgoRM-J_HxouedyqXGVDWM8tgt5vR31EBS2WjvW-ojhM6bktCIRKz4r36p7s9JocDgLGv9IThVMoLapCDQTan6w__8z5FTyUvO2sYYoOkoxLOq-hsd4RVBewuTOAjnyZJU1ZLacVr9sTSpDzbg259CLtHtQILZd2ohM71PW6oHPFhWB81-Dw-cfTGqZ7sFTGfEdciCFRD4rWHEMH-HxuZxvpRrRyUyYMUB3J-c5hJiP3T3emLkxKYJ4BAoHX9V9VB7TEVZ854Yp-gPw0Thpf-E8xHfI2143bdVlnZ77Oer7he7GUW2evX5tLBtE9emeq_TIPkacJ_j9ozg0Vb5SCj0baz-kb4cj9XnddWD_A08OCn87m5XKeQ9iyPqBRrUPAu7_NaNNqmcBuRZqYFvPT4GElrvZvTsYdcyGsNOySnosb56o1AzJuawfdm7NcgaH-jjIm2a-dSuF6lWyD6JJUXzPxf2_5dAPTist_Mxo8i6lJOA537mpTaRitjZzVt1zA0NsI0ngj7sRU5Pl86jlf-vc3V3KswAW2-zI3XbCcyd8xYfFFBHS0Hs-eRFkbjLacEkgIO8a4LQtPHqHcCbGG1edK9c-HBkyXDO2nEwGHfq7zUhQOwsYLgq247AWvsH6fRDbxjH-ZxLDahI3V3BCeMPNbxdCEe-o_6WZuMgKurs7KOA9Dot7Aa1hk6aQpkfHrXwbGLAdJJQnxI_uYeW5iJSYsSz4iIk_2DhKtOaILgaotLQ02EA2tijNFLIxpmh8D-HsionBgzBlvVjbNYoiE679OAaq6DwxhgG2NQ7CY8b8UxwTexhy-FlPg=w1920-h957"
-        alt="Coffice Logo"
-        height="50"
-      />
-      <img
-        style="margin-left: 20px"
-        src="https://lh3.googleusercontent.com/fife/ALs6j_FyrMZVmFEdJWTPK8KhSIs3eQXwC0Z9JTcTRElILAbM9aM-HKHwcRWR14sHsUir0Kd9bVfL3bYutVIJn33-34qQYIKjxEhCytPKroocVA3fHDfxj_98Ab81rNOffofQ7GycUQEu87VlqoUoqiIwK86eGxRcWcDoKGY6iw-tfiM2HhUlkATJ6wXHTk-n1Th_R7xO6_x6-scIYYFBiSwtdiiURnHR4YZGM8cPVSqvo1HM_3qV7nNOBlGY6WHmHphA8u6KdaRGY8wPZ-VJLFGRlFIltipLpy5kr5uNTwttbYYf9wNKLZNTy2gXxOrZjVBGDbLsb7g3YUSLraZhEQKUc8YcWn31GZJmg7qgqzzzeYhDNBv1oABIxbYOMG4vrLrqgPH0NTkBE1tCXroSMA008kj1nCQrniMBy8BjJfFXFPuKIknDdCFywRgAoxOXb31CkSNEeuVH23Uo__2GncNrbD4MaV1P98DF5Xm7c9xJJN4B5TpoTGzC7Cu0S1JBju5wBCT2tgNOYpofZ546qJi4G9fxkFsooJovjmbu8xqyd4nH2OJ_Z5Pgmq8gOgN1oLNbsYuAmvfJj_SR5M4lsaFEcDT5rAtC_GACaQcPDA52CdITguFAo6JzjwtGACkUH6_0Gpgvvt1vZNCBIiWjON02ZzN9hd8vbVsKFQ3d-bjkr_59QcUfWvbfA3TXtz9S-TaTUQPo2zmgAEwBaF3RWRTMez-t6y_AAJaY159p9g34Ioa0S6JP_TGVLznTacoLBnBCl9tn1NFoazKZDrZhyMrhHzW1lMAVKoGHdgR6T_bMhvaGn2HZR4m4f2bSTSLNpXS6WVYg0VQj-JuCEtka9Ht8nJOYwC0fplfr78DAVxXEvI0_6aTPvMBRvAqxGTj-BNNGpDBoz54s7EYbtcKa-DsFYGOBFO3ZfEJy6LRLSjkobavh1hhgBA4WvTZC_kV6fS8YJOCGYjdmsgOjthSAEO5bKF7EEhQC0aHvdn0oqBpoOvvlvx1PwLWptfklM2VGmKnX2nm6s104VvFgZIcLANJ6MreOl9SLbOMS_M6VRdHeq_iNFNhMz5s=w1920-h957-v0"
-        height="40"
-      />
-      <div class="dropdown">
+      <a href="{% url 'home' %}">
+
         <img
-          onclick="myFunction()"
-          class="dropbtn"
-          src="https://cdn-icons-png.freepik.com/512/64/64572.png"
-          height="40"
+            class="header-logo"
+            src="https://pbs.twimg.com/media/GPWhLuzbIAAcsfx?format=png&name=small"
+            height="41"
         />
-        <div id="myDropdown" class="dropdown-content">
-          {% if user.is_authenticated %}
-          <a href="/logout/">Logout</a>
-          {% else %}
-          <a href="/login/">Login</a>
-          <a href="/register/">Register</a>
-          {% endif %}
+
+      </a>
+        
+        <div class="dropdown">
+            <img
+                onclick="myFunction()"
+                class="dropbtn"
+                src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihb67HQT9jP6_0eVWC2VQJHnm9YY7SXD9rCcqpuE2OmaSjWfNt1a2lUYDzOiX68GdBBP3TuSWbL1Xpih3PDlGjvHM4asQ3xLWQ=w1912-h976-rw-v1"
+                height="40"
+            />
+            <div id="myDropdown" class="dropdown-content">
+                {% if user.is_authenticated %}
+                <a href="/myprofile/">Meu Perfil</a>
+                <a href="/logout/">Logout</a>
+                {% else %}
+                <a href="/login/">Login</a>
+                <a href="/register/">Register</a>
+                {% endif %}
+            </div>
+            <img onclick="myFunction()" class="dropbtn" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZCyoLhRKN0a0vSgLblevrTdpS6CVmV6iB_5-FuuNQhB6qUKTzNUevbfRkbojipz1TtPWJuANlPUFYyDg4-5Y4SsL1SJKOwAVM=w950-h959" alt="setadropdown" style="margin-bottom: 5px;">
         </div>
-      </div>
     </div>
 
-    <div class="search-container">
-      <form action="/search" method="GET">
-        <div class="search-wrapper">
-          <input
-            type="text"
-            name="q"
-            class="search-input"
-            placeholder="Pesquisar..."
-          />
-          <button type="submit" class="search-button">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </form>
-    </div>
+    <br>
+    <br>
+    <h2 id="msg-filter">Olá, como você gostaria de trabalhar hoje?</h2>
+    <br>
+    <br>
 
-    <br /><br /><br />
-    <h2 id="msg-filter">Olá, como deseja trabalhar hoje?</h2>
-    <br />
-
-    <div class="filter-container">
-      <div class="filter-bar filter-bar1">
-        <label
-          ><input
-            type="checkbox"
-            class="filter-checkbox"
-            value="sozinho"
-          />Sozinho</label
-        >
-        <label
-          ><input type="checkbox" class="filter-checkbox" value="em_grupo" />Em
-          grupo</label
-        >
-      </div>
-      <br />
-      <div class="filter-bar filter-bar2">
-        <label
-          ><input
-            type="checkbox"
-            class="filter-checkbox"
-            value="silencioso"
-          />Ambiente Silencioso</label
-        >
-        <label
-          ><input
-            type="checkbox"
-            class="filter-checkbox"
-            value="sala_reuniao"
-          />Sala de Reunião</label
-        >
-        <label
-          ><input
-            type="checkbox"
-            class="filter-checkbox"
-            value="reserva"
-          />Possibilidade de Reserva</label
-        >
-      </div>
-      <div class="filter-bar filter-bar3">
-        <label
-          ><input
-            type="checkbox"
-            class="filter-checkbox"
-            value="reservavel"
-          />Pertinho de mim</label
-        >
-        <label
-          ><input
-            type="checkbox"
-            class="filter-checkbox"
-            value="vegano"
-          />Veggie</label
-        >
-        <label
-          ><input
-            type="checkbox"
-            class="filter-checkbox"
-            value="zero-lactose"
-          />Zero Lactose</label
-        >
-        <label
-          ><input
-            type="checkbox"
-            class="filter-checkbox"
-            value="sem-gluten"
-          />Gluten Free</label
-        >
-        <label
-          ><input
-            type="checkbox"
-            class="filter-checkbox"
-            value="estacionamento"
-          />Estacionamento</label
-        >
-        <label
-          ><input
-            type="checkbox"
-            class="filter-checkbox"
-            value="acessibilidade"
-          />Acessibilidade</label
-        >
-      </div>
-    </div>
-    <br /><br />
-
-    <div class="album py-5 bg-body-tertiary">
-      <div class="container">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
-          {% for coffee in coffee_shops %}
-          <div class="col mb-4">
-            <a
-              href="{% url 'coffee_shop_detail' pk=coffee.cnpj %}"
-              class="card-link"
-            >
-              <div class="card shadow-sm">
-                <img
-                  src="https://sebraemg.com.br/wp-content/uploads/2018/10/terceira-onda-1-980x588.jpg"
-                  class="bd-placeholder-img card-img-top"
-                  width="100%"
-                  height="225"
-                  role="img"
-                  aria-label="Placeholder: Thumbnail"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
-                  alt="Coffee Shop Image"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">{{ coffee.name }}</h5>
-                  <p class="card-text">
-                    {{ coffee.description|truncatechars_html:50 }}
-                  </p>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <a href="#" class="btn btn-sm btn-outline-secondary"
-                      ><i class="fas fa-star"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </a>
+    <!-- Div que contém todos os filtros -->
+    <div class="filter-div">
+      <!-- Div que contém os filtros da linha 1 -->
+      <div class="first-line-filters">
+        <button class="div-filter-option">
+          <div class="filter-image-container">
+            <img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZS1r4PtuIoPiIWiSYMEcrfF2fr31WU_4PmUL8ziukQKX2_x26gups8-1QR7iV5XIvl1jauFq69qmyjrazjx0HrWLLDJ0VTWA=w950-h966-rw-v1" class="filter-image" />
           </div>
-          {% empty %}
-          <div class="col mb-4">
-            <div class="card shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title">Não há cafés disponíveis</h5>
+          <div class="filter-text" style="font-weight: bold;">Sozinho</div>
+        </button>
+        <button class="div-filter-option">
+          <div class="filter-image-container">
+            <img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihbg2BXLLC15waOdxI2VTehdl_5NgcxahOV7PIDB26S4WPNHX-CF5ljqdB8wj8wcF1Y83uErOWfC6u2d_Kp-ylTumQiHJ6kzSrI=w950-h966-rw-v1" class="filter-image" />
+          </div>
+          <div class="filter-text" style="font-weight: bold;">Em grupo</div>
+        </button>
+      </div>
+      <!-- Div que contém os filtros da linha 2 -->
+      <div class="second-line-filters">
+        <button class="div-filter-option-2">
+          <div class="filter-image-container-2">
+            <img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZ02YY7KlFrzMxD1UjMDVGduoQnaIWq0xZUkAa8NBFcmbtBXrdKbeGeOIC68BVcQM7qUFjQJQ759I9F0ftT-Sj9ESJ01c7r9AM=w950-h966-rw-v1" alt="Ambiente Silencioso" class="filter-image" />
+          </div>
+          <div class="filter-text-small" style="font-weight: bold;">Ambiente silencioso</div>
+        </button>
+        <button class="div-filter-option-2">
+          <div class="filter-image-container-2">
+            <img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihYh3Wm4MTiXO4mnkAzzLuRrrDh0JvE3YyQ1DCyxeQJIDOhh1bVyoHza2YL15uCdSp38GjHBcIePHqv5KWeGFgiUTka8X6i2gI8=w1912-h976-rw-v1" alt="Sala de reunião" class="filter-image" />
+          </div>
+          <div class="filter-text-small" style="font-weight: bold;">Sala de reuniões</div>
+        </button>
+        <button class="div-filter-option-2">
+          <div class="filter-image-container-2">
+            <img src="https://lh3.googleusercontent.com/u/3/drive-viewer/AKGpihY1urRKvAyB5gDaWFVseCSz-q1C9Wc8xjZwCPBHPlyiDKthsumSxiH9D63MkD15LmUeufzO7oqJr-fc0kONR-4CJyqPX6TNaRc=w950-h966-rw-v1" alt="Ambiente silencioso" class="filter-image" />
+          </div>
+          <div class="filter-text-small" style="font-weight: bold;">Possibilidade de reserva</div>
+        </button>
+      </div>
+      <!-- Div que contém os filtros da linha 3 -->
+      <div class="third-line-filters">
+        <button class="div-filter-option-3">
+          <input type="checkbox" class="filter-checkbox" value="pertinho" />
+          <div style="font-weight: bold;">Pertinho<br>de mim</div>
+        </button>
+        <button class="div-filter-option-3">
+          <input type="checkbox"  class="filter-checkbox" value="veggie" /> <div style="font-weight: bold;" id="VeganFilter"> Veggie </div>
+        </button>
+        <button class="div-filter-option-3">
+          <input type="checkbox" class="filter-checkbox" value="zero-lactose" /> <div style="font-weight: bold;"> Zero Lactose </div>
+        </button>
+        <button class="div-filter-option-3">
+          <input type="checkbox" class="filter-checkbox" value="gluten-free" /><div style="font-weight: bold;">Gluten Free</div>
+        </button>
+        <button class="div-filter-option-3">
+          <input type="checkbox" class="filter-checkbox" value="estacionamento" />
+          <div style="font-weight: bold;" id="ParkingFilter">Estaciona-<br>mento</div>
+        </button>
+        <button class="div-filter-option-3">
+          <input type="checkbox" class="filter-checkbox" value="acessibilidade" /><div style="font-weight: bold;" id="AcessFilter">Acessibilidade</div>
+        </button>
+      </div>
+    </div>
+
+    <!-- Botão de Gerar opções -->
+    <div class="generate-options">
+      <button class="generate-options-button" onclick="generateOptions()">Gerar opções</button>
+    </div>
+
+    <br><br>
+
+    <div class="coffees-list">
+        {% for coffee in coffee_shops %}
+        <!-- CADA CARD -->
+        <div id="cards" class="card">
+          <a href="{% url 'coffee_shop_detail' pk=coffee.cnpj %}" class="card-link">
+            <!-- BACKGROUND IMAGE -->
+            <div class="background-image" style="background-image: url('https://sebraemg.com.br/wp-content/uploads/2018/10/terceira-onda-1-980x588.jpg')">
+            </div>
+            <!-- LOGO -->
+            <div class="card-logo">
+              <img src="https://static.ifood-static.com.br/image/upload/t_high/logosgde/5263af65-50db-482d-8ce9-239ce3b4cc32/201908161622_mXdZ_i.png" alt="Coffee Shop Logo"/>
+            </div>
+            
+          </a>
+          <div>
+            {% if user.is_authenticated %}
+            <form action="{% url 'favorited_coffee_shop' pk=coffee.cnpj %}" method="POST" class="ui form">
+                {% csrf_token %}
+                <input type="hidden" name="redirect_to" value="home">
+                <button type="submit" id="FavSuccess" class="no-style-button">
+                    {% if coffee.favorited %}
+                        <img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihbUqZTjvw8y_se2tiojwQETTdYh_12MB-szDQBiBLQj_UKDwk3n7VT9GxrtJASw8ZJx5WjW0fnAuQk4YNMsfUyn8P8ioeFY_3M=w1912-h976-rw-v1" alt="favoritado" id="favoritado">
+                    {% else %}
+                        <img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihauzrZ3JKU0RFjZdIkXtQ4xz4ZUvBQNoWdjglOxbSDlMOLXnCiOCz2cpsFaFNRKAgevYpRIkTsU7CzQBK-8cRe1N-amw1k58Ok=w953-h959-rw-v1" alt="não favoritado" style="opacity: 0.7;" id="Nao-favoritado">
+                    {% endif %}
+                </button>
+            </form>
+        {% else %}
+        <button type="submit" id="FavSuccess" class="no-style-button">
+          <a href="{% url 'login' %}?next={% url 'favorited_coffee_shop' pk=coffee.cnpj %}"><img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihauzrZ3JKU0RFjZdIkXtQ4xz4ZUvBQNoWdjglOxbSDlMOLXnCiOCz2cpsFaFNRKAgevYpRIkTsU7CzQBK-8cRe1N-amw1k58Ok=w953-h959-rw-v1" alt="não favoritado" style="opacity: 0.7;" id="Nao-favoritado"></a>
+        </button>
+            
+        {% endif %}
+        
+              
+            </div>
+            <!-- NOME DO CAFÉ E AVALIAÇÃO -->
+            <div class="title-rating">
+              <!-- NOME DO CAFÉ -->
+              <div class="card-title">
+                <span class="title-text">{{ coffee.name }}</span>
+              </div>
+              <!-- AVALIAÇÃO DO CAFÉ -->
+              <div class="card-rating">
+                <span class="rating-text">4.5 <img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZ-hnnZOZxvOnRRUThOJACLioRnbouJ9iBb635GpoTIO5ON0nITrSqS1TqHhupsZdBzs5OcDJeTsp2pxK8aohj60hVpL2B5vJI=w1912-h976-rw-v1" alt="rating" style="height: 15px;width: 15px;"></span> 
               </div>
             </div>
-          </div>
-          {% endfor %}
+            <!-- DESCRIÇÃO DO CAFÉ -->
+            <div class="card-description">
+              <div>
+              <span>{{ coffee.street }}, {{ coffee.number }}</span>
+              </div>
+            </div>
         </div>
-      </div>
+        {% endfor %}
     </div>
 
     <script>
-      document
-        .querySelector(".dropdown")
-        .addEventListener("mouseover", function () {
-          document.getElementById("myDropdown").classList.add("show");
+      document.querySelectorAll('.div-filter-option, .div-filter-option-2, .div-filter-option-3').forEach(function(button) {
+        button.addEventListener('click', function() {
+          this.classList.toggle('active');
         });
+      });
 
-      document
-        .querySelector(".dropdown")
-        .addEventListener("mouseout", function () {
+      document.querySelector(".dropdown").addEventListener("mouseover", function () {
+          document.getElementById("myDropdown").classList.add("show");
+      });
+
+      document.querySelector(".dropdown").addEventListener("mouseout", function () {
           document.getElementById("myDropdown").classList.remove("show");
-        });
+      });
 
       window.onclick = function (event) {
-        if (!event.target.matches(".dropbtn")) {
-          var dropdowns = document.getElementsByClassName("dropdown-content");
-          for (var i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains("show")) {
-              openDropdown.classList.remove("show");
-            }
+          if (!event.target.matches(".dropbtn")) {
+              var dropdowns = document.getElementsByClassName("dropdown-content");
+              for (var i = 0; i < dropdowns.length; i++) {
+                  var openDropdown = dropdowns[i];
+                  if (openDropdown.classList.contains("show")) {
+                      openDropdown.classList.remove("show");
+                  }
+              }
+          }
+      };
+
+     function generateOptions() {
+      // Inicializa um array para armazenar os valores dos filtros selecionados
+      const selectedFilters = [];
+
+      // Seleciona todos os checkboxes que estão marcados
+      const checkboxes = document.querySelectorAll('.filter-checkbox:checked');
+
+      // Itera sobre cada checkbox e adiciona o valor ao array de filtros selecionados
+      checkboxes.forEach((checkbox) => {
+        selectedFilters.push(checkbox.value);
+      });
+
+      // Seleciona os botões de filtro da primeira linha
+      const firstLineFilterButtons = document.querySelectorAll('.first-line-filters .div-filter-option');
+
+      // Itera sobre cada botão de filtro da primeira linha
+      firstLineFilterButtons.forEach((button) => {
+        // Verifica se o botão está ativo
+        if (button.classList.contains('active')) {
+          // Seleciona o checkbox dentro do botão de filtro
+          const checkbox = button.querySelector('.filter-text');
+
+          // Verifica se o checkbox está presente e possui um valor
+          if (checkbox && checkbox.innerText) {
+            // Se estiver ativo e o checkbox tiver um valor, adiciona o valor ao array de filtros selecionados
+            selectedFilters.push(checkbox.innerText);
           }
         }
-      };
+      });
+
+      // Seleciona os botões de filtro da segunda linha
+      const secondLineFilterButtons = document.querySelectorAll('.second-line-filters .div-filter-option-2');
+
+      // Itera sobre cada botão de filtro da segunda linha
+      secondLineFilterButtons.forEach((button) => {
+        // Verifica se o botão está ativo
+        if (button.classList.contains('active')) {
+          // Seleciona o checkbox dentro do botão de filtro
+          const checkbox = button.querySelector('.filter-text-small');
+          // Verifica se o checkbox está presente e possui um valor
+          if (checkbox && checkbox.innerText) {
+            // Se estiver ativo e o checkbox tiver um valor, adiciona o valor ao array de filtros selecionados
+            selectedFilters.push(checkbox.innerText);
+          }
+        }
+  });
+
+      // Seleciona os botões de filtro da terceira linha
+      const thirdLineFilterButtons = document.querySelectorAll('.third-line-filters .div-filter-option-3');
+
+      // Itera sobre cada botão de filtro da terceira linha
+      thirdLineFilterButtons.forEach((button) => {
+        // Verifica se o botão está ativo
+        if (button.classList.contains('active')) {
+          // Seleciona o checkbox dentro do botão de filtro
+          const checkbox = button.querySelector('.filter-checkbox');
+          // Verifica se o checkbox está presente e possui um valor
+          if (checkbox && checkbox.value) {
+            // Se estiver ativo e o checkbox tiver um valor, adiciona o valor ao array de filtros selecionados
+            selectedFilters.push(checkbox.value);
+          }
+        }
+      });
+
+      // Cria um objeto para armazenar os parâmetros de consulta
+      const params = new URLSearchParams();
+
+      // Adiciona cada filtro selecionado aos parâmetros de consulta
+      selectedFilters.forEach((filter) => {
+        params.append(filter, 'true');
+      });
+
+      // Debug: Verificar os filtros selecionados
+      console.log('Selected Filters:', params.toString());
+
+      // Redireciona para a página atual com os parâmetros de consulta
+      window.location.href = '?' + params.toString();
+    }
+
+      // ...
     </script>
+
   </body>
 </html>

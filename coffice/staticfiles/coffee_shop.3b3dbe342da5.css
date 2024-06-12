@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.container img {
+    max-width: 100%;
+    max-height: 100%; 
+    display: block; 
+    margin: 0 auto; 
+    border-radius: 10px; 
+
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+strong {
+    font-weight: bold;
+}
+
+.details-list {
+    list-style: none;
+    padding: 0;
+}
+
+.details-item {
+    margin-bottom: 10px;
+}
+
+.details-item strong {
+    display: inline-block;
+    width: 200px;
+}
+
+.details-item span {
+    display: inline-block;
+}
+
+.details-item .yes {
+    color: green;
+}
+
+.details-item .no {
+    color: red;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.box {
+    width: 350px;
+    padding: 20px;
+    text-align: center;
+    line-height: 1.5;
+    box-sizing: border-box;
+    width: calc(50% - 10px);
+
+}
+
+.box-1 {
+    width: 20%;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-right: auto;
+}
+
+.box-2 {
+    width: 20%;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-right: auto;
+}
+
+.box-3 {
+    width: 20%;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-right: auto;
+}
+
+.box-4 {
+    width: 20%;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-right: auto;
+}
+
+.box-5 {
+    width: 20%;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-right: auto;
+}
+
+
+
+.box-container {
+    display: flex; 
+    justify-content: space-between; 
+    flex-wrap: wrap;
+    margin:auto;
+    width: 700px;
+
+}
+
+
+.box-quad {
+    display: flex;
+    justify-content: center;
+}
+
+.box-quad-group {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.box-quad-group img {
+    width: 30%; 
+    height: auto;
+    margin-bottom: 5px;
+}
+
+#coffee-logo {
+    height: 50px; 
+    width: auto;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0; 
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+
+label {
+
+    background-color: #4B3621;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  label:hover, label.active {
+    background-color: #3D1F00;
+  }
+  
+  .filter-checkbox:checked + label {
+    background-color: #4B3621;
+  }
+
+   
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+.header h1 {
+    margin: 0;
+}
+.header button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6B8E23;
+    color: #fff;
+    cursor: pointer;
+}
+.header button:hover {
+    background-color: #4B3621;
+}
+.content {
+    padding: 20px;
+}

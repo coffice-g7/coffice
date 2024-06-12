@@ -1,171 +1,516 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
- body {
-            
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
-        }
-        .header h1 {
-            margin: 0;
-        }
-        .header button {
-            margin-left: 10px;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            background-color: #6B8E23;
-            color: #fff;
-            cursor: pointer;
-        }
-        .header button:hover {
-            background-color: #4B3621;
-        }
-        .content {
-            padding: 20px;
-        }
+@import url("https://fonts.googleapis.com/css2?family=Lexend&display=swap");
+
+body {
+  font-family: "Lexend", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden; /* Adicionado para evitar rolagem horizontal na body */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px 10px 20px;
+    background-color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); 
+}
+
+.header-logo {
+  margin-left: 20px;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.header button {
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.header button:hover {
+  background-color: #4b3621;
+}
+
+.header .home-button {
+  font-family: 'Lexend', sans-serif;
+  font-size: 20px;
+  color: #333;
+  text-decoration: none;
+  margin-top: 7px;
+  margin-left: 20px; /* Adicionado */
+}
+
+.logo-home-container {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  color: #DC5F4A;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: 'Lexend', sans-serif;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.show {
+  display: block;
+}
 
 
-        .card {
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+.navigation {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
 
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px !important;
-        }
-        .search-container {
-            margin-top: 40px;
-            text-align: center;
-          }
-          
-          .search-input {
-            padding: 10px;
-            border-radius: 20px;
-            border: 1px solid #ccc;
-            outline: none;
-            width: 300px;
-            max-width: 100%;
-          }
-          
-          .search-button {
-            background-color: #b08e6b;  
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-            margin-left: -4px;
-          }
-          
-          .search-button:hover {
-            background-color: #4B3621;
-          }
-          .filter-container {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .filter-bar {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Lexend', sans-serif;
-        }
-        
-        .filter-bar1 {
-            justify-content: center;
-            font-size: 90px;
-        }
-        
-        .filter-bar2 {
-            justify-content: center;
-            font-size: 33.5px;
-        }
-        
-        .filter-bar3 {
-            justify-content: center;
-            font-size: 18.5px;
-        }
-        
-        .filter-bar label {
-            margin-right: 5px;
-            margin-bottom: 5px;
-        }
-        
-        .filter-bar input[type="checkbox"] {
-            margin-right: 5px;
-        }
-        
+.navigation a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
 
-          .filter-checkbox {
-            position: absolute;
-            opacity: 0;
-          }
-          
-          label {
+.dropdown {
+  position: relative;
+}
 
-            background-color: #4B3621;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 10px;
-            cursor: pointer;
-          }
-          
-          label:hover, label.active {
-            background-color: #3D1F00;
-          }
-          
-          .filter-checkbox:checked + label {
-            background-color: #4B3621;
-          }
+.dropbtn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
 
-          .dropdown {
-            position: relative;
-            display: inline-block;
-        }
+.dropbtn img {
+  height: 40px;
+}
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f1f1f1;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            right: 0; 
-        }
+.search-container {
+  margin-top: 40px;
+  text-align: center;
+}
 
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
+.search-input {
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+  width: 300px;
+  max-width: 100%;
+}
 
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
+.search-button {
+  background-color: #b08e6b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-left: -4px;
+}
 
-        .show {
-            display: block;
-        }
+.search-button:hover {
+  background-color: #4b3621;
+}
 
-        #msg-filter {
-          display: flex;
-          justify-content: center;
-          margin-bottom: 20px;
-          font-family:'Lucida Sans';
-        }
-          
-         
+.filter-div {
+  width: 863px !important;
+  overflow-x: auto; /* Adicionado para permitir rolagem horizontal */
+  overflow-y: hidden; /* Escondido a rolagem vertical para manter o design */
+}
+
+.first-line-filters,
+.second-line-filters,
+.third-line-filters {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  color: #dc5f4a;
+}
+
+.first-line-filters {
+  height: 140px;
+}
+
+.second-line-filters {
+  height: 100px;
+  margin-top: 10px;
+}
+
+.third-line-filters {
+  height: 70px;
+  margin: 10px 0 10px 0;
+}
+
+.div-filter-option,
+.div-filter-option-2,
+.div-filter-option-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+  border-radius: 50px;
+  height: 100%;
+  font-family: "Lexend", sans-serif;
+  text-align: center;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  color: #dc5f4a;
+}
+
+.div-filter-option:hover,
+.div-filter-option-2:hover,
+.div-filter-option-3:hover,
+.div-filter-option.active,
+.div-filter-option-2.active,
+.div-filter-option-3.active {
+  background-color: #DC5F4A;
+  color: white;
+}
+
+.div-filter-option {
+  width: 49%;
+  font-size: 30px;
+}
+
+.div-filter-option-2 {
+  width: 32%;
+  font-size: 20px;
+}
+
+.div-filter-option-3 {
+  width: 15%;
+  font-size: 18px;
+  padding: 5px; /* Adiciona um pouco de padding */
+  box-sizing: border-box; /* Inclui padding e border no tamanho total do elemento */
+  min-height: 75.5px;
+  border-radius: 30px; /* Ajusta o border-radius */
+}
+
+.div-filter-option-3 input[type="checkbox"] {
+  display: none;
+}
+
+.div-filter-option-3 input[type="checkbox"]:checked + div {
+  background-color: #e2e2e2;
+}
+
+.div-filter-option-3 div {
+  white-space: nowrap; /* Evita quebra de linha dentro do div */
+  text-align: center; /* Centraliza o texto */
+}
+
+label:hover,
+label.active {
+  background-color: #DC5F4A;
+}
+
+
+#msg-filter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  font-family: "Lexend", sans-serif;
+  font-size: 35px;
+  color: #183c39;
+  width: 477px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.filter-image-container,
+.filter-image-container-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  overflow: hidden; /* Corta o conteúdo excedente */
+}
+
+.filter-image-container {
+  width: 50%;
+}
+
+.filter-image-container-2 {
+  width: 40%;
+}
+
+.filter-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Mantém as proporções da imagem */
+}
+
+.filter-text,
+.filter-text-small {
+  margin-top: 10px;
+}
+
+.filter-text {
+  width: 50%;
+}
+
+.filter-text-small {
+  width: 60%;
+  margin-right: 50px;
+}
+
+.coffees-list {
+  width: 1200px;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap; /* Para os cards envolverem para a próxima linha quando não couberem mais na largura */
+  justify-content: start; /* Centralizar os cards */
+  overflow-y: auto; /* Adicionado para permitir rolagem vertical */
+}
+
+.card {
+  width: 285px; 
+  height: 350px; 
+  border-radius: 50px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+  margin: 0 10px 20px;
+}
+
+.card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.background-image {
+  height: 65%;
+  overflow: hidden;
+  border-radius: 50px;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-logo {
+  width: 65px;
+  height: 65px; /* Adicione esta linha para garantir que a logo fique uma bolinha completa */
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  z-index: 1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.card-logo img {
+  width: 100%;
+  height: 100%; /* Adicione esta linha para garantir que a imagem preencha totalmente o contêiner */
+  object-fit: cover; /* Adicione esta linha para garantir que a imagem se ajuste dentro do contêiner */
+}
+
+
+.title-rating {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Alinhar verticalmente */
+  padding: 10px 0px 10px 5px;
+}
+
+.card-title {
+  width: calc(100% - 70px);
+}
+
+.card-title span {
+  font-size: 18px;
+  color: #183c39;
+  font-weight: bold;
+}
+
+.card-rating {
+  width: 50px; /* Largura fixa para a avaliação */
+  font-size: 18px;
+  color: #dc5f4a;
+  text-decoration: none;
+}
+
+/* Remover o sublinhado do nome do café e do rating */
+.card-title span,
+.card-rating {
+  text-decoration: none;
+}
+
+.card-description {
+  padding: 0 10px;
+}
+
+.card-description p {
+  font-size: 14px;
+  color: #8B898F;
+}
+
+/* BOTÃO DE GERAR OPÇÕES */
+
+.generate-options {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Ajuste conforme necessário */
+}
+
+.generate-options-button {
+  background-color: #dc5f4a; /* Cor rosa usada no texto dos filtros */
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 30px; /* Ajuste para o tamanho desejado */
+  font-size: 20px; /* Maior que os itens da terceira linha dos filtros */
+  cursor: pointer;
+  font-family: "Lexend", sans-serif;
+}
+
+.generate-options-button:hover {
+  background-color: #e0776a; /* Cor de fundo ao passar o mouse */
+}
+
+.btn-home {
+  background-color: #e0776a; /* Cor de fundo */
+  color: white; /* Cor do texto */
+  border: 2px solid #e0776a; /* Cor da borda */
+  padding: 10px 20px; /* Espaçamento interno */
+  text-decoration: none; /* Remover sublinhado */
+  font-size: 16px; /* Tamanho da fonte */
+  border-radius: 15px; /* Bordas arredondadas */
+  transition: background-color 0.3s, color 0.3s; /* Transição suave */
+}
+
+/* Estilo hover do botão */
+.btn-home:hover {
+  background-color: #183c39; /* Cor de fundo ao passar o mouse */
+  color: #e0776a; /* Cor do texto ao passar o mouse */
+}
+
+.profile-section {
+  display: flex;
+  justify-content: space-around; /* Distribuir os elementos de forma uniforme */
+  color: #8B898F
+}
+
+.no-style-button {
+  border: none;
+  background: none;
+  padding: 0;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.no-style-button img {
+  width: 30px;
+  height: 30px;
+}
+
+.section-tab {
+  padding: 10px 40px;
+  cursor: pointer;
+  background-color: transparent; 
+  border: none; 
+  position: relative; 
+  margin-right: 20px; 
+}
+
+.section-tab:last-child {
+  margin-right: 0; /* Remover margem do último botão para evitar espaçamento extra */
+}
+
+.section-tab::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #8B898F; /* Cor da linha */
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.3s ease-in-out; /* Transição suave */
+}
+
+.section-tab.selected::after {
+  width: 100%; /* Expandir a linha quando o botão estiver selecionado */
+}
+
+.content {
+  border: 1px solid #ccc;
+  border-top: none;
+  padding: 20px;
+  color: #8B898F
+}
+
+.btn-favorite {
+  color: #dc5f4a; /* cor do ícone de coração vazio */
+  border: none; /* remove a borda do botão */
+  background-color: transparent; /* torna o fundo do botão transparente */
+}
+
+.btn-favorited {
+  color: #dc5f4a; /* cor do ícone de coração preenchido */
+  border: none; /* remove a borda do botão */
+  background-color: transparent; /* torna o fundo do botão transparente */
+}
+
+
+
+
+/* Adiciona estilo ao botão "Remover dos Favoritos" */
+.btn-remove-favorite {
+  background-color: #ff4d4d; /* Cor de fundo vermelha */
+  color: #fff; /* Cor do texto branco */
+  border: none; /* Remove a borda */
+  padding: 8px 16px; /* Espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+  cursor: pointer; /* Muda o cursor para indicar interatividade */
+  display: flex; /* Faz com que o ícone e o texto fiquem na mesma linha */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+/* Adiciona espaçamento entre o ícone e o texto */
+.btn-remove-favorite i {
+  margin-right: 8px; /* Espaçamento à direita do ícone */
+}

@@ -1,0 +1,73 @@
+name: Build and test pipeline Python app to Azure Web App - Coffice
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python version
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+
+      - name: Create and start virtual environment
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+
+      - name: Install dependencies
+        run: |
+          source venv/bin/activate
+          cd coffice
+          pip install -r requirements.txt
+          npm ci
+          cd ..
+
+      - name: Apply migrations and export local database data
+        env:
+          DATABASE_URL: "sqlite:///coffice/db.sqlite3"  # Ajuste para seu banco de dados se necessário
+        run: |
+          source venv/bin/activate
+          cd coffice
+          python manage.py migrate
+          python manage.py dumpdata > initial_data.json
+          cd ..
+
+      - name: Run migrations and import data
+        run: |
+          source venv/bin/activate
+          cd coffice
+          python manage.py migrate
+          python manage.py loaddata initial_data.json
+          python manage.py runserver &
+          sleep 5
+          npx cypress run
+          cd ..
+
+      - name: Clean testing files
+        run: |
+          cd coffice/
+          rm .env db.sqlite3 cypress.config.js package-lock.json package.json
+          rm -rf cypress node_modules
+          cd ..
+
+      - name: Zip artifact for deployment
+        run: |
+          source venv/bin/activate
+          cd coffice/
+          zip -r ../release.zip * .[!.]* -x "*.venv/*"
+          cd ..
+
+      - name: Upload artifact for deployment jobs
+        uses: actions/upload-artifact@v3
+        with:
+          name: python-app
+          path: release.zip
