@@ -52,9 +52,8 @@ jobs:
         run: |
           source venv/bin/activate
           cd coffice/
-          zip -r release.zip .
+          zip -r ../release.zip * .[!.]* -x "*.venv/*"
           cd ..
-          mv coffice/release.zip .
 
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v3
