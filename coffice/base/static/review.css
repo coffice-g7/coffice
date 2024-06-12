@@ -234,22 +234,19 @@
 }
 
 .avaliacoes-button-2 {
-    cursor: pointer; /* Adiciona o cursor de ponteiro para indicar que é clicável */
-    width: 32%;
-    height: 53px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    border-radius: 20px;
-    background-color: #DC5F4A;
-}
-
-.avaliacoes-button-2 a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    font-weight: 400;
-    opacity: 0; /* Esconde o texto do link */
+  background-color: #DC5F4A;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 30%;
+  height: 53px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 19.7;
+  font-weight: 400;
 }
 
 .avaliacoes-button-2:hover {
@@ -260,11 +257,33 @@
     background-color: #DC5F4A; /* Restaura a cor de fundo quando clicado */
 }
 
+.avaliacoes-button-3 {
+  background-color: #DC5F4A;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 30%;
+  height: 53px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 19.7;
+  font-weight: 400;
+}
 
+.avaliacoes-button-3:hover {
+    background-color: #c0392b; /* Altera a cor de fundo ao passar o mouse */
+}
+
+.avaliacoes-button-3.clicked {
+    background-color: #DC5F4A; /* Restaura a cor de fundo quando clicado */
+}
 
 .filtros-botao{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     width: 80%;
     margin-top: 7px;
@@ -314,13 +333,13 @@
     width: 100%;
     max-width: 1200px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-direction: row; 
     flex-wrap: wrap;
 }
 
 .review {
-    margin: 10px; 
+    margin: 10px 45px; 
     border-radius: 28px;
     font-size: 14px;
     width: 22%;

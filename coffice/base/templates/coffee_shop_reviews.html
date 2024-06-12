@@ -112,21 +112,17 @@
                 </div>
                 <h2>Ordenar por</h2>
                 <div class="ordenar">
-                    <div class="avaliacoes-button-2">
-                        <a href="{% url 'make_reservation' coffee_shop.cnpj %}">Mais relevante</a>
-                    </div>
-                    <div class="avaliacoes-button-2">
-                        <a href="{% url 'new_review' coffee_shop.cnpj %}">Mais recentes</a>
-                    </div>
+                    <div class="avaliacoes-button-3" onclick="applyFilter(this.innerText)">Mais relevantes</div>
+                    <div class="avaliacoes-button-3" onclick="applyFilter(this.innerText)">Mais recentes</div>
                 </div>
             </div>
        </div>
 
        <div class="direita">
         <div class="main-picture" style="background-image: url('https://sebraemg.com.br/wp-content/uploads/2018/10/terceira-onda-1-980x588.jpg')"></div>
-        <div class="avaliacoes-button-2">
-            <a class="avaliacoes-button-2-link" href="{% url 'new_review' coffee_shop.cnpj %}">Avaliar</a>
-       </div>
+       
+            <a class="avaliacoes-button-2" href="{% url 'new_review' coffee_shop.cnpj %}">Avaliar</a>
+       
         </div>
     </div>
 
