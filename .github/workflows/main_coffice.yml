@@ -31,11 +31,21 @@ jobs:
           npm ci
           cd ..
 
-      - name: Run migrations and Cypress tests
+      - name: Export local database data
+        env:
+          DATABASE_URL: "sqlite:///coffice/db.sqlite3"  # Ajuste para seu banco de dados se necessário
+        run: |
+          source venv/bin/activate
+          cd coffice
+          python manage.py dumpdata > initial_data.json
+          cd ..
+
+      - name: Run migrations and import data
         run: |
           source venv/bin/activate
           cd coffice
           python manage.py migrate
+          python manage.py loaddata initial_data.json
           python manage.py runserver &
           sleep 5
           npx cypress run
