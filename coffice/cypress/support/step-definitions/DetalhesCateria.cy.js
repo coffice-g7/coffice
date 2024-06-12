@@ -3,8 +3,6 @@
 // Cenário 1: Visualizar detalhes da cafeteria com sucesso
 
 Given('que estou na "home"', () => {
-    cy.criarCards('Cafeteria', 'Otima');
-  
   cy.visit('/'); // Visita a página inicial (home)
     cy.url().should('equal', 'http://127.0.0.1:8000/');
     cy.wait(2000); // Espera 2 segundos para garantir que a página carregue completamente
