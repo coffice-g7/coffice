@@ -1,4 +1,4 @@
-name: Build and test pipeline Python app to Azure Web App - Coffice
+name: Build and deploy Python app to Azure Web App - Coffice
 
 on:
   push:
@@ -31,22 +31,11 @@ jobs:
           npm ci
           cd ..
 
-      - name: Apply migrations and export local database data
-        env:
-          DATABASE_URL: "sqlite:///coffice/db.sqlite3"  # Ajuste para seu banco de dados se necessário
+      - name: Run migrations and Cypress tests
         run: |
           source venv/bin/activate
           cd coffice
           python manage.py migrate
-          python manage.py dumpdata > initial_data.json
-          cd ..
-
-      - name: Run migrations and import data
-        run: |
-          source venv/bin/activate
-          cd coffice
-          python manage.py migrate
-          python manage.py loaddata initial_data.json
           python manage.py runserver &
           sleep 5
           npx cypress run
@@ -63,8 +52,9 @@ jobs:
         run: |
           source venv/bin/activate
           cd coffice/
-          zip -r ../release.zip * .[!.]* -x "*.venv/*"
+          zip -r release.zip .
           cd ..
+          mv coffice/release.zip .
 
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v3

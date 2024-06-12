@@ -13,14 +13,14 @@ Given('que tenho um perfil de usuário no site', () => {
   });
   
   When('eu favoritar uma cafeteria específica', () => {
-    cy.get('.card').eq(1).within(() => {
+    cy.get('#cards').eq(1).within(() => {
       cy.get('#Nao-favoritado').click(); 
     });
     cy.wait(2000);
   });
   
   Then('essa cafeteria deve ser visualizada com prioridade e como favorita no painel de cafeterias', () => {
-    cy.get('.card').first().within(() => {
+    cy.get('#cards').first().within(() => {
       cy.get('#favoritado').should('be.visible'); 
     });
   });
