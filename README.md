@@ -61,7 +61,7 @@ O Coffice é uma plataforma que conecta profissionais a cafeterias ideais para t
   </a>
 </p>
 <p style="text-align: center; text-decoration: none;">
-  <a href="https://www.figma.com/file/VuJpIWTrolT7ZYsfdg1E6g/Figma-basics?type=design&node-id=1669%3A162202&mode=design&t=4V8eHwX7xPwvWkX1-1" style="text-decoration: none;">
+  <a href="https://www.figma.com/design/9wBimR8eslDPdtV7xWCUoB/Interface-Coffice?node-id=0-1&t=WS3vlL7hOQhJmC0H-0" style="text-decoration: none;">
     <img src="media/imagens/GRÃO_PNG_MARROM-removebg-preview.png" alt="Logo" width="20" height="25">
     <span>Figma</span>
   </a>
