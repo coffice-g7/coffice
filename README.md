@@ -17,7 +17,6 @@
   /></a>
 </p>
 
-
 <h4>Bem vindo ao repositório do Coffice! Este Projeto está sendo realizado com intuito de fomentar a cultura e conhecimento acerca das cafeterias com ambiente de trabalho na cidade do Recife.<h4>
 
 ## 🗪 Visão Geral
@@ -28,7 +27,7 @@
 
 O Coffice é uma plataforma que conecta profissionais a cafeterias ideais para trabalhar, estudar ou simplesmente desfrutar de um momento tranquilo. Facilitamos o processo de descobrir, filtrar e reservar espaços em cafeterias, enquanto você se integra a uma comunidade ativa que fornece feedback e valor à plataforma.
 
-## 🔗 Links importantes 
+## 🔗 Links importantes
 
 <p style="text-align: center; text-decoration: none;">
   <a href="https://sites.google.com/cesar.school/site-grupo7/home?authuser=1" style="text-decoration: none;">
@@ -69,14 +68,14 @@ O Coffice é uma plataforma que conecta profissionais a cafeterias ideais para t
 
 ## ⚙ Tecnologias Utilizadas
 
-| Categoria                   | Tecnologia                                                                           |
-|-----------------------------|--------------------------------------------------------------------------------------|
-| *Linguagem de Programação*    | <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python Logo" style="border-radius: 5px;"> |
-| *Banco de Dados*               | <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL Logo" style="border-radius: 5px;"> |
-| *Framework de Desenvolvimento* | <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django Logo" style="border-radius: 5px;"> |
-| *Frontend*                     | <img src="https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white" alt="HTML Logo" style="border-radius: 5px;"> <img src="https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white" alt="CSS Logo" style="border-radius: 5px;"> <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap Logo" style="border-radius: 5px;"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="Bootstrap Logo" style="border-radius: 5px;">|
-| *Organização*                  | <img src="https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white" alt="Jira Logo" style="border-radius: 5px;"> |
-|  *Aplicação*                  | <img src="https://img.shields.io/badge/Microsoft_Azure-0089D6?style=for-the-badge&logo=microsoft-azure&logoColor=white" alt="Jira Logo"> <img src="https://img.shields.io/badge/Google_chrome-4285F4?style=for-the-badge&logo=Google-chrome&logoColor=white" alt="Jira Logo"> <img src="https://img.shields.io/badge/Miro-050038?style=for-the-badge&logo=Miro&logoColor=white" alt="Miro Logo">|
+| Categoria                      | Tecnologia                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _Linguagem de Programação_     | <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python Logo" style="border-radius: 5px;">                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| _Banco de Dados_               | <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL Logo" style="border-radius: 5px;">                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| _Framework de Desenvolvimento_ | <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django Logo" style="border-radius: 5px;">                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| _Frontend_                     | <img src="https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white" alt="HTML Logo" style="border-radius: 5px;"> <img src="https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white" alt="CSS Logo" style="border-radius: 5px;"> <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap Logo" style="border-radius: 5px;"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="Bootstrap Logo" style="border-radius: 5px;"> |
+| _Organização_                  | <img src="https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white" alt="Jira Logo" style="border-radius: 5px;">                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| _Aplicação_                    | <img src="https://img.shields.io/badge/Microsoft_Azure-0089D6?style=for-the-badge&logo=microsoft-azure&logoColor=white" alt="Jira Logo"> <img src="https://img.shields.io/badge/Google_chrome-4285F4?style=for-the-badge&logo=Google-chrome&logoColor=white" alt="Jira Logo"> <img src="https://img.shields.io/badge/Miro-050038?style=for-the-badge&logo=Miro&logoColor=white" alt="Miro Logo">                                                                                                                                                                                                                            |
 
 <details>
 <summary> <h1> 📝 Status Report 1 </h1> </summary>
@@ -85,17 +84,18 @@ O Coffice é uma plataforma que conecta profissionais a cafeterias ideais para t
 
 ### Como usuário cliente:
 
-| Número | Descrição |
-|--------|-----------|
-| 1. | **Gostaria de ver uma lista de sugestão de cafeterias** <br> Como usuário cliente, gostaria de visualizar uma lista de sugestões de cafeterias na plataforma Coffice, com base na minha localização ou preferências, para que eu possa escolher o local ideal para trabalhar, estudar ou desfrutar de um momento tranquilo. |
-| 2. | **Gostaria de ver detalhes de uma cafeteria** <br> Como usuário cliente, gostaria de visualizar os detalhes de uma cafeteria específica na plataforma Coffice, incluindo sua localização, horário de funcionamento, comodidades oferecidas e avaliações de outros usuários, para que eu possa tomar uma decisão informada sobre onde ir. |
-| 3. | **Consigo realizar login** <br> Como usuário cliente, gostaria de poder realizar o login na plataforma Coffice utilizando meu e-mail e senha cadastrados, para acessar minha conta e utilizar os recursos da plataforma. |
-| 4. | **Gostaria de me cadastrar** <br> Como usuário cliente, gostaria de poder me cadastrar na plataforma Coffice, fornecendo informações básicas como nome, e-mail e senha, para que eu possa acessar todos os recursos da plataforma. |
-| 5. | **Gostaria de favoritar cafeterias** <br> Como usuário cliente, gostaria de poder favoritar minhas cafeterias favoritas na plataforma Coffice, para que eu possa acessá-las facilmente e receber notificações sobre promoções e eventos especiais. |
-| 6. | **Gostaria de filtrar a lista de sugestões de cafeterias** <br> Como usuário cliente, gostaria de poder filtrar a lista de sugestões de cafeterias na plataforma Coffice, por critérios como localização, comodidades oferecidas e avaliações, para encontrar o local ideal para mim. |
-| 7. | **Gostaria de ver uma lista com as cafeterias que favoritei** <br> Como usuário cliente, gostaria de poder acessar uma lista com as cafeterias que favoritei na plataforma Coffice, para que eu possa encontrá-las facilmente e verificar se há novidades ou promoções disponíveis. |
+| Número | Descrição                                                                                                                                                                                                                                                                                                                                |
+| ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1.     | **Gostaria de ver uma lista de sugestão de cafeterias** <br> Como usuário cliente, gostaria de visualizar uma lista de sugestões de cafeterias na plataforma Coffice, com base na minha localização ou preferências, para que eu possa escolher o local ideal para trabalhar, estudar ou desfrutar de um momento tranquilo.              |
+| 2.     | **Gostaria de ver detalhes de uma cafeteria** <br> Como usuário cliente, gostaria de visualizar os detalhes de uma cafeteria específica na plataforma Coffice, incluindo sua localização, horário de funcionamento, comodidades oferecidas e avaliações de outros usuários, para que eu possa tomar uma decisão informada sobre onde ir. |
+| 3.     | **Consigo realizar login** <br> Como usuário cliente, gostaria de poder realizar o login na plataforma Coffice utilizando meu e-mail e senha cadastrados, para acessar minha conta e utilizar os recursos da plataforma.                                                                                                                 |
+| 4.     | **Gostaria de me cadastrar** <br> Como usuário cliente, gostaria de poder me cadastrar na plataforma Coffice, fornecendo informações básicas como nome, e-mail e senha, para que eu possa acessar todos os recursos da plataforma.                                                                                                       |
+| 5.     | **Gostaria de favoritar cafeterias** <br> Como usuário cliente, gostaria de poder favoritar minhas cafeterias favoritas na plataforma Coffice, para que eu possa acessá-las facilmente e receber notificações sobre promoções e eventos especiais.                                                                                       |
+| 6.     | **Gostaria de filtrar a lista de sugestões de cafeterias** <br> Como usuário cliente, gostaria de poder filtrar a lista de sugestões de cafeterias na plataforma Coffice, por critérios como localização, comodidades oferecidas e avaliações, para encontrar o local ideal para mim.                                                    |
+| 7.     | **Gostaria de ver uma lista com as cafeterias que favoritei** <br> Como usuário cliente, gostaria de poder acessar uma lista com as cafeterias que favoritei na plataforma Coffice, para que eu possa encontrá-las facilmente e verificar se há novidades ou promoções disponíveis.                                                      |
 
 ## 🔄 Diagrama de Atividades
+
 <p style="text-align: center; text-decoration: none;">
   <a href="https://drive.google.com/drive/u/1/folders/1RlvqC1O59g56bpLv19bwYtHw1LVJ5vRn" style="text-decoration: none;">
     <img src="media/imagens/GRÃO_PNG_MARROM-removebg-preview.png" alt="Logo" width="20" height="25">
@@ -104,7 +104,6 @@ O Coffice é uma plataforma que conecta profissionais a cafeterias ideais para t
 </p>
 
 <img src="media/imagens/diagrama_coffice.png" alt="Descrição da imagem" height="800">
-
 
 ## 🎥 ScreenCasts
 
@@ -145,6 +144,7 @@ Nesta seção, você encontrará os screencasts demonstrando o funcionamento da 
 Após a conclusão da implementação da funcionalidade de visualização de detalhes da cafeteria, podemos fornecer um feedback positivo sobre nossa experiência de trabalho em equipe e sobre o resultado alcançado.
 
 A aplicação da programação em par foi fundamental para o sucesso do projeto. Trabalhando em conjunto, conseguimos dividir as tarefas de forma eficiente e aproveitar nossas habilidades individuais para alcançar um objetivo comum.</p>
+
 </details>
 
 ## 📊 Jira
@@ -164,19 +164,20 @@ A aplicação da programação em par foi fundamental para o sucesso do projeto.
 
 ### Como usuário cliente:
 
-| Número | Descrição |
-|--------|-----------|
-| 1. | **Posso filtrar cafeterias** <br> Como usuário cliente, posso filtrar a lista de sugestões de cafeterias, por critérios como "estou sozinho" ou "estou em grupo" para encontrar o local ideal para mim. |
-| 2. | **Posso favoritar cafeterias** <br> Como usuário cliente, posso favoritar minhas cafeterias favoritas, para que eu possa visualizá-las facilmente. |
-| 3. | **Posso ver minha lista de favoritos** <br> Como usuário cliente, posso acessar uma lista com as cafeterias que favoritei, para que eu possa encontrá-las facilmente. |
-| 4. | **Posso solicitar reserva em uma cafeteria** <br> Como usuário cliente, posso solicitar uma reserva em uma cafeteria específica, para garantir um lugar para trabalhar ou encontrar amigos. |
-| 5. | **Posso ver minhas solicitações de reserva** <br> Como usuário cliente, posso visualizar minhas solicitações de reserva em cafeterias, para acompanhar o status. |
-| 6. | **Posso adicionar uma avaliação em uma cafeteria** <br> Como usuário cliente, posso adicionar uma avaliação para uma cafeteria, para compartilhar minha experiência com outros usuários. |
-| 7. | **Posso visualizar as avaliações de uma cafeteria** <br> Como usuário cliente, posso visualizar as avaliações de outros usuários para uma cafeteria específica, para tomar uma decisão informada sobre onde ir. |
-| 8. | **Posso visualizar de Resumo de Avaliações de Cafeterias** <br> Como usuário cliente, posso visualizar um resumo das avaliações de uma cafeteria, para conhecer as experiências de outros usuários. |
+| Número | Descrição                                                                                                                                                                                                       |
+| ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1.     | **Posso filtrar cafeterias** <br> Como usuário cliente, posso filtrar a lista de sugestões de cafeterias, por critérios como "estou sozinho" ou "estou em grupo" para encontrar o local ideal para mim.         |
+| 2.     | **Posso favoritar cafeterias** <br> Como usuário cliente, posso favoritar minhas cafeterias favoritas, para que eu possa visualizá-las facilmente.                                                              |
+| 3.     | **Posso ver minha lista de favoritos** <br> Como usuário cliente, posso acessar uma lista com as cafeterias que favoritei, para que eu possa encontrá-las facilmente.                                           |
+| 4.     | **Posso solicitar reserva em uma cafeteria** <br> Como usuário cliente, posso solicitar uma reserva em uma cafeteria específica, para garantir um lugar para trabalhar ou encontrar amigos.                     |
+| 5.     | **Posso ver minhas solicitações de reserva** <br> Como usuário cliente, posso visualizar minhas solicitações de reserva em cafeterias, para acompanhar o status.                                                |
+| 6.     | **Posso adicionar uma avaliação em uma cafeteria** <br> Como usuário cliente, posso adicionar uma avaliação para uma cafeteria, para compartilhar minha experiência com outros usuários.                        |
+| 7.     | **Posso visualizar as avaliações de uma cafeteria** <br> Como usuário cliente, posso visualizar as avaliações de outros usuários para uma cafeteria específica, para tomar uma decisão informada sobre onde ir. |
+| 8.     | **Posso visualizar de Resumo de Avaliações de Cafeterias** <br> Como usuário cliente, posso visualizar um resumo das avaliações de uma cafeteria, para conhecer as experiências de outros usuários.             |
 
 ## 🔄 Diagrama de Atividades
- <a href="https://www.canva.com/design/DAGH5j6wZo4/6JcHpCJgeIYNR4-ZomDSQQ/view?utm_content=DAGH5j6wZo4&utm_campaign=designshare&utm_medium=link&utm_source=editor" style="text-decoration: none;"><span>Diagrama de atividades</span></a>
+
+<a href="https://www.canva.com/design/DAGH5j6wZo4/6JcHpCJgeIYNR4-ZomDSQQ/view?utm_content=DAGH5j6wZo4&utm_campaign=designshare&utm_medium=link&utm_source=editor" style="text-decoration: none;"><span>Diagrama de atividades</span></a>
 
 ## 🎥 ScreenCasts
 
@@ -197,9 +198,6 @@ Nesta seção, você encontrará os screencasts demonstrando o funcionamento da 
   <a href="https://www.youtube.com/watch?v=fC3OhSjGkPA&ab_channel=G7projetos2" style="text-decoration: none;"> <span>ScreenCast Execução dos testes</span>
   </a>
 </p>
-
-
-
 
 ## 👥 Pair Programming
 
@@ -250,6 +248,9 @@ Nesta seção, você encontrará os screencasts demonstrando o funcionamento da 
 
 ## 📊 Jira
 
+<img src="media/imagens/jira_sr2.png" alt="Issues opened">
+
+<img src="media/imagens/jira2_sr2.png" alt="Issues closed">
 
 ## 🐛 Issue / Bug Tracker
 
@@ -259,10 +260,9 @@ Nesta seção, você encontrará os screencasts demonstrando o funcionamento da 
 
 </details>
 
-
 ## 👩‍💻 Membros
 
-### CC 
+### CC
 
 <ul>
   <li>
@@ -308,7 +308,6 @@ Nesta seção, você encontrará os screencasts demonstrando o funcionamento da 
   </li>
 </ul>
 
-
 ## 👩‍💻 Contribuintes Github
 
 <p align="left">
@@ -320,13 +319,3 @@ Nesta seção, você encontrará os screencasts demonstrando o funcionamento da 
 ## 📝 Licença
 
 Este projeto está licenciado sob a [Licença MIT](LICENSE).
-
-
-
-
-
-
-
-
-
-
