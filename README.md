@@ -1,4 +1,4 @@
-<p align="center"><img align="center" width="280" src="media/imagens/coffice_reta_marrom.png"/></p>
+<p align="center"><img align="center" width="280" src="media/imagens/LOGO VERDE PNG.png"/></p>
 <hr>
 
 <p align="center">
@@ -23,7 +23,7 @@
 
 <p float="left">
 
-<img align="right" width="80" height="100" src="media/imagens/GRÃO_PNG_MARROM-removebg-preview.png" />
+<img align="right" width="80" height="100" src="media/imagens/logo.png" />
 
 O Coffice é uma plataforma que conecta profissionais a cafeterias ideais para trabalhar, estudar ou simplesmente desfrutar de um momento tranquilo. Facilitamos o processo de descobrir, filtrar e reservar espaços em cafeterias, enquanto você se integra a uma comunidade ativa que fornece feedback e valor à plataforma.
 
@@ -31,37 +31,37 @@ O Coffice é uma plataforma que conecta profissionais a cafeterias ideais para t
 
 <p style="text-align: center; text-decoration: none;">
   <a href="https://sites.google.com/cesar.school/site-grupo7/home?authuser=1" style="text-decoration: none;">
-    <img src="media/imagens/GRÃO_PNG_MARROM-removebg-preview.png" alt="Logo" width="20" height="25">
+    <img src="media/imagens/logo.png" alt="Logo" width="20" height="25">
     <span>Google Sites</span>
   </a>
 </p>
 <p style="text-align: center; text-decoration: none;">
   <a href="https://coffice.azurewebsites.net/" style="text-decoration: none;">
-    <img src="media/imagens/GRÃO_PNG_MARROM-removebg-preview.png" alt="Logo" width="20" height="25">
+    <img src="media/imagens/logo.png" alt="Logo" width="20" height="25">
     <span>Azure Site</span>
   </a>
 </p>
 <p style="text-align: center; text-decoration: none;">
   <a href="https://coffice-pj2.atlassian.net/jira/software/projects/COF/boards/1" style="text-decoration: none;">
-    <img src="media/imagens/GRÃO_PNG_MARROM-removebg-preview.png" alt="Logo" width="20" height="25">
+    <img src="media/imagens/logo.png" alt="Logo" width="20" height="25">
     <span>Jira</span>
   </a>
 </p>
 <p style="text-align: center; text-decoration: none;">
   <a href="https://miro.com/app/board/uXjVNjNdv6A=/" style="text-decoration: none;">
-    <img src="media/imagens/GRÃO_PNG_MARROM-removebg-preview.png" alt="Logo" width="20" height="25">
+    <img src="media/imagens/logo.png" alt="Logo" width="20" height="25">
     <span>Miro</span>
   </a>
 </p>
 <p style="text-align: center; text-decoration: none;">
   <a href="https://www.youtube.com/channel/UCpPg-7nDrKEgPi6ADXkpfIA" style="text-decoration: none;">
-    <img src="media/imagens/GRÃO_PNG_MARROM-removebg-preview.png" alt="Logo" width="20" height="25">
+    <img src="media/imagens/logo.png" alt="Logo" width="20" height="25">
     <span>Youtube</span>
   </a>
 </p>
 <p style="text-align: center; text-decoration: none;">
   <a href="https://www.figma.com/design/9wBimR8eslDPdtV7xWCUoB/Interface-Coffice?node-id=0-1&t=WS3vlL7hOQhJmC0H-0" style="text-decoration: none;">
-    <img src="media/imagens/GRÃO_PNG_MARROM-removebg-preview.png" alt="Logo" width="20" height="25">
+    <img src="media/imagens/logo.png" alt="Logo" width="20" height="25">
     <span>Figma</span>
   </a>
 </p>
@@ -98,7 +98,7 @@ O Coffice é uma plataforma que conecta profissionais a cafeterias ideais para t
 
 <p style="text-align: center; text-decoration: none;">
   <a href="https://drive.google.com/drive/u/1/folders/1RlvqC1O59g56bpLv19bwYtHw1LVJ5vRn" style="text-decoration: none;">
-    <img src="media/imagens/GRÃO_PNG_MARROM-removebg-preview.png" alt="Logo" width="20" height="25">
+    <img src="media/imagens/logo.png" alt="Logo" width="20" height="25">
     <span>Diagrama</span>
   </a>
 </p>
